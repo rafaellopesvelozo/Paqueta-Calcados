@@ -1,5 +1,5 @@
 import React, { useContext } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { formatCurrency } from "../utils/format";
 import AppContext from "../context/AppContext";
 
@@ -15,10 +15,16 @@ const Bag = () => {
 
       {cartItem.map((cart) => (
         <section className="cart-item" key={cart.id}>
-          <img src="" alt="" className="cart-item-img" />
+          <img
+            src={cart.image}
+            alt="imagem da compra"
+            className="cart-item-img"
+          />
           <div>
             <h3 className="cart-item-tittle">{cart.name}</h3>
-            <h3 className="cart-item-price"></h3>
+            <h3 className="cart-item-price">
+              {formatCurrency(cart.price.value)}
+            </h3>
           </div>
 
           <button type="button" className="button--remove-item">

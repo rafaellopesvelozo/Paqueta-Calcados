@@ -5,7 +5,6 @@ export const Provider = ({ children }) => {
   const [shoes, setShoes] = useState([]);
   const [cartItem, setCartItem] = useState([]);
 
-
   const value = {
     shoes,
     setShoes,

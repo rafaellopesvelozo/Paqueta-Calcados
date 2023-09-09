@@ -7,13 +7,6 @@ import AppContext from "../../context/AppContext";
 import { Shoes_Api } from "../../services/api";
 import { formatCurrency } from "../../utils/format";
 
-import { Swiper, SwiperSlide } from "swiper/react";
-import { Pagination, Scrollbar, A11y } from "swiper/modules";
-import "swiper/css";
-import "swiper/css/navigation";
-import "swiper/css/pagination";
-import "swiper/css/scrollbar";
-
 const Shoes = () => {
   const { shoes, setShoes, cartItem, setCartItem } = useContext(AppContext);
 
@@ -27,9 +20,9 @@ const Shoes = () => {
     }
   }, []);
 
-  function handleAddCart() {
-    setCartItem([...cartItem]);
-    console.log(cartItem);
+  function handleAddCart(shoesItem) {
+    setCartItem([...cartItem, shoesItem]);
+    console.log(cartItem)
   }
 
   return (
@@ -61,60 +54,47 @@ const Shoes = () => {
         </div>
 
         <section>
-     
-         
-          <Swiper
-            modules={[Pagination, Scrollbar, A11y]}
-            pagination={{ clickable: true }}
-            onSlideChange={() => console.log("slide change")}
-            slidesPerView={3}
-            spaceBetween={25}
-          >
-            {shoes.length === 0 && <p>Carregado...</p>}
-            {shoes.map((shoesList) => (
-              <SwiperSlide className="container_products" key={shoesList.name}>
-                <div className="img_product">
-                  {shoesList.soldout === true && (
-                    <div className="sold_out_product">
-                      <p>PRODUTO ESGOTADO</p>
-                    </div>
-                  )}
-                  <img src={shoesList.image} alt="imagem do produto" />
-                </div>
+          {shoes.length === 0 && <p>Carregado...</p>}
+          {shoes.map((shoesItem) => (
+            <div className="container_products" key={shoesItem.name}>
+              <div className="img_product">
+                {shoesItem.soldout === true && (
+                  <div className="sold_out_product">
+                    <p>PRODUTO ESGOTADO</p>
+                  </div>
+                )}
+                <img src={shoesItem.image} alt="imagem do produto" />
+              </div>
 
-                <p>{shoesList.name}</p>
-                <p>{formatCurrency(shoesList.price.value)}</p>
+              <p>{shoesItem.name}</p>
+              <p>{formatCurrency(shoesItem.price.value)}</p>
 
-                <div>
-                  {shoesList.name.includes("TÊNIS RS 3.0 FUTURE VINTAGE") ||
-                  shoesList.name.includes(
-                    "Mercedes Kart Cat-X Tech Unisex Sneakers"
-                  ) ? (
-                    <p>OU 9X {formatCurrency(shoesList.price.value / 9)}</p>
+              <div>
+                {shoesItem.name.includes("TÊNIS RS 3.0 FUTURE VINTAGE") ||
+                shoesItem.name.includes(
+                  "Mercedes Kart Cat-X Tech Unisex Sneakers"
+                ) ? (
+                  <p>OU 9X {formatCurrency(shoesItem.price.value / 9)}</p>
+                ) : (
+                  <p>OU 10X {formatCurrency(shoesItem.price.value / 10)}</p>
+                )}
+              </div>
+              <div>
+                <Button
+                  onClick={() => handleAddCart(shoesItem)}
+                  theme="price"
+                  type="button"
+                  rel="nopeener noreferer"
+                >
+                  {shoesItem.soldout == true ? (
+                    <p>ME AVISE QUANDO CHEGAR</p>
                   ) : (
-                    <p>OU 10X {formatCurrency(shoesList.price.value / 10)}</p>
+                    <p>comprar</p>
                   )}
-                </div>
-                <div>
-                  <Button
-                    onClick={handleAddCart}
-                    theme="price"
-                    type="button"
-                    target="_blacnk"
-                    rel="nopeener noreferer"
-                  >
-                    {shoesList.soldout == true ? (
-                      <p>ME AVISE QUANDO CHEGAR</p>
-                    ) : (
-                      <p>comprar</p>
-                    )}
-                  </Button>
-                  
-                </div>
-              </SwiperSlide>
-            ))}
-          </Swiper>
-        
+                </Button>
+              </div>
+            </div>
+          ))}
         </section>
       </div>
     </styled.Shoes>

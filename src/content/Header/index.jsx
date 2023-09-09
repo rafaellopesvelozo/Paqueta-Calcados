@@ -29,13 +29,16 @@ const Header = () => {
           <img src={Logo} alt="Logotipo Paguetá" />
 
           <nav className="enter">
-            <a>
-              <i class="bi bi-heart"></i>{" "}
-              <Link to="WishList">Lista de desejos</Link>
-            </a>
-            <a>
-              <i class="bi bi-bag-dash"></i> <Link to="Bag">Sacola</Link>
-            </a>
+            
+            <Link to="WishList">
+              <i class="bi bi-heart"></i> Lista de desejos
+            </Link>
+
+            <Link to="Bag">
+              <i class="bi bi-bag-dash"></i>
+              Sacola
+            </Link>
+
             <a>
               <i class="bi bi-person"></i>Entrar
             </a>
