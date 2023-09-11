@@ -14,6 +14,7 @@ const Shoes = () => {
     try {
       Shoes_Api.get("api/paqueta/shoes").then(({ data }) => {
         setShoes(data);
+        console.log(data)
       });
     } catch (error) {
       console.log(error);
@@ -22,7 +23,6 @@ const Shoes = () => {
 
   function handleAddCart(shoesItem) {
     setCartItem([...cartItem, shoesItem]);
-    console.log(cartItem)
   }
 
   return (

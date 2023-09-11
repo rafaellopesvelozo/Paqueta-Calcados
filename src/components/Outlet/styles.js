@@ -82,6 +82,7 @@ export const Outlet = styled.section`
       height: 2px;
       width: 100%;
       background-color: #383838;
+      margin: 0 auto;
     }
     .paqueta-Outlet-info {
       padding: 7% 0 2% 0;

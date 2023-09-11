@@ -6,6 +6,9 @@ export const Shoes = styled.section`
     ul {
       display: flex;
       justify-content: space-between;
+      width: 100%;
+      margin: 0;
+      padding: 0;
 
       li {
         border: 1px solid #383838;
@@ -30,14 +33,19 @@ export const Shoes = styled.section`
     section {
       display: flex;
       border-radius: 3px;
-      max-height: 450px;
+      max-height: 500px;
       overflow: hidden;
+      padding: 30px 0;
+      gap: 20px;
+      
       button {
         color: #ffff;
         font-weight: 600;
+        width: 100%;
       }
 
       .container_products {
+        max-width: 220px;
         border-radius: 3px;
         padding: 10px;
         display: flex;
@@ -60,12 +68,14 @@ export const Shoes = styled.section`
             }
           }
           img {
-            width: 100%;
+            max-width: 200px;
+            max-height: 200px;
           }
         }
 
         p {
           font-size: 14px;
+          margin: 0;
         }
 
         p:nth-child(3) {
