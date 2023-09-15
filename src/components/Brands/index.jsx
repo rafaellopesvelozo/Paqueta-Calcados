@@ -49,19 +49,19 @@ export const Brands = () => {
             <form action="#" method="#">
               <fieldset>
                 <label htmlFor="Masculino">
-                  Masculino{" "}
                   <input type="checkbox" name="masculino" id="masculino" />
+                  Masculino
                 </label>
 
                 <label htmlFor="Feminino">
-                  Feminino{" "}
                   <input type="checkbox" name="masculino" id="feminino" />
+                  Feminino
                 </label>
               </fieldset>
             </form>
           </div>
 
-          <div>
+          <div className="btn-form">
             <Button className="button-price" type="submit">
               QUERO RECEBER
             </Button>

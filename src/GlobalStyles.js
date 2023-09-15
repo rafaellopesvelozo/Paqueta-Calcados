@@ -11,17 +11,20 @@ export const GlobalStyle = createGlobalStyle`
         word-wrap: break-word;
     }
 
-    p, h1, h2, h3, h4, h5, h6{
+    p, h1, h2, h3, h4, h5, h6 {
         margin: 0;
     }
-
+    ul, li, address {
+        margin: 0;
+        padding: 0;
+    }
     a{
         color: inherit;
         text-decoration: none;
     }
    
     
-    body,#root, html{
+    body,#root, html {
         position: relative;
         max-width: 1920px;
         height: 100vh;

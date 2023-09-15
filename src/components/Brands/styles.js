@@ -43,19 +43,66 @@ export const BrandsContainer = styled.section`
   }
 
   .Email {
+    width: 450px;
     display: flex;
     flex-direction: column;
+    gap: 20px;
     justify-content: space-between;
+
+    div {
+      display: flex;
+      justify-content: space-between;
+
+      input {
+        border: none;
+        outline: none;
+        color: #ffffff;
+        padding-left: 10px;
+        background-color: transparent;
+        border-bottom: 1px solid #ffffff;
+      }
+
+      input[type="text"]::placeholder,
+      input[type="email"]::placeholder {
+        color: #ffffff;
+      }
+    }
+
     p {
       font-family: "Poppins", sans-serif;
-      font-size: 15px;
+      font-size: 14px;
       color: #ffffff;
     }
+
     .input-form {
       display: flex;
+      justify-content: space-between;
+
       form {
         display: flex;
         flex-direction: column;
+
+        fieldset {
+          display: flex;
+          gap: 30px;
+
+          label {
+            color: #ffffff;
+
+            input[type="checkbox"] {
+              margin-right: 5px;
+              outline: none;
+              border: none;
+              box-shadow: 1px 1px 3px #000000;
+            }
+          }
+        }
+      }
+    }
+    .btn-form {
+      button {
+        max-width: 230px;
+        background: linear-gradient(to bottom, #f99500, #ffcd29 100%);
       }
     }
   }
