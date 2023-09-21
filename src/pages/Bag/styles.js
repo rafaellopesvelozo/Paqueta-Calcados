@@ -13,14 +13,28 @@ export const containerBag = styled.section`
   }
   .cartItems {
     display: flex;
+    background-color: #f9f9f9;
+    padding: 15px 0;
+    .cart-Items-Itens {
+      margin-right: 10px;
+      p {
+        padding: 15px 0 0 20px;
+        border-bottom: 2px solid #cf5d00;
+        font-family: "Montserrat", sans-serif;
+        font-weight: 600;
+      }
+    }
+
     .listItems {
       width: 100%;
+
       section {
         display: flex;
         justify-content: space-between;
-        background-color: #f9f9f9;
+
         padding: 15px;
-        margin-bottom: 10px;
+        border-bottom: 2px solid #cf5d00;
+
         img {
           max-width: 200px;
           max-height: 200px;
@@ -40,15 +54,17 @@ export const containerBag = styled.section`
             font-size: 13px;
           }
 
-          .cart-item-numeracao,
-          .cart-item-cor,
-          .cart-item-quantidade {
+          .cart-item-numeracao > span,
+          .cart-item-cor > span,
+          .cart-item-quantidade > span,
+          .cart-item-price > span {
             margin-bottom: 10px;
+            font-family: "Montserrat", sans-serif;
+            font-weight: 600;
           }
           .cart-item-tittle {
             font-size: 25px;
           }
-          
         }
 
         button {
@@ -58,6 +74,9 @@ export const containerBag = styled.section`
           height: 20px;
           width: 100px;
         }
+      }
+      section:last-child {
+        border-bottom: none;
       }
     }
   }

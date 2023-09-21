@@ -31,7 +31,9 @@ const Bag = () => {
         </div>
 
         <div className="cartItems">
-          <p>Itens</p>
+          <div className="cart-Items-Itens">
+            <p>Itens</p>
+          </div>
           <div className="listItems">
             {cartItem.map((cart) => (
               <section key={cart.id}>
@@ -45,11 +47,17 @@ const Bag = () => {
                   <p className="cart-item-codigo">
                     Código do produto: {cart.id}
                   </p>
-                  <p className="cart-item-numeracao">Numeração: 39</p>
-                  <p className="cart-item-cor">Cor: Preto</p>
-                  <p className="cart-item-quantidade">Quantidade: 1</p>
+                  <p className="cart-item-numeracao">
+                    <span>Numeração:</span> 39
+                  </p>
+                  <p className="cart-item-cor">
+                    <span>Cor:</span> Preto
+                  </p>
+                  <p className="cart-item-quantidade">
+                    <span>Quantidade:</span> 1
+                  </p>
                   <p className="cart-item-price">
-                    Preço: {formatCurrency(cart.price.value)}
+                    <span>Preço:</span> {formatCurrency(cart.price.value)}
                   </p>
                 </div>
 
@@ -58,7 +66,7 @@ const Bag = () => {
                   type="button"
                   className="button--remove-item"
                 >
-                  excluir
+                  <i className="bi bi-trash3"></i> Remover
                 </button>
               </section>
             ))}

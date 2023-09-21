@@ -1,4 +1,4 @@
-import React, { useContext, useEffect} from "react";
+import React, { useContext, useEffect, useState } from "react";
 import * as styled from "./styles";
 
 import Button from "../Button";
@@ -8,9 +8,14 @@ import { Shoes_Api } from "../../services/api";
 import { formatCurrency } from "../../utils/format";
 
 const Shoes = () => {
-  const { shoes, setShoes, cartItem, setCartItem } = useContext(AppContext);
-
-
+  const {
+    shoes,
+    setShoes,
+    cartItem,
+    setCartItem,
+    heartIsActive,
+    setHeatIsActive,
+  } = useContext(AppContext);
 
   useEffect(() => {
     try {
@@ -22,10 +27,16 @@ const Shoes = () => {
     }
   }, []);
 
+
   function handleAddCart(shoesItem) {
     setCartItem([...cartItem, shoesItem]);
   }
 
+
+  const wishList = () => {
+    setHeatIsActive(!heartIsActive);
+    
+  };
   return (
     <styled.Shoes>
       <nav className="numbers-list">
@@ -64,6 +75,13 @@ const Shoes = () => {
                     <p>PRODUTO ESGOTADO</p>
                   </div>
                 )}
+                <i
+                  onClick={wishList}
+                  className={`${
+                    heartIsActive ? "bi-heart bi-heart-active" : "bi-heart"
+                  }`}
+                ></i>
+
                 <img src={shoesItem.image} alt="imagem do produto" />
               </div>
 
@@ -83,6 +101,7 @@ const Shoes = () => {
               <div>
                 <Button
                   onClick={() => handleAddCart(shoesItem)}
+                  disabled={shoesItem.soldout == true}
                   theme="price"
                   type="button"
                   rel="nopeener noreferer"
@@ -97,7 +116,6 @@ const Shoes = () => {
             </div>
           ))}
         </section>
-      
       </div>
     </styled.Shoes>
   );

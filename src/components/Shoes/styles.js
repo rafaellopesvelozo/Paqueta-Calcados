@@ -37,7 +37,7 @@ export const Shoes = styled.section`
       overflow: hidden;
       padding: 30px 0;
       gap: 20px;
-      
+
       button {
         color: #ffff;
         font-weight: 600;
@@ -54,6 +54,19 @@ export const Shoes = styled.section`
         box-shadow: 0px 0px 23px 0px rgba(0, 0, 0, 0.1);
 
         .img_product {
+          position: relative;
+
+          .bi-heart {
+            cursor: pointer;
+            position: absolute;
+            right: 5px;
+            top: 10px;
+          }
+
+          .bi-heart-active {
+            color: red;
+          }
+
           .sold_out_product {
             background-color: #cf5d00;
             height: 25px;

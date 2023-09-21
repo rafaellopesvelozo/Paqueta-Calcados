@@ -14,12 +14,12 @@ const Header = () => {
           <div className=" talk">
             <div>
               <a>
-                <i class="bi bi-headphones"></i> Fale conosco
+                <i className="bi bi-headphones"></i> Fale conosco
               </a>
             </div>
             <div>
               <a>
-                <i class="bi bi-geo-alt"></i> Econtrar uma loja fisica
+                <i className="bi bi-geo-alt"></i> Econtrar uma loja fisica
               </a>
             </div>
           </div>
@@ -29,18 +29,16 @@ const Header = () => {
           <img src={Logo} alt="Logotipo Paguetá" />
 
           <nav className="enter">
-            
             <Link to="WishList">
               <i className="bi bi-heart"></i> Lista de desejos
             </Link>
 
             <Link to="Bag">
-              <i className="bi bi-bag-dash"></i>
-              Sacola
+              <i className="bi bi-bag-dash"></i> Sacola
             </Link>
 
             <a>
-              <i className="bi bi-person"></i>Entrar
+              <i className="bi bi-person"></i> Entrar
             </a>
           </nav>
         </div>

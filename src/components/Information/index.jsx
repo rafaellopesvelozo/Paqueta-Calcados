@@ -5,7 +5,7 @@ const Information = () => {
     <styled.Section>
       <div className="info-section">
         <div className="icons">
-          <i class="bi bi-bag"></i>
+          <i className="bi bi-bag"></i>
         </div>
         <div className="text-info">
           <p className="Caps-lock">PAGUE EM ATÉ 10X</p>
@@ -14,7 +14,7 @@ const Information = () => {
       </div>
       <div className="info-section">
         <div className="icons">
-          <i class="bi bi-bag"></i>
+          <i className="bi bi-bag"></i>
         </div>
         <div className="text-info">
           <p className="Caps-lock">RETIRE GRÁTIS</p>
@@ -23,7 +23,7 @@ const Information = () => {
       </div>
       <div className="info-section">
         <div className="icons">
-          <i class="bi bi-bag"></i>
+          <i className="bi bi-bag"></i>
         </div>
         <div className="text-info">
           <p className="Caps-lock">GANHE 20% DE </p>
@@ -32,7 +32,7 @@ const Information = () => {
       </div>
       <div className="info-section">
         <div className="icons">
-          <i class="bi bi-bag"></i>
+          <i className="bi bi-bag"></i>
         </div>
         <div className="text-info">
           <p className="Caps-lock">
@@ -45,7 +45,7 @@ const Information = () => {
       </div>
       <div className="info-section">
         <div className="icons">
-          <i class="bi bi-bag"></i>
+          <i className="bi bi-bag"></i>
         </div>
         <div className="text-info">
           <p>PRIMEIRA TROCA GRÁTIS</p>
