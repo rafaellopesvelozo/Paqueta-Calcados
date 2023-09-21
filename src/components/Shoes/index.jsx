@@ -1,4 +1,4 @@
-import React, { useContext, useEffect } from "react";
+import React, { useContext, useEffect} from "react";
 import * as styled from "./styles";
 
 import Button from "../Button";
@@ -10,11 +10,12 @@ import { formatCurrency } from "../../utils/format";
 const Shoes = () => {
   const { shoes, setShoes, cartItem, setCartItem } = useContext(AppContext);
 
+
+
   useEffect(() => {
     try {
       Shoes_Api.get("api/paqueta/shoes").then(({ data }) => {
         setShoes(data);
-        console.log(data)
       });
     } catch (error) {
       console.log(error);
@@ -96,6 +97,7 @@ const Shoes = () => {
             </div>
           ))}
         </section>
+      
       </div>
     </styled.Shoes>
   );

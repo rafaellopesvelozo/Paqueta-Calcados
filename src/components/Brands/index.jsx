@@ -32,14 +32,14 @@ export const Brands = () => {
               type="text"
               name="name"
               id="name"
-              maxlength="30"
+              maxLength="30"
               placeholder="Maria da Silva"
             />
             <input
               type="email"
               name="email"
               id="email"
-              maxlength="30"
+              maxLength="30"
               placeholder="maria@seuemail.com"
             />
           </div>

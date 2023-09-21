@@ -1,11 +1,21 @@
 import React, { useContext } from "react";
+import * as styled from "./styles";
 import { Link } from "react-router-dom";
 import { formatCurrency } from "../../utils/format";
 import AppContext from "../../context/AppContext";
-import * as styled from "./styles";
 
 const Bag = () => {
-  const { cartItem } = useContext(AppContext);
+  const { cartItem, setCartItem } = useContext(AppContext);
+
+  const handleRemoveItem = (cart) => {
+    try {
+      const id = cart.id;
+      const updatedItems = cartItem.filter((item) => item.id !== id);
+      setCartItem(updatedItems);
+    } catch (error) {
+      console.log(error);
+    }
+  };
 
   return (
     <styled.containerBag>
@@ -43,7 +53,11 @@ const Bag = () => {
                   </p>
                 </div>
 
-                <button type="button" className="button--remove-item">
+                <button
+                  onClick={() => handleRemoveItem(cart)}
+                  type="button"
+                  className="button--remove-item"
+                >
                   excluir
                 </button>
               </section>

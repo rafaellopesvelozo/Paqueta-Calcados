@@ -20,6 +20,7 @@ export const containerBag = styled.section`
         justify-content: space-between;
         background-color: #f9f9f9;
         padding: 15px;
+        margin-bottom: 10px;
         img {
           max-width: 200px;
           max-height: 200px;

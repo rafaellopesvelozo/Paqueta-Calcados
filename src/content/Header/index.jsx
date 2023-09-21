@@ -31,16 +31,16 @@ const Header = () => {
           <nav className="enter">
             
             <Link to="WishList">
-              <i class="bi bi-heart"></i> Lista de desejos
+              <i className="bi bi-heart"></i> Lista de desejos
             </Link>
 
             <Link to="Bag">
-              <i class="bi bi-bag-dash"></i>
+              <i className="bi bi-bag-dash"></i>
               Sacola
             </Link>
 
             <a>
-              <i class="bi bi-person"></i>Entrar
+              <i className="bi bi-person"></i>Entrar
             </a>
           </nav>
         </div>
