@@ -1,4 +1,4 @@
-import React, { useContext, useEffect, useState } from "react";
+import React, { useContext, useEffect } from "react";
 import * as styled from "./styles";
 
 import Button from "../Button";
@@ -6,6 +6,7 @@ import AppContext from "../../context/AppContext";
 
 import { Shoes_Api } from "../../services/api";
 import { formatCurrency } from "../../utils/format";
+import { numberShoes } from "../../utils/numberShoes";
 
 const Shoes = () => {
   const {
@@ -15,6 +16,8 @@ const Shoes = () => {
     setCartItem,
     heartIsActive,
     setHeatIsActive,
+    cartWishList,
+    setCartWishList,
   } = useContext(AppContext);
 
   useEffect(() => {
@@ -27,33 +30,24 @@ const Shoes = () => {
     }
   }, []);
 
-
   function handleAddCart(shoesItem) {
     setCartItem([...cartItem, shoesItem]);
   }
 
+  const wishList = (shoesItem) => {
+    //setHeatIsActive(!heartIsActive);
 
-  const wishList = () => {
-    setHeatIsActive(!heartIsActive);
-    
+    setCartWishList([...cartWishList, shoesItem]);
+    console.log(setCartWishList);
   };
+
+
+  const listNumbers = numberShoes.map((n) => <li>{n}</li>);
+
   return (
     <styled.Shoes>
       <nav className="numbers-list">
-        <ul>
-          <li>33</li>
-          <li>34</li>
-          <li>35</li>
-          <li>36</li>
-          <li>37</li>
-          <li>38</li>
-          <li>39</li>
-          <li>40</li>
-          <li>41</li>
-          <li>42</li>
-          <li>43</li>
-          <li>44</li>
-        </ul>
+        <ul>{listNumbers}</ul>
       </nav>
       <div className="highlights">
         <div className="highlight_Check">
@@ -75,8 +69,9 @@ const Shoes = () => {
                     <p>PRODUTO ESGOTADO</p>
                   </div>
                 )}
+
                 <i
-                  onClick={wishList}
+                  onClick={()=>wishList(shoesItem)}
                   className={`${
                     heartIsActive ? "bi-heart bi-heart-active" : "bi-heart"
                   }`}
