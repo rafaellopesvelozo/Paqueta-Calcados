@@ -39,6 +39,25 @@ export const headerStyle = styled.header`
     display: flex;
     justify-content: space-between;
     gap: 4rem;
+
+    .number-buy {
+      position: relative;
+      span {
+        position: absolute;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        left: 6px;
+        top: -14px;
+        height: 20px;
+        width: 20px;
+        padding: 5px;
+        border-radius: 50%;
+        background-color: #fcad12;
+        color: #ffffff;
+        font-size: 12px;
+      }
+    }
   }
 `;
 

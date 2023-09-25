@@ -1,4 +1,4 @@
-import React, { useContext, useEffect } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import * as styled from "./styles";
 
 import Button from "../Button";
@@ -41,6 +41,12 @@ const Shoes = () => {
     console.log(setCartWishList);
   };
 
+  let activeShoes = 0;
+  const left = (direction) => {
+    activeShoes = activeShoes + direction;
+    const shoesCarousel = shoes[activeShoes];
+    console.log(shoesCarousel);
+  };
 
   const listNumbers = numberShoes.map((n) => <li>{n}</li>);
 
@@ -62,7 +68,7 @@ const Shoes = () => {
         <section>
           {shoes.length === 0 && <p>Carregado...</p>}
           {shoes.map((shoesItem) => (
-            <div className="container_products" key={shoesItem.name}>
+            <div className={`container_products`} key={shoesItem.name}>
               <div className="img_product">
                 {shoesItem.soldout === true && (
                   <div className="sold_out_product">
@@ -71,9 +77,9 @@ const Shoes = () => {
                 )}
 
                 <i
-                  onClick={()=>wishList(shoesItem)}
+                  onClick={() => wishList(shoesItem)}
                   className={`${
-                    heartIsActive ? "bi-heart bi-heart-active" : "bi-heart"
+                    heartIsActive ? "bi-heart-active" : "bi-heart"
                   }`}
                 ></i>
 
@@ -111,6 +117,11 @@ const Shoes = () => {
             </div>
           ))}
         </section>
+        <div className="btn-carousel">
+          <div className="left" onClick={() => left(1)}></div>
+          <div className="center"></div>
+          <div className="right" onClick={() => left(-1)}></div>
+        </div>
       </div>
     </styled.Shoes>
   );

@@ -19,6 +19,21 @@ export const Shoes = styled.section`
     }
   }
   .highlights {
+    .btn-carousel {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+
+      .left,
+      .center,
+      .right {
+        width: 50px;
+        height: 10px;
+        background-color: red;
+        cursor: pointer;
+      }
+    }
     .highlight_Check {
       margin: 20px 0;
       div:nth-child(2) {
@@ -94,6 +109,10 @@ export const Shoes = styled.section`
         p:nth-child(3) {
           font-weight: 600;
           font-size: 20px;
+        }
+
+        .transitionX {
+          transform: translateX(${(props) => -200 * props.activeShoes} "px");
         }
       }
     }

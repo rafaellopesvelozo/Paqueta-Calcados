@@ -1,8 +1,11 @@
 import * as styled from "./styles";
 import Logo from "../../assets/Header/logo.jpg";
 import { Link } from "react-router-dom";
+import { useContext } from "react";
+import AppContext from "../../context/AppContext";
 
 const Header = () => {
+  const { cartItem, cartWishList } = useContext(AppContext);
   return (
     <>
       <styled.headerStyle>
@@ -29,12 +32,18 @@ const Header = () => {
           <img src={Logo} alt="Logotipo Paguetá" />
 
           <nav className="enter">
-            <Link to="WishList">
-              <i className="bi bi-heart"></i> Lista de desejos
+            <Link to="WishList" className="number-buy">
+              <div>
+                {cartWishList.length ? <span>{cartWishList.length}</span> : ""}
+                <i className="bi bi-heart"></i> Lista de desejos
+              </div>
             </Link>
 
             <Link to="Bag">
-              <i className="bi bi-bag-dash"></i> Sacola
+              <div className="number-buy">
+                {cartItem.length ? <span>{cartItem.length}</span> : ""}
+                <i className="bi bi-bag-dash"></i> Sacola
+              </div>
             </Link>
 
             <a>

@@ -14,6 +14,7 @@ export const containerBag = styled.section`
   .cartItems {
     display: flex;
     background-color: #f9f9f9;
+    border-radius: 10px;
     padding: 15px 0;
     .cart-Items-Itens {
       margin-right: 10px;
