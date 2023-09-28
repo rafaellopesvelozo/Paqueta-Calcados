@@ -112,7 +112,7 @@ export const Shoes = styled.section`
         }
 
         .transitionX {
-          transform: translateX(${(props) => -200 * props.activeShoes} "px");
+          transform: translateX(-${(props) => 200 * props.activeShoes} "px");
         }
       }
     }

@@ -7,6 +7,7 @@ import AppContext from "../../context/AppContext";
 import { Shoes_Api } from "../../services/api";
 import { formatCurrency } from "../../utils/format";
 import { numberShoes } from "../../utils/numberShoes";
+import { localStorageAddUser } from "../../utils/localStorage";
 
 const Shoes = () => {
   const {
@@ -32,6 +33,7 @@ const Shoes = () => {
 
   function handleAddCart(shoesItem) {
     setCartItem([...cartItem, shoesItem]);
+    localStorageAddUser(shoesItem);
   }
 
   const wishList = (shoesItem) => {
@@ -45,7 +47,7 @@ const Shoes = () => {
   const left = (direction) => {
     activeShoes = activeShoes + direction;
     const shoesCarousel = shoes[activeShoes];
-    console.log(shoesCarousel);
+    console.log(shoesCarousel, activeShoes);
   };
 
   const listNumbers = numberShoes.map((n) => <li>{n}</li>);

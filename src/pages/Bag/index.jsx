@@ -3,6 +3,7 @@ import * as styled from "./styles";
 import { Link } from "react-router-dom";
 import { formatCurrency } from "../../utils/format";
 import AppContext from "../../context/AppContext";
+import { localStorageRemoveUser } from "../../utils/localStorage";
 
 const Bag = () => {
   const { cartItem, setCartItem } = useContext(AppContext);
@@ -12,6 +13,8 @@ const Bag = () => {
       const id = cart.id;
       const updatedItems = cartItem.filter((item) => item.id !== id);
       setCartItem(updatedItems);
+      localStorageRemoveUser(cart);
+
     } catch (error) {
       console.log(error);
     }
