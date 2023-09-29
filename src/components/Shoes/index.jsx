@@ -4,6 +4,7 @@ import * as styled from "./styles";
 import Button from "../Button";
 import AppContext from "../../context/AppContext";
 
+import { Link } from "react-router-dom";
 import { Shoes_Api } from "../../services/api";
 import { formatCurrency } from "../../utils/format";
 import { numberShoes } from "../../utils/numberShoes";
@@ -19,6 +20,8 @@ const Shoes = () => {
     setHeatIsActive,
     cartWishList,
     setCartWishList,
+    products,
+    setProducts,
   } = useContext(AppContext);
 
   useEffect(() => {
@@ -37,10 +40,18 @@ const Shoes = () => {
   }
 
   const wishList = (shoesItem) => {
-    //setHeatIsActive(!heartIsActive);
-
     setCartWishList([...cartWishList, shoesItem]);
-    console.log(setCartWishList);
+
+    const iconHeart = () => {
+      setHeatIsActive(!heartIsActive);
+      console.log(heartIsActive);
+    };
+    iconHeart();
+  };
+
+  const pageProducts = (shoesItem) => {
+    setProducts([products, shoesItem])
+    console.log(shoesItem);
   };
 
   let activeShoes = 0;
@@ -78,14 +89,21 @@ const Shoes = () => {
                   </div>
                 )}
 
-                <i
-                  onClick={() => wishList(shoesItem)}
-                  className={`${
-                    heartIsActive ? "bi-heart-active" : "bi-heart"
-                  }`}
-                ></i>
+                <div onClick={() => wishList(shoesItem)}>
+                  {!heartIsActive ? (
+                    <i class="bi bi-heart"></i>
+                  ) : (
+                    <i class="bi bi-heart-fill"></i>
+                  )}
+                </div>
 
-                <img src={shoesItem.image} alt="imagem do produto" />
+                <Link to="product">
+                  <img
+                    onClick={() => pageProducts(shoesItem)}
+                    src={shoesItem.image}
+                    alt="imagem do produto"
+                  />
+                </Link>
               </div>
 
               <p>{shoesItem.name}</p>

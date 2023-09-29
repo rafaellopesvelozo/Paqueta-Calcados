@@ -1,7 +1,6 @@
 import { formatCurrency } from "./format";
 
 export const localStorageAddUser = (shoesItem) => {
-    
   let listUser = JSON.parse(localStorage.getItem("listUser") || "[]");
   listUser.push({
     nameCad: shoesItem.name,
@@ -13,5 +12,5 @@ export const localStorageAddUser = (shoesItem) => {
 };
 
 export const localStorageRemoveUser = () => {
-  localStorage.removeItem(listUser);
+  localStorage.removeItem("listUser", listUser);
 };

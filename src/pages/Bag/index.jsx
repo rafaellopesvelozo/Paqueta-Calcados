@@ -13,7 +13,7 @@ const Bag = () => {
       const id = cart.id;
       const updatedItems = cartItem.filter((item) => item.id !== id);
       setCartItem(updatedItems);
-      localStorageRemoveUser(cart);
+      localStorageRemoveUser();
 
     } catch (error) {
       console.log(error);

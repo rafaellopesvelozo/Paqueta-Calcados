@@ -2,6 +2,7 @@ import styled from "styled-components";
 
 export const Shoes = styled.section`
   padding: 0 10%;
+  
   .numbers-list {
     ul {
       display: flex;
@@ -71,14 +72,13 @@ export const Shoes = styled.section`
         .img_product {
           position: relative;
 
-          .bi-heart {
+          i {
             cursor: pointer;
             position: absolute;
             right: 5px;
             top: 10px;
           }
-
-          .bi-heart-active {
+          .bi-heart-fill{
             color: red;
           }
 
