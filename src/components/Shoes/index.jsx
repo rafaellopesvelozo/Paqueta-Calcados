@@ -50,15 +50,15 @@ const Shoes = () => {
   };
 
   const pageProducts = (shoesItem) => {
-    setProducts([products, shoesItem])
-    console.log(shoesItem);
+    setProducts([shoesItem]);
+
   };
 
   let activeShoes = 0;
   const left = (direction) => {
     activeShoes = activeShoes + direction;
     const shoesCarousel = shoes[activeShoes];
-    console.log(shoesCarousel, activeShoes);
+    //console.log(shoesCarousel, activeShoes);
   };
 
   const listNumbers = numberShoes.map((n) => <li>{n}</li>);

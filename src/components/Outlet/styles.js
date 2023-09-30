@@ -7,7 +7,7 @@ export const Outlet = styled.section`
   padding: 7% 10%;
   article {
     display: flex;
-    gap: 20px;
+    justify-content: space-between;
     align-items: center;
 
     .outlet-info-woman {
@@ -27,8 +27,7 @@ export const Outlet = styled.section`
       }
     }
     .outlet-info-man {
-      display: flex;
-      flex-direction: column;
+ 
       p {
         font-family: "Montserrat", sans-serif;
       }
@@ -41,11 +40,11 @@ export const Outlet = styled.section`
   .gradient-man {
     position: relative;
     height: 400px;
-    width: 100%;
+    width: 550px;
 
     img {
-      height: 100%;
       width: 100%;
+      height: 100%;
     }
 
     .gradientWoman,

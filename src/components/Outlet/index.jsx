@@ -17,9 +17,9 @@ const Outlet = () => {
           </div>
         </div>
         <div className="outlet-info-woman">
-          <p>Escolher o seu sapato favorito entre nossa </p>
           <p>
-            <span>variedade de modelos e cores</span> não será uma tarefa fácil,
+            Escolher o seu sapato favorito entre nossa <br />
+            <span>variedade de modelos e cores</span> não será uma tarefa <br />fácil,
             mas o que uma mulher não consegue fazer?
           </p>
           <Button
@@ -27,7 +27,7 @@ const Outlet = () => {
             type="button"
             target="blank"
             rel="nopeener noreferer"
-          >
+          > 
             <a href="#">conferir</a>
           </Button>
         </div>
@@ -35,8 +35,8 @@ const Outlet = () => {
       <article>
         <div className="outlet-info-man">
           <p>
-            Tenha em seu guarda roupa sapatos de qualidade e confortáveis, para
-            o dia a dia, trabalho e até mesmo para praticar esportes!
+            Tenha em seu guarda roupa sapatos de <br/> qualidade e confortáveis, para
+            o dia a dia,<br/> trabalho e até mesmo para praticar esportes!
           </p>
           <Button
             type="button"
