@@ -2,7 +2,7 @@ import styled from "styled-components";
 
 export const Shoes = styled.section`
   padding: 0 10%;
-  
+
   .numbers-list {
     ul {
       display: flex;
@@ -78,7 +78,7 @@ export const Shoes = styled.section`
             right: 5px;
             top: 10px;
           }
-          .bi-heart-fill{
+          .bi-heart-fill {
             color: red;
           }
 

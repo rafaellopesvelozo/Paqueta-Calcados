@@ -6,12 +6,26 @@ import AppContext from "../../context/AppContext";
 import Button from "../../components/Button";
 
 const WishList = () => {
-  const { cartWishList } = useContext(AppContext);
+  const { cartWishList, setCartWishList, heartIsActive } =
+    useContext(AppContext);
+
+  const removeItem = (item) => {
+    const id = item.id;
+    const updateItems = cartWishList.filter((items) => items.id != id);
+    setCartWishList(updateItems);
+  };
+
   return (
     <Styled.WishListContainer>
       <a>
         <Link to="/">Voltar</Link>
       </a>
+
+      {!heartIsActive ? (
+        <i class="bi bi-heart"></i>
+      ) : (
+        <i class="bi bi-heart-fill"></i>
+      )}
       {cartWishList.map((item) => (
         <section className="Container-Items">
           <div>
@@ -26,9 +40,19 @@ const WishList = () => {
               <p>Preço: {formatCurrency(item.price.value)}</p>
             </div>
           </div>
-          <Button theme="price" type="button" rel="nopeener noreferer">
-            Comprar
-          </Button>
+          <div className="wishlist-btn">
+            <Button
+              onClick={() => removeItem(item)}
+              theme="remove"
+              type="button"
+              rel="nopeener noreferer"
+            >
+              Remover
+            </Button>
+            <Button theme="price" type="button" rel="nopeener noreferer">
+              Comprar
+            </Button>
+          </div>
         </section>
       ))}
     </Styled.WishListContainer>

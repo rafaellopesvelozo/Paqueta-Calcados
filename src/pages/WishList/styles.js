@@ -7,13 +7,16 @@ export const WishListContainer = styled.section`
   height: 100vw;
   gap: 20px;
 
+  .bi-heart-fill {
+    color: red;
+  }
+
   .Container-Items {
     display: flex;
     align-items: center;
     justify-content: space-between;
     border-radius: 10px;
     background-color: #f9f9f9;
-
     padding: 10px;
     width: 80%;
 
@@ -22,6 +25,10 @@ export const WishListContainer = styled.section`
       gap: 15px;
     }
 
+    .wishlist-btn {
+      display: flex;
+      flex-direction: column;
+    }
     .Container-img {
       max-width: 200px;
       h2 {

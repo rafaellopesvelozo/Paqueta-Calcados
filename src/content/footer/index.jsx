@@ -1,6 +1,24 @@
 import React from "react";
 import * as styled from "./styles";
+
 import logoFooter from "./../../assets/Footer/logo-footer1.png";
+import americanExpress from "../../assets/Footer/american-express.png";
+import mastercard from "../../assets/Footer/mastercard.png";
+import boleto from "../../assets/Footer/boleto.png";
+import elo from "../../assets/Footer/elo.png";
+import gaston from "../../assets/Footer/gaston.png";
+import hiperCard from "../../assets/Footer/hipercard.png";
+import itau from "../../assets/Footer/itau.png";
+import paqueta from "../../assets/Footer/paqueta.png";
+import visa from "../../assets/Footer/visa.png";
+import eBit from "../../assets/Footer/eBit.png";
+import instagram from "../../assets/Footer/instagram.png";
+import facebook from "../../assets/Footer/facebook.png";
+import twitter from "../../assets/Footer/twitter.png";
+import youtube from "../../assets/Footer/youtube.png";
+import pinterest from "../../assets/Footer/pinterest.png";
+import security from "../../assets/Footer/security.png";
+
 const Footer = () => {
   return (
     <styled.ConteinerFooter>
@@ -44,26 +62,49 @@ const Footer = () => {
           </div>
         </section>
         <section className="payment">
-          <div>
+          <div className="payment-container">
             <h6>Formas de Pagamento</h6>
+            <div className="partners">
+              <div>
+                <img src={mastercard} alt="logo mastercard" />
+                <img src={americanExpress} alt="logo american express" />
+                <img src={elo} alt="logo elo" />
+              </div>
+              <div>
+                <img src={paqueta} alt="logo paqueta" />
+                <img src={gaston} alt="logo gaston" />
+                <img src={visa} alt="logo visa" />
+              </div>
+              <div>
+                <img src={hiperCard} alt="logo hipercard" />
+                <img src={itau} alt="" />
+                <img src={boleto} alt="logo-boleto" />
+              </div>
+            </div>
           </div>
           <div className="social-media">
             <h6>Redes Sociais</h6>
             <div className="social-media-icons">
-              <i class="bi bi-instagram"></i>
-              <i class="bi bi-facebook"></i>
-              <i class="bi bi-twitter"></i>
-              <i class="bi bi-youtube"></i>
-              <i class="bi bi-pinterest"></i>
+              <img src={instagram} alt="logo instagram" />
+              <img src={facebook} alt="logo facebook" />
+              <img src={twitter} alt="logo twitter" />
+              <img src={youtube} alt="logo youtube" />
+              <img src={pinterest} alt="logo pinterest" />
             </div>
           </div>
         </section>
         <section className="awards-security">
           <div>
             <h6>Prêmios e Certifições</h6>
+            <div>
+              <img src={eBit} alt="logo do certificado" />
+            </div>
           </div>
-          <div>
+          <div className="security">
             <h6>Segurança</h6>
+            <div>
+              <img src={security} alt="logo segurança" />
+            </div>
           </div>
         </section>
       </div>

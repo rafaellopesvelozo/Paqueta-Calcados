@@ -13,59 +13,86 @@ export const ConteinerFooter = styled.footer`
       justify-content: space-between;
     }
 
-    section {
-      div {
-        padding: 0;
-      }
-      .footer-service{
-        display: flex;
-        flex-direction: column;
-        justify-content: space-between;
-      }
-      address,
-      p {
-        color: #808080;
-      }
+    div {
+      padding: 0;
+    }
+    .footer-service {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+    address,
+    p {
+      color: #808080;
+      font-size: clamp(0.1rem, 1.09vw, 0.938rem);
+    }
 
-      h6 {
-        font-size: 16px;
-        font-weight: 700;
+    h6 {
+      font-size: 15px;
+      font-weight: 700;
+      font-family: "Montserrat", sans-serif;
+      margin-bottom: 10px;
+      color: #383838;
+    }
+
+    ul {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      li {
+        font-size: 14px;
+        font-weight: 400;
         font-family: "Montserrat", sans-serif;
-        margin-bottom: 10px;
-        color: #383838;
       }
+    }
+    .footer-adress,
+    .footer-talk-us,
+    .footer-work-us {
+      display: block;
+    }
 
-      ul {
+    .social-media {
+      display: flex;
+      flex-direction: column;
+      .social-media-icons {
         display: flex;
-        flex-direction: column;
-        gap: 10px;
-        li {
-          font-size: 14px;
-          font-weight: 400;
-          font-family: "Montserrat", sans-serif;
-        }
-      }
-      .footer-adress,
-      .footer-talk-us,
-      .footer-work-us {
-        display: block;
-      }
-      .social-media {
-        .social-media-icons {
-          display: flex;
-          gap: 15px;
-
-          .bi-instagram,
-          .bi-facebook,
-          .bi-twitter,
-          .bi-youtube,
-          .bi-pinterest {
-            font-size: 25px;
-          }
+        justify-content: unset;
+        gap: 17px;
+        img {
+          max-width: 15px;
         }
       }
     }
   }
+  .payment {
+    .payment-container {
+      display: flex;
+      flex-direction: column;
+      .partners {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        max-width: 190px;
+      }
+    }
+  }
+  .awards-security {
+    div {
+      display: flex;
+      flex-direction: column;
+      img {
+        max-width: 50px;
+      }
+    }
+    .security {
+      div {
+        img {
+          max-width: 100px;
+        }
+      }
+    }
+  }
+
   .footer-group {
     background-color: #383838;
     display: flex;

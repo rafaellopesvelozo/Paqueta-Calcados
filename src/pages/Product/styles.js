@@ -97,11 +97,10 @@ export const ContainerProducts = styled.section`
         }
       }
     }
-    .row{
+    .row {
       margin: 150px 0;
-      background-color: #EBEBEB;
+      background-color: #ebebeb;
       height: 1px;
-
     }
     .products-description {
       padding: 25px 0 0 0;
