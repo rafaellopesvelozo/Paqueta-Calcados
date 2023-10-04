@@ -77,6 +77,7 @@ export const Shoes = styled.section`
             position: absolute;
             right: 5px;
             top: 10px;
+            font-size: 25px;
           }
           .bi-heart-fill {
             color: red;

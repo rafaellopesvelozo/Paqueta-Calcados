@@ -1,11 +1,33 @@
 import styled from "styled-components";
 
+
 export const ContainerProducts = styled.section`
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   padding: 5% 15%;
+  position: relative;
+
+  .sizes-fixed {
+    position: fixed;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    top: 0;
+    left: 0;
+    background-color: #000000;
+    opacity: 0.9;
+    border: 1px solid red;
+    width: 100vw;
+    height: 100vh;
+
+    img{
+      width: 50%;
+    }
+    
+  }
+
   section {
     .container-products-item {
       display: flex;
@@ -85,6 +107,7 @@ export const ContainerProducts = styled.section`
       }
       .products-number {
         padding-bottom: 15px;
+
         .choie-number {
           font-size: 14px;
         }

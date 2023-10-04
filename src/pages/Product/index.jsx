@@ -6,10 +6,15 @@ import { useContext } from "react";
 import { Link } from "react-router-dom";
 import { formatCurrency } from "../../utils/format";
 import Button from "../../components/Button";
+import Sizes from '../../assets/sizes/sizes-fixed.png'
 
 const Product = () => {
   const { products } = useContext(AppContext);
   console.log(products);
+
+ const a = (e)=>{
+    e.preventDefault();
+  };
 
   return (
     <Styled.ContainerProducts>
@@ -83,6 +88,9 @@ const Product = () => {
           </>
         ))}
       </section>
+      <div onClick={() => a} className="sizes-fixed">
+        <img src={Sizes} alt="" />
+      </div>
     </Styled.ContainerProducts>
   );
 };

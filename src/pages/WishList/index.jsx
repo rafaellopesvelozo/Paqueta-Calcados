@@ -17,20 +17,25 @@ const WishList = () => {
 
   return (
     <Styled.WishListContainer>
-      <a>
-        <Link to="/">Voltar</Link>
-      </a>
+      <div className="link-back">
+        <a>
+          <Link to="/">Paquetá</Link> &gt; Lista de desejos
+        </a>
+      </div>
 
-      {!heartIsActive ? (
-        <i class="bi bi-heart"></i>
-      ) : (
-        <i class="bi bi-heart-fill"></i>
-      )}
       {cartWishList.map((item) => (
         <section className="Container-Items">
           <div>
             <div className="Container-img">
               <img src={item.image} alt="imagem do prduto" />
+              <div className="bg-hover"></div>
+              <div onClick={() => removeItem(item)} className="icon-heart">
+                {!heartIsActive ? (
+                  <i class="bi bi-heart"></i>
+                ) : (
+                  <i class="bi bi-heart-fill"></i>
+                )}
+              </div>
             </div>
             <div className="Container-info">
               <div>
@@ -39,19 +44,6 @@ const WishList = () => {
               </div>
               <p>Preço: {formatCurrency(item.price.value)}</p>
             </div>
-          </div>
-          <div className="wishlist-btn">
-            <Button
-              onClick={() => removeItem(item)}
-              theme="remove"
-              type="button"
-              rel="nopeener noreferer"
-            >
-              Remover
-            </Button>
-            <Button theme="price" type="button" rel="nopeener noreferer">
-              Comprar
-            </Button>
           </div>
         </section>
       ))}
