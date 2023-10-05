@@ -1,6 +1,5 @@
 import styled from "styled-components";
 
-
 export const ContainerProducts = styled.section`
   display: flex;
   flex-direction: column;
@@ -16,16 +15,100 @@ export const ContainerProducts = styled.section`
     justify-content: center;
     top: 0;
     left: 0;
-    background-color: #000000;
-    opacity: 0.9;
-    border: 1px solid red;
+    background: rgba(0, 0, 0, 0.95);
     width: 100vw;
     height: 100vh;
 
-    img{
-      width: 50%;
-    }
+    .sizes-fixed .modal-active {
+      display: none;
     
+    }
+
+    .container-size {
+      display: flex;
+      background-color: #ffffff;
+      width: 50%;
+      padding: 30px 30px;
+      border-radius: 20px;
+
+      .guia-de-tamanhos,
+      .numeros {
+        width: 50%;
+      }
+      .guia-de-tamanhos {
+        .título-tamanhos {
+          p {
+            font-family: "Montserrat", sans-serif;
+            font-weight: 700;
+            font-size: 20px;
+            color: #cf5d00;
+            margin-bottom: 35px;
+          }
+        }
+        .instruções {
+          display: flex;
+          gap: 10px;
+          margin-bottom: 20px;
+          p:nth-child(1) {
+            background-color: #ff8a29;
+            text-align: center;
+            border-radius: 50%;
+            font-size: 15px;
+            width: 20px;
+            height: 22px;
+            color: #ffffff;
+          }
+          p:nth-child(2) {
+            font-family: "Montserrat", sans-serif;
+
+            font-size: 14px;
+          }
+        }
+        .tamanho-img {
+          display: flex;
+          justify-content: center;
+          img {
+            max-height: 230px;
+          }
+        }
+      }
+      .numeros {
+        .título-numeros {
+          display: flex;
+          justify-content: space-between;
+          p {
+            text-align: center;
+            color: #383838;
+            font-family: "Montserrat", sans-serif;
+            font-weight: 600;
+            font-size: 15px;
+          }
+        }
+        .numeros-e-comprimentos {
+          padding: 15px 0;
+          .lista {
+            display: flex;
+            justify-content: space-between;
+            padding: 6px;
+            border-bottom: 2px solid #d7d7d7;
+
+            &:last-child {
+              border-bottom: unset;
+            }
+
+            p:nth-child(1) {
+              padding-left: 30px;
+              font-weight: 600;
+              font-size: 15px;
+            }
+            p:nth-child(2) {
+              padding-right: 30px;
+              font-size: 15px;
+            }
+          }
+        }
+      }
+    }
   }
 
   section {

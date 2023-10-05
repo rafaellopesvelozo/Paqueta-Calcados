@@ -3,7 +3,6 @@ import * as Styled from "./styles";
 import { Link } from "react-router-dom";
 import { formatCurrency } from "../../utils/format";
 import AppContext from "../../context/AppContext";
-import Button from "../../components/Button";
 
 const WishList = () => {
   const { cartWishList, setCartWishList, heartIsActive } =
@@ -15,6 +14,8 @@ const WishList = () => {
     setCartWishList(updateItems);
   };
 
+
+
   return (
     <Styled.WishListContainer>
       <div className="link-back">
@@ -22,7 +23,9 @@ const WishList = () => {
           <Link to="/">Paquetá</Link> &gt; Lista de desejos
         </a>
       </div>
-
+     
+      <h3>Favoritos</h3>
+      
       {cartWishList.map((item) => (
         <section className="Container-Items">
           <div>

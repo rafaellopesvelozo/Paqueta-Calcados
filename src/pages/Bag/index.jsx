@@ -14,10 +14,18 @@ const Bag = () => {
       const updatedItems = cartItem.filter((item) => item.id !== id);
       setCartItem(updatedItems);
       localStorageRemoveUser();
-
     } catch (error) {
       console.log(error);
     }
+  };
+
+  const getRamdom = () => {
+    const min = 0;
+    const max = 9999;
+    const nRamdom = Math.floor(Math.random() * (max - min + 1)) * 99999999;
+    let nRamdom1 = nRamdom.toString().slice(0, 6);
+    let nRamdom2 = nRamdom.toString().slice(6, 12);
+    return nRamdom1 + "-" + nRamdom2;
   };
 
   return (
@@ -45,32 +53,34 @@ const Bag = () => {
                   alt="imagem da compra"
                   className="cart-item-img"
                 />
-                <div className="cart-item-info">
-                  <h3 className="cart-item-tittle">{cart.name}</h3>
-                  <p className="cart-item-codigo">
-                    Código do produto: {cart.id}
-                  </p>
-                  <p className="cart-item-numeracao">
-                    <span>Numeração:</span> 39
-                  </p>
-                  <p className="cart-item-cor">
-                    <span>Cor:</span> Preto
-                  </p>
-                  <p className="cart-item-quantidade">
-                    <span>Quantidade:</span> 1
-                  </p>
-                  <p className="cart-item-price">
-                    <span>Preço:</span> {formatCurrency(cart.price.value)}
-                  </p>
-                </div>
 
-                <button
-                  onClick={() => handleRemoveItem(cart)}
-                  type="button"
-                  className="button--remove-item"
-                >
-                  <i className="bi bi-trash3"></i> Remover
-                </button>
+                <div className="cart-item-info">
+                  <div>
+                    <h3 className="cart-item-tittle">{cart.name}</h3>
+                    <p className="cart-item-codigo">
+                      Código do produto: {getRamdom()}
+                    </p>
+                    <p className="cart-item-numeracao">
+                      <span>Numeração:</span> 39
+                    </p>
+                    <p className="cart-item-cor">
+                      <span>Cor:</span> Preto
+                    </p>
+                    <p className="cart-item-quantidade">
+                      <span>Quantidade:</span> 1
+                    </p>
+                    <p className="cart-item-price">
+                      <span>Preço:</span> {formatCurrency(cart.price.value)}
+                    </p>
+                  </div>
+                  <button
+                    onClick={() => handleRemoveItem(cart)}
+                    type="button"
+                    className="button--remove-item"
+                  >
+                    <i className="bi bi-trash3"></i> Remover
+                  </button>
+                </div>
               </section>
             ))}
           </div>

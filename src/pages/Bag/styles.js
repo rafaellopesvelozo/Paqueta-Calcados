@@ -28,10 +28,8 @@ export const containerBag = styled.section`
 
     .listItems {
       width: 100%;
-
       section {
         display: flex;
-        justify-content: space-between;
         padding: 15px;
         border-bottom: 2px solid #cf5d00;
 
@@ -40,6 +38,11 @@ export const containerBag = styled.section`
           max-height: 200px;
         }
         .cart-item-info {
+          display: flex;
+          width: 100%;
+          justify-content: space-between;
+          padding-left: 30px;
+
           p,
           h3 {
             margin: 0;

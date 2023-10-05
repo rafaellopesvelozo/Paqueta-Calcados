@@ -6,6 +6,10 @@ export const WishListContainer = styled.section`
   gap: 20px;
   padding: 0 10%;
 
+  h3 {
+    width: fit-content;
+    border-bottom: 2px solid #cf5d00;
+  }
   .link-back {
     margin: 30px 0;
   }
@@ -20,10 +24,13 @@ export const WishListContainer = styled.section`
     width: 70%;
     align-items: center;
     justify-content: space-between;
-    border-radius: 10px;
-    background-color: #f9f9f9;
+    background-color: #ebebeb;
     padding: 10px;
+    border-bottom: 2px solid #cf5d00;
 
+    &:last-child {
+      border-bottom: none;
+    }
     > div {
       display: flex;
     }
@@ -36,12 +43,11 @@ export const WishListContainer = styled.section`
         top: 0;
         width: 100%;
         height: 100%;
-        z-index: 99;
 
         &:hover {
           background-color: #000000;
           opacity: 0.7;
-          transition: .7s all linear;
+          transition: 0.7s all linear;
         }
       }
       img {
@@ -51,7 +57,7 @@ export const WishListContainer = styled.section`
         position: absolute;
         top: 5px;
         right: 5px;
-        z-index: 999;
+        z-index: 99;
 
         i {
           cursor: pointer;
@@ -64,11 +70,15 @@ export const WishListContainer = styled.section`
     display: flex;
     flex-direction: column;
     gap: 30px;
-    padding: 5px 0 0 30px;
+    padding: 10px 0 10px 20px;
     div {
       h2 {
         font-size: 25px;
       }
+    }
+    > p {
+      font-family: "Montserrat", sans-serif;
+      font-weight: 600;
     }
   }
 `;
