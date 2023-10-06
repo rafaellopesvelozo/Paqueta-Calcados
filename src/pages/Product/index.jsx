@@ -1,7 +1,6 @@
 import React from "react";
 import AppContext from "../../context/AppContext";
 import * as Styled from "./styles";
-
 import { useContext } from "react";
 import { Link } from "react-router-dom";
 import { formatCurrency } from "../../utils/format";
@@ -10,6 +9,13 @@ import sizeImg from "../../assets/sizes/Union.png";
 
 const Product = () => {
   const { products, modalActive, setModalActive } = useContext(AppContext);
+
+  function a(item) {
+    let preço = item.price.value;
+    let discount = item.price.discount * 100;
+    let total = preço - (preço * (discount / 100));
+    return total;
+  }
 
   return (
     <Styled.ContainerProducts>
@@ -40,12 +46,18 @@ const Product = () => {
                 </div>
                 <div className="products-price">
                   <div className="price-discount">
-                    <p className="with-discount">R$ 189,90</p>{" "}
-                    <p className="discount">21% e desconto</p>
+                    <p className="with-discount">{formatCurrency(item.price.value)}</p>{" "}
+                    <p className="discount">
+                      {item.price.discount > 0 ? (
+                        <p>{item.price.discount * 100} % de desconto</p>
+                      ) : (
+                        <p> produto sem desconto</p>
+                      )}
+                    </p>
                   </div>
                   <div className="price">
-                    <p className="no-discount">R$ 149,90</p>
-                    <p className="price-divided">ou 9x R$ 16,66</p>
+                    <p className="no-discount">{formatCurrency(a(item))}</p>
+                    <p className="price-divided">ou 9x {formatCurrency(a(item) / 9)}</p>
                   </div>
                 </div>
                 <div className="products-number">
