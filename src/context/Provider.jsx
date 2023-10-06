@@ -7,7 +7,7 @@ export const Provider = ({ children }) => {
   const [heartIsActive, setHeatIsActive] = useState(false);
   const [cartWishList, setCartWishList] = useState([]);
   const [products, setProducts] = useState([]);
-
+  const [modalActive, setModalActive] = useState(false);
   const value = {
     shoes,
     setShoes,
@@ -19,6 +19,8 @@ export const Provider = ({ children }) => {
     setCartWishList,
     products,
     setProducts,
+    modalActive,
+    setModalActive,
   };
 
   return <AppContext.Provider value={value}>{children}</AppContext.Provider>;

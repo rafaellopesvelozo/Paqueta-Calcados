@@ -15,14 +15,9 @@ export const ContainerProducts = styled.section`
     justify-content: center;
     top: 0;
     left: 0;
-    background: rgba(0, 0, 0, 0.95);
+    background: rgba(0, 0, 0, 0.85);
     width: 100vw;
     height: 100vh;
-
-    .sizes-fixed .modal-active {
-      display: none;
-    
-    }
 
     .container-size {
       display: flex;
@@ -30,6 +25,16 @@ export const ContainerProducts = styled.section`
       width: 50%;
       padding: 30px 30px;
       border-radius: 20px;
+      position: relative;
+
+      .closeModal {
+        position: absolute;
+        cursor: pointer;
+        font-size: 20px;
+        font-weight: 600;
+        top: 5px;
+        right: 20px;
+      }
 
       .guia-de-tamanhos,
       .numeros {
@@ -60,7 +65,6 @@ export const ContainerProducts = styled.section`
           }
           p:nth-child(2) {
             font-family: "Montserrat", sans-serif;
-
             font-size: 14px;
           }
         }
@@ -68,7 +72,7 @@ export const ContainerProducts = styled.section`
           display: flex;
           justify-content: center;
           img {
-            max-height: 230px;
+            max-height: 210px;
           }
         }
       }
@@ -85,11 +89,11 @@ export const ContainerProducts = styled.section`
           }
         }
         .numeros-e-comprimentos {
-          padding: 15px 0;
+          padding: 15px 0 0 0;
           .lista {
             display: flex;
             justify-content: space-between;
-            padding: 6px;
+            padding: 5px;
             border-bottom: 2px solid #d7d7d7;
 
             &:last-child {
@@ -200,6 +204,7 @@ export const ContainerProducts = styled.section`
         .size-guide {
           font-size: 14px;
           font-weight: 600;
+          cursor: pointer;
         }
       }
     }
@@ -219,6 +224,12 @@ export const ContainerProducts = styled.section`
         color: #383838;
         line-height: 30px;
       }
+    }
+  }
+  .container-de-interesses {
+    .a{
+      display: flex;
+      margin-top: 15px;
     }
   }
 `;
