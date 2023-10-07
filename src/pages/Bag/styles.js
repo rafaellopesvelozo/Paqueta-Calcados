@@ -42,7 +42,8 @@ export const containerBag = styled.section`
           width: 100%;
           justify-content: space-between;
           padding-left: 30px;
-
+          div {
+          }
           p,
           h3 {
             margin: 0;
@@ -59,7 +60,6 @@ export const containerBag = styled.section`
 
           .cart-item-numeracao > span,
           .cart-item-cor > span,
-          .cart-item-quantidade > span,
           .cart-item-price > span {
             margin-bottom: 10px;
             font-family: "Montserrat", sans-serif;
@@ -67,6 +67,31 @@ export const containerBag = styled.section`
           }
           .cart-item-tittle {
             font-size: 25px;
+          }
+          .cart-item-quantidade {
+            display: flex;
+            .quantidade {
+              font-family: "Montserrat", sans-serif;
+              font-weight: 600;
+            }
+            gap: 15px;
+            .add-remove {
+              display: flex;
+              align-items: center;
+              gap: 5px;
+              background-color: #a7b3be;
+              border-radius: 10px;
+              color: #FFFFFF;
+
+              .less,
+              .more {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                width: 30px;
+                cursor: pointer;
+              }
+            }
           }
         }
 

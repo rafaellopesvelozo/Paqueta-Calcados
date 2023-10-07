@@ -8,6 +8,7 @@ export const Provider = ({ children }) => {
   const [cartWishList, setCartWishList] = useState([]);
   const [products, setProducts] = useState([]);
   const [modalActive, setModalActive] = useState(false);
+  const [existingItem, setExistingItem] = useState(false);
   const value = {
     shoes,
     setShoes,
@@ -21,6 +22,8 @@ export const Provider = ({ children }) => {
     setProducts,
     modalActive,
     setModalActive,
+    existingItem,
+    setExistingItem,
   };
 
   return <AppContext.Provider value={value}>{children}</AppContext.Provider>;

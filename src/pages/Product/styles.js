@@ -227,9 +227,40 @@ export const ContainerProducts = styled.section`
     }
   }
   .container-de-interesses {
-    .a{
+    .container-items {
       display: flex;
       margin-top: 15px;
+      gap: 20px;
+      justify-content: space-between;
+      .item-carousel {
+        border: 1px solid red;
+        width: 220px;
+        flex-wrap: wrap;
+        padding: 10px;
+        .img-carousel {
+          img {
+            width: 100%;
+            height: 120px;
+          }
+        }
+        .name-item {
+          p {
+            font-size: 12px;
+            font-family: "Poppins", sans-serif;
+            font-weight: 500;
+          }
+        }
+        .price-item{
+          p:nth-child(1){
+            margin: 10px 0;
+            font-weight: 600;
+          }
+          p:nth-child(2){
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 400;
+          }
+        }
+      }
     }
   }
 `;

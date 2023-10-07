@@ -28,6 +28,23 @@ const Bag = () => {
     return nRamdom1 + "-" + nRamdom2;
   };
 
+  const updateItem = (action) => {
+    let i = 1;
+    let newQuantity = i;
+
+    if (action === "increase") {
+      newQuantity += 1;
+    }
+    if (action === "decrease") {
+      if (newQuantity === 1) {
+        return;
+      }
+      newQuantity -= 1;
+    }
+
+    console.log(newQuantity);
+  };
+
   return (
     <styled.containerBag>
       <div>
@@ -66,11 +83,27 @@ const Bag = () => {
                     <p className="cart-item-cor">
                       <span>Cor:</span> Preto
                     </p>
-                    <p className="cart-item-quantidade">
-                      <span>Quantidade:</span> 1
-                    </p>
+                    <div className="cart-item-quantidade">
+                      <p className="quantidade">Quantidade:</p>
+                      <div className="add-remove">
+                        <div
+                          onClick={() => updateItem("decrease")}
+                          className="less"
+                        >
+                          -
+                        </div>
+                        <p>1</p>
+                        <div
+                          onClick={() => updateItem("increase")}
+                          className="more"
+                        >
+                          +
+                        </div>
+                      </div>
+                    </div>
                     <p className="cart-item-price">
                       <span>Preço:</span> {formatCurrency(cart.price.value)}
+                      <p>{}</p>
                     </p>
                   </div>
                   <button

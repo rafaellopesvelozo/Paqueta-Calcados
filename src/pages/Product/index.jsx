@@ -6,14 +6,19 @@ import { Link } from "react-router-dom";
 import { formatCurrency } from "../../utils/format";
 import Button from "../../components/Button";
 import sizeImg from "../../assets/sizes/Union.png";
+import img1 from "../../assets/product/image1.jpg";
+import img2 from "../../assets/product/image2.jpg";
+import img3 from "../../assets/product/image3.jpg";
+import img4 from "../../assets/product/image4.jpg";
 
 const Product = () => {
-  const { products, modalActive, setModalActive } = useContext(AppContext);
+  const { products, modalActive, setModalActive, shoes } =
+    useContext(AppContext);
 
-  function a(item) {
+  function price(item) {
     let preço = item.price.value;
     let discount = item.price.discount * 100;
-    let total = preço - (preço * (discount / 100));
+    let total = preço - preço * (discount / 100);
     return total;
   }
 
@@ -46,7 +51,9 @@ const Product = () => {
                 </div>
                 <div className="products-price">
                   <div className="price-discount">
-                    <p className="with-discount">{formatCurrency(item.price.value)}</p>{" "}
+                    <p className="with-discount">
+                      {formatCurrency(item.price.value)}
+                    </p>{" "}
                     <p className="discount">
                       {item.price.discount > 0 ? (
                         <p>{item.price.discount * 100} % de desconto</p>
@@ -56,8 +63,10 @@ const Product = () => {
                     </p>
                   </div>
                   <div className="price">
-                    <p className="no-discount">{formatCurrency(a(item))}</p>
-                    <p className="price-divided">ou 9x {formatCurrency(a(item) / 9)}</p>
+                    <p className="no-discount">{formatCurrency(price(item))}</p>
+                    <p className="price-divided">
+                      ou 9x {formatCurrency(price(item) / 9)}
+                    </p>
                   </div>
                 </div>
                 <div className="products-number">
@@ -93,48 +102,59 @@ const Product = () => {
             <div className="row"></div>
             <section className="container-de-interesses">
               <p>TALVES POSSA LHE INTERESSAR</p>
-              <div className="a">
-                <div>
-                  <div>img</div>
-                  <div>
+              <div className="container-items">
+                <div className="item-carousel">
+                  <div className="img-carousel">
+                    <img src={img1} alt="" />
+                  </div>
+                  <div className="name-item">
                     <p>CHINELO RASTEIRA BRANCA STRASS DUMOND</p>
                   </div>
-                  <div>
+                  <div className="price-item">
                     <p>R$ 279,99</p>
                     <p>ou 10X R$ 27,99</p>
                   </div>
                   <div>btn</div>
                 </div>
-                <div>
-                  <div>img</div>
-                  <div>
-                    <p>CHINELO RASTEIRA BRANCA STRASS DUMOND</p>
+                <div className="item-carousel">
+                  <div className="img-carousel">
+                    {" "}
+                    <img src={img2} alt="" />
                   </div>
-                  <div>
-                    <p>R$ 279,99</p>
-                    <p>ou 10X R$ 27,99</p>
+                  <div className="name-item">
+                    <p>SANDÁLIA METALIZADA COBRE TWIN SET</p>
                   </div>
-                  <div>btn</div>
-                </div>
-                <div>
-                  <div>img</div>
-                  <div>
-                    <p>CHINELO RASTEIRA BRANCA STRASS DUMOND</p>
-                  </div>
-                  <div>
-                    <p>R$ 279,99</p>
-                    <p>ou 10X R$ 27,99</p>
+                  <div className="price-item">
+                    <p>R$ 179,99</p>
+                    <p>ou 10X R$ 17,99</p>
                   </div>
                   <div>btn</div>
                 </div>
-                <div>
-                  <div>img</div>
-                  <div>
-                    <p>CHINELO RASTEIRA BRANCA STRASS DUMOND</p>
+                <div className="item-carousel">
+                  <div className="img-carousel">
+                    {" "}
+                    <img src={img3} alt="" />
                   </div>
-                  <div>
-                    <p>R$ 279,99</p>
-                    <p>ou 10X R$ 27,99</p>
+                  <div className="name-item">
+                    <p>SANDÁLIA PRETA VERNIZ SALTO GEOMÉTRICO VIA MARTE</p>
+                  </div>
+                  <div className="price-item">
+                    <p>R$ 189,99</p>
+                    <p>ou 10X R$ 18,99</p>
+                  </div>
+                  <div>btn</div>
+                </div>
+                <div className="item-carousel">
+                  <div className="img-carousel">
+                    {" "}
+                    <img src={img4} alt="" />
+                  </div>
+                  <div className="name-item">
+                    <p>SANDÁLIA RASTEIRA VIA MARTE STRASS OFF WHITE</p>
+                  </div>
+                  <div className="price-item">
+                    <p>R$ 199,99</p>
+                    <p>ou 10X R$ 19,99</p>
                   </div>
                   <div>btn</div>
                 </div>

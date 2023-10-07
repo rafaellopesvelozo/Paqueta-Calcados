@@ -58,6 +58,14 @@ export const Shoes = styled.section`
         color: #ffff;
         font-weight: 600;
         width: 100%;
+        font-size: 15px;
+       
+      }
+      .comprado{
+        background: red !important;
+      }
+      .Warn {
+        font-size: 12px;
       }
 
       .container_products {
@@ -78,9 +86,11 @@ export const Shoes = styled.section`
             right: 5px;
             top: 10px;
             font-size: 25px;
+            color: #cf5d00;
           }
           .bi-heart-fill {
-            color: red;
+            color: #cf5d00;
+            transition: all 0.2s linear;
           }
 
           .sold_out_product {

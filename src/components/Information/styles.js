@@ -12,18 +12,27 @@ export const Section = styled.section`
     display: flex;
     align-items: center;
     gap: 10px;
+
+    .icons {
+      display: flex;
+      border: 1px solid red;
+      i {
+        font-size: 35px;
+        color: #ffffff;
+        margin: 0 auto;
+      }
+    }
   }
 
   div {
     p {
-      font-size: 14px;
+      font-size: 12px;
       color: #ffff;
       margin: 0;
     }
 
     .Caps-lock {
       font-weight: bold;
-      
     }
   }
 `;

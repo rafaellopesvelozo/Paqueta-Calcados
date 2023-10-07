@@ -22,6 +22,8 @@ const Shoes = () => {
     setCartWishList,
     products,
     setProducts,
+    existingItem,
+    setExistingItem,
   } = useContext(AppContext);
 
   useEffect(() => {
@@ -36,7 +38,12 @@ const Shoes = () => {
 
   function handleAddCart(shoesItem) {
     setCartItem([...cartItem, shoesItem]);
-    localStorageAddUser(shoesItem);
+
+    console.log(name);
+    //if (item.id != shoesItem.id) {
+    //setExistingItem(!existingItem);
+    //console.log(cartItem)
+    //localStorageAddUser(shoesItem);
   }
 
   const wishList = (shoesItem) => {
@@ -44,14 +51,12 @@ const Shoes = () => {
 
     const iconHeart = () => {
       setHeatIsActive(!heartIsActive);
-      console.log(heartIsActive);
     };
     iconHeart();
   };
 
   const pageProducts = (shoesItem) => {
     setProducts([shoesItem]);
-
   };
 
   let activeShoes = 0;
@@ -81,7 +86,7 @@ const Shoes = () => {
         <section>
           {shoes.length === 0 && <p>Carregado...</p>}
           {shoes.map((shoesItem) => (
-            <div className={`container_products`} key={shoesItem.name}>
+            <div className="container_products" key={shoesItem.name}>
               <div className="img_product">
                 {shoesItem.soldout === true && (
                   <div className="sold_out_product">
@@ -120,19 +125,27 @@ const Shoes = () => {
                 )}
               </div>
               <div>
-                <Button
-                  onClick={() => handleAddCart(shoesItem)}
-                  disabled={shoesItem.soldout == true}
-                  theme="price"
-                  type="button"
-                  rel="nopeener noreferer"
-                >
-                  {shoesItem.soldout == true ? (
-                    <p>ME AVISE QUANDO CHEGAR</p>
-                  ) : (
-                    <p>comprar</p>
-                  )}
-                </Button>
+                {shoesItem.soldout == true ? (
+                  <Button
+                    className="Warn"
+                    theme="soldout"
+                    type="button"
+                    rel="nopeener noreferer"
+                  >
+                    ME AVISE QUANDO CHEGAR
+                  </Button>
+                ) : (
+                  <Button
+                    onClick={() => handleAddCart(shoesItem)}
+                    //className={`${existingItem == true ? "comprado" : ""}}`}
+                    //disabled={!existingItem}
+                    theme="price"
+                    type="button"
+                    rel="nopeener noreferer"
+                  >
+                    comprar
+                  </Button>
+                )}
               </div>
             </div>
           ))}

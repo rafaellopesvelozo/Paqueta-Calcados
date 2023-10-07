@@ -6,7 +6,7 @@ export const Button = Styled.div`
     border: none;
   }
 
-  .button-price, .button-remove {
+  .button-price, .button-remove{
     width: 257px;
     height: 46px;
     cursor: pointer;
@@ -14,17 +14,12 @@ export const Button = Styled.div`
     border-radius: 5px;
     transition: all 0.5s;
     color: #ffff;
-
-    a {
-      font-family: "Poppins";
-      font-weight: 400;
-      color: #ffff;
-    }
-
+   
     &:hover {
       background: linear-gradient(to top, #e98c00, #fcc71b 100%);
     }
   }
+
 
   .button-remove{
     background: linear-gradient(to top, #FF0000, #FF4E47);
@@ -32,5 +27,17 @@ export const Button = Styled.div`
       background: linear-gradient(to top, #FF0000, #FF1919);
     }
   }
+
+  .button-soldout{
+    width: 257px;
+    height: 46px;
+    cursor: pointer;
+    background: gray;
+    border-radius: 5px;
+    transition: all 1s;
+    color: #ffff;
+ 
+  }
+
   
 `;

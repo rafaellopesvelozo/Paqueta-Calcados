@@ -10,12 +10,18 @@ export const WishListContainer = styled.section`
     width: fit-content;
     border-bottom: 2px solid #cf5d00;
   }
+
   .link-back {
     margin: 30px 0;
   }
 
+  i {
+    color: #cf5d00;
+  }
+  
   .bi-heart-fill {
-    color: red;
+    color: #cf5d00;
+    transition: all 0.2s linear;
   }
 
   .Container-Items {
