@@ -14,10 +14,6 @@ export const Button = Styled.div`
     border-radius: 5px;
     transition: all 0.5s;
     color: #ffff;
-   
-    &:hover {
-      background: linear-gradient(to top, #e98c00, #fcc71b 100%);
-    }
   }
 
 
@@ -36,8 +32,14 @@ export const Button = Styled.div`
     border-radius: 5px;
     transition: all 1s;
     color: #ffff;
- 
   }
-
+  .button-buyItem{
+    width: 257px;
+    height: 46px;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: all .3s;
+    color: #ffff;
+  }
   
 `;

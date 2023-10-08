@@ -59,11 +59,19 @@ export const Shoes = styled.section`
         font-weight: 600;
         width: 100%;
         font-size: 15px;
-       
       }
-      .comprado{
-        background: red !important;
+
+      .comprado {
+        background-color: #05fa3d;
       }
+
+      .comprar {
+        background: linear-gradient(to top, #f99500, #ffcd29 100%);
+        &:hover {
+          background: linear-gradient(to top, #e98c00, #fcc71b 100%);
+        }
+      }
+
       .Warn {
         font-size: 12px;
       }

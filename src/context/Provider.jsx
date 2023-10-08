@@ -9,6 +9,7 @@ export const Provider = ({ children }) => {
   const [products, setProducts] = useState([]);
   const [modalActive, setModalActive] = useState(false);
   const [existingItem, setExistingItem] = useState(false);
+  
   const value = {
     shoes,
     setShoes,

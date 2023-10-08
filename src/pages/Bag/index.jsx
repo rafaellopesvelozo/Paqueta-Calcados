@@ -2,21 +2,17 @@ import React, { useContext } from "react";
 import * as styled from "./styles";
 import { Link } from "react-router-dom";
 import { formatCurrency } from "../../utils/format";
-import AppContext from "../../context/AppContext";
 import { localStorageRemoveUser } from "../../utils/localStorage";
+import AppContext from "../../context/AppContext";
 
 const Bag = () => {
   const { cartItem, setCartItem } = useContext(AppContext);
 
   const handleRemoveItem = (cart) => {
-    try {
-      const id = cart.id;
-      const updatedItems = cartItem.filter((item) => item.id !== id);
-      setCartItem(updatedItems);
-      localStorageRemoveUser();
-    } catch (error) {
-      console.log(error);
-    }
+    const id = cart.id;
+    const updatedItems = cartItem.filter((item) => item.id !== id);
+    setCartItem(updatedItems);
+    localStorageRemoveUser();
   };
 
   const getRamdom = () => {
@@ -28,13 +24,18 @@ const Bag = () => {
     return nRamdom1 + "-" + nRamdom2;
   };
 
-  const updateItem = (action) => {
-    let i = 1;
-    let newQuantity = i;
+  const a = (n) =>{
+    return n
+  }
 
+  const updateItem = (action) => {
+    let i = 1
+    let newQuantity = i;
+    
     if (action === "increase") {
       newQuantity += 1;
     }
+
     if (action === "decrease") {
       if (newQuantity === 1) {
         return;
@@ -92,7 +93,7 @@ const Bag = () => {
                         >
                           -
                         </div>
-                        <p>1</p>
+                        <p>{a(1)}</p>
                         <div
                           onClick={() => updateItem("increase")}
                           className="more"

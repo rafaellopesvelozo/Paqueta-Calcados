@@ -37,22 +37,19 @@ const Shoes = () => {
   }, []);
 
   function handleAddCart(shoesItem) {
-    setCartItem([...cartItem, shoesItem]);
-
-    console.log(name);
-    //if (item.id != shoesItem.id) {
-    //setExistingItem(!existingItem);
-    //console.log(cartItem)
-    //localStorageAddUser(shoesItem);
+    let existCart = cartItem.find((item) => item.id === shoesItem.id);
+    if (!existCart) {
+      setCartItem([...cartItem, shoesItem]);
+      setExistingItem(!existingItem);
+    }
   }
 
   const wishList = (shoesItem) => {
-    setCartWishList([...cartWishList, shoesItem]);
-
-    const iconHeart = () => {
+    let existWishList = cartWishList.find((item) => item.id === shoesItem.id);
+    if (!existWishList) {
+      setCartWishList([...cartWishList, shoesItem]);
       setHeatIsActive(!heartIsActive);
-    };
-    iconHeart();
+    }
   };
 
   const pageProducts = (shoesItem) => {
@@ -137,13 +134,13 @@ const Shoes = () => {
                 ) : (
                   <Button
                     onClick={() => handleAddCart(shoesItem)}
-                    //className={`${existingItem == true ? "comprado" : ""}}`}
+                    className={`${!existingItem ? "comprar" : "comprado"}`}
                     //disabled={!existingItem}
-                    theme="price"
+                    theme="buyItem"
                     type="button"
                     rel="nopeener noreferer"
                   >
-                    comprar
+                    {!existingItem ? "comprar" : "adicionado a sacola"}
                   </Button>
                 )}
               </div>

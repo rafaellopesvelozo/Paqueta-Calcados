@@ -15,7 +15,6 @@ export const Section = styled.section`
 
     .icons {
       display: flex;
-      border: 1px solid red;
       i {
         font-size: 35px;
         color: #ffffff;
