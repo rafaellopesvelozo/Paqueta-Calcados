@@ -1,5 +1,6 @@
 import { formatCurrency } from "./format";
 
+
 export const localStorageAddUser = (shoesItem) => {
   let listUser = JSON.parse(localStorage.getItem("listUser") || "[]");
   listUser.push({
@@ -7,7 +8,6 @@ export const localStorageAddUser = (shoesItem) => {
     idCad: shoesItem.id,
     priceCad: formatCurrency(shoesItem.price.value),
   });
-
   localStorage.setItem("listUser", JSON.stringify(listUser));
 };
 

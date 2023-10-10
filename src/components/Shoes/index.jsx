@@ -1,29 +1,17 @@
 import React, { useContext, useEffect, useState } from "react";
 import * as styled from "./styles";
 
-import Button from "../Button";
 import AppContext from "../../context/AppContext";
 
-import { Link } from "react-router-dom";
+//import { Link } from "react-router-dom";
 import { Shoes_Api } from "../../services/api";
-import { formatCurrency } from "../../utils/format";
 import { numberShoes } from "../../utils/numberShoes";
-import { localStorageAddUser } from "../../utils/localStorage";
+import { ShoesIndex } from "../../components/Shoes/components/card";
 
 const Shoes = () => {
   const {
     shoes,
     setShoes,
-    cartItem,
-    setCartItem,
-    heartIsActive,
-    setHeatIsActive,
-    cartWishList,
-    setCartWishList,
-    products,
-    setProducts,
-    existingItem,
-    setExistingItem,
   } = useContext(AppContext);
 
   useEffect(() => {
@@ -35,26 +23,6 @@ const Shoes = () => {
       console.log(error);
     }
   }, []);
-
-  function handleAddCart(shoesItem) {
-    let existCart = cartItem.find((item) => item.id === shoesItem.id);
-    if (!existCart) {
-      setCartItem([...cartItem, shoesItem]);
-      setExistingItem(!existingItem);
-    }
-  }
-
-  const wishList = (shoesItem) => {
-    let existWishList = cartWishList.find((item) => item.id === shoesItem.id);
-    if (!existWishList) {
-      setCartWishList([...cartWishList, shoesItem]);
-      setHeatIsActive(!heartIsActive);
-    }
-  };
-
-  const pageProducts = (shoesItem) => {
-    setProducts([shoesItem]);
-  };
 
   let activeShoes = 0;
   const left = (direction) => {
@@ -82,73 +50,12 @@ const Shoes = () => {
 
         <section>
           {shoes.length === 0 && <p>Carregado...</p>}
-          {shoes.map((shoesItem) => (
-            <div className="container_products" key={shoesItem.name}>
-              <div className="img_product">
-                {shoesItem.soldout === true && (
-                  <div className="sold_out_product">
-                    <p>PRODUTO ESGOTADO</p>
-                  </div>
-                )}
-
-                <div onClick={() => wishList(shoesItem)}>
-                  {!heartIsActive ? (
-                    <i class="bi bi-heart"></i>
-                  ) : (
-                    <i class="bi bi-heart-fill"></i>
-                  )}
-                </div>
-
-                <Link to="product">
-                  <img
-                    onClick={() => pageProducts(shoesItem)}
-                    src={shoesItem.image}
-                    alt="imagem do produto"
-                  />
-                </Link>
-              </div>
-
-              <p>{shoesItem.name}</p>
-              <p>{formatCurrency(shoesItem.price.value)}</p>
-
-              <div>
-                {shoesItem.name.includes("TÊNIS RS 3.0 FUTURE VINTAGE") ||
-                shoesItem.name.includes(
-                  "Mercedes Kart Cat-X Tech Unisex Sneakers"
-                ) ? (
-                  <p>OU 9X {formatCurrency(shoesItem.price.value / 9)}</p>
-                ) : (
-                  <p>OU 10X {formatCurrency(shoesItem.price.value / 10)}</p>
-                )}
-              </div>
-              <div>
-                {shoesItem.soldout == true ? (
-                  <Button
-                    className="Warn"
-                    theme="soldout"
-                    type="button"
-                    rel="nopeener noreferer"
-                  >
-                    ME AVISE QUANDO CHEGAR
-                  </Button>
-                ) : (
-                  <Button
-                    onClick={() => handleAddCart(shoesItem)}
-                    className={`${!existingItem ? "comprar" : "comprado"}`}
-                    //disabled={!existingItem}
-                    theme="buyItem"
-                    type="button"
-                    rel="nopeener noreferer"
-                  >
-                    {!existingItem ? "comprar" : "adicionado a sacola"}
-                  </Button>
-                )}
-              </div>
-            </div>
-          ))}
+          {shoes.map((shoesItem) => {
+            return <ShoesIndex shoesItem={shoesItem} />;
+          })}
         </section>
         <div className="btn-carousel">
-          <div className="left" onClick={() => left(1)}></div>
+          <div  className="left" onClick={() => left(1)}></div>
           <div className="center"></div>
           <div className="right" onClick={() => left(-1)}></div>
         </div>

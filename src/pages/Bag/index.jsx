@@ -1,19 +1,31 @@
-import React, { useContext } from "react";
-import * as styled from "./styles";
+import React, { useState, useContext, useEffect } from "react";
+import { ContainerBag } from "./styles";
 import { Link } from "react-router-dom";
 import { formatCurrency } from "../../utils/format";
-import { localStorageRemoveUser } from "../../utils/localStorage";
+//import { localStorageRemoveUser } from "../../utils/localStorage";
 import AppContext from "../../context/AppContext";
 
 const Bag = () => {
   const { cartItem, setCartItem } = useContext(AppContext);
+  const [value, setValue] = useState(1);
 
   const handleRemoveItem = (cart) => {
     const id = cart.id;
     const updatedItems = cartItem.filter((item) => item.id !== id);
     setCartItem(updatedItems);
-    localStorageRemoveUser();
+    //localStorageRemoveUser(cart);
   };
+
+  /*
+  useEffect(() => {
+    const items = localStorage.getItem("listUser");
+    if (items && items?.length > 0) {
+      const value2 = JSON.parse(items);
+      console.log(value2)
+      if (value2?.length > 0) setCartItem([...value2]);
+    }
+  }, [setCartItem]);
+   */
 
   const getRamdom = () => {
     const min = 0;
@@ -24,30 +36,21 @@ const Bag = () => {
     return nRamdom1 + "-" + nRamdom2;
   };
 
-  const a = (n) =>{
-    return n
-  }
-
   const updateItem = (action) => {
-    let i = 1
-    let newQuantity = i;
-    
     if (action === "increase") {
-      newQuantity += 1;
+      setValue((value) => value + 1);
     }
 
     if (action === "decrease") {
-      if (newQuantity === 1) {
+      if (value === 1) {
         return;
       }
-      newQuantity -= 1;
+      setValue((value) => value - 1);
     }
-
-    console.log(newQuantity);
   };
 
   return (
-    <styled.containerBag>
+    <ContainerBag>
       <div>
         <div className="navigation">
           <a>
@@ -93,7 +96,7 @@ const Bag = () => {
                         >
                           -
                         </div>
-                        <p>{a(1)}</p>
+                        <p>{value}</p>
                         <div
                           onClick={() => updateItem("increase")}
                           className="more"
@@ -103,7 +106,8 @@ const Bag = () => {
                       </div>
                     </div>
                     <p className="cart-item-price">
-                      <span>Preço:</span> {formatCurrency(cart.price.value)}
+                      <span>Preço:</span>{" "}
+                      {formatCurrency(cart.price.value * value)}
                       <p>{}</p>
                     </p>
                   </div>
@@ -120,7 +124,7 @@ const Bag = () => {
           </div>
         </div>
       </div>
-    </styled.containerBag>
+    </ContainerBag>
   );
 };
 export default Bag;

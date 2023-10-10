@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-export const containerBag = styled.section`
+export const ContainerBag = styled.section`
   display: flex;
   flex-direction: column;
   padding: 0 10%;
@@ -81,7 +81,7 @@ export const containerBag = styled.section`
               gap: 5px;
               background-color: #a7b3be;
               border-radius: 10px;
-              color: #FFFFFF;
+              color: #ffffff;
 
               .less,
               .more {
@@ -109,3 +109,4 @@ export const containerBag = styled.section`
     }
   }
 `;
+
