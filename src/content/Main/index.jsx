@@ -1,14 +1,14 @@
-import * as styled from "./styles";
+import * as S from "./styles";
 import Information from "../../components/Information";
-import Button from "../../components/Button/index.jsx";
 import Outlet from "../../components/Outlet";
 import ImgBanner from "../../assets/Header/img-header.png";
 import Shoes from "../../components/Shoes";
 import { Brands } from "../../components/Brands";
+import { ButtonPrice } from "../../components/Button/Button.style";
 
 const Main = () => {
   return (
-    <styled.Main>
+    <S.Main>
       <div className="banner-Main">
         <img src={ImgBanner} alt="" />
         <div className="infoHeader">
@@ -20,11 +20,11 @@ const Main = () => {
           </div>
 
           <div className="btn-price">
-            <Button type="button" theme="price">
+            <ButtonPrice type="button" theme="price">
               <a href="#" target="_blank" rel="nopeener noreferer">
                 Aproveite
               </a>
-            </Button>
+            </ButtonPrice>
           </div>
         </div>
       </div>
@@ -33,8 +33,8 @@ const Main = () => {
       </div>
       <Outlet />
       <Shoes />
-      <Brands/>
-    </styled.Main>
+      <Brands />
+    </S.Main>
   );
 };
 export default Main;

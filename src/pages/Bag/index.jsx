@@ -4,6 +4,7 @@ import { Link } from "react-router-dom";
 import { formatCurrency } from "../../utils/format";
 //import { localStorageRemoveUser } from "../../utils/localStorage";
 import AppContext from "../../context/AppContext";
+import { ButtonRemove } from "../../components/Button/Button.style";
 
 const Bag = () => {
   const { cartItem, setCartItem } = useContext(AppContext);
@@ -15,17 +16,6 @@ const Bag = () => {
     setCartItem(updatedItems);
     //localStorageRemoveUser(cart);
   };
-
-  /*
-  useEffect(() => {
-    const items = localStorage.getItem("listUser");
-    if (items && items?.length > 0) {
-      const value2 = JSON.parse(items);
-      console.log(value2)
-      if (value2?.length > 0) setCartItem([...value2]);
-    }
-  }, [setCartItem]);
-   */
 
   const getRamdom = () => {
     const min = 0;
@@ -111,13 +101,9 @@ const Bag = () => {
                       <p>{}</p>
                     </p>
                   </div>
-                  <button
-                    onClick={() => handleRemoveItem(cart)}
-                    type="button"
-                    className="button--remove-item"
-                  >
+                  <ButtonRemove onClick={() => handleRemoveItem(cart)}>
                     <i className="bi bi-trash3"></i> Remover
-                  </button>
+                  </ButtonRemove>
                 </div>
               </section>
             ))}

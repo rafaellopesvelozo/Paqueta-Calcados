@@ -1,14 +1,13 @@
 import React, { useState, useContext } from "react";
+import * as S from "../styles";
 
-import { ContainerProducts, ImgProducts, soldOutProduct } from "../styles";
 import { formatCurrency } from "../../../utils/format";
 import { Link } from "react-router-dom";
+import { ButtonBuy, ButtonSoldout } from "../../Button/Button.style";
 //import { localStorageAddUser } from "../../../utils/localStorage";
-
 import AppContext from "../../../context/AppContext";
-import Button from "../../Button";
 
-export const ShoesIndex = ({ shoesItem }) => {
+export const ShoesIndex = ({ shoesItem}) => {
   const { cartItem, setCartItem, setProducts, cartWishList, setCartWishList } =
     useContext(AppContext);
 
@@ -36,9 +35,10 @@ export const ShoesIndex = ({ shoesItem }) => {
     setProducts([shoesItem]);
   };
 
+  
   return (
-    <ContainerProducts key={shoesItem.name}>
-      <ImgProducts>
+    <S.ContainerProducts key={shoesItem.name}>
+      <S.ImgProducts>
         {shoesItem.soldout === true && (
           <div className="sold_out_product">
             <p>PRODUTO ESGOTADO</p>
@@ -60,7 +60,7 @@ export const ShoesIndex = ({ shoesItem }) => {
             alt="imagem do produto"
           />
         </Link>
-      </ImgProducts>
+      </S.ImgProducts>
 
       <p>{shoesItem.name}</p>
       <p>{formatCurrency(shoesItem.price.value)}</p>
@@ -76,27 +76,18 @@ export const ShoesIndex = ({ shoesItem }) => {
 
       <div>
         {shoesItem.soldout == true ? (
-          <Button
-            className="Warn"
-            theme="soldout"
-            type="button"
-            rel="nopeener noreferer"
-          >
+          <ButtonSoldout className="Warn" rel="nopeener noreferer">
             ME AVISE QUANDO CHEGAR
-          </Button>
+          </ButtonSoldout>
         ) : (
-          <Button
+          <ButtonBuy
             onClick={() => handleAddCart(shoesItem)}
-            className={`${!existingItem ? "comprar" : "comprado"}`}
-            //disabled={!existingItem}
-            theme="buyItem"
-            type="button"
-            rel="nopeener noreferer"
+            className={`${!existingItem ? "comprar" : "Addsacola"}`}
           >
             {!existingItem ? "comprar" : "adicionado a sacola"}
-          </Button>
+          </ButtonBuy>
         )}
       </div>
-    </ContainerProducts>
+    </S.ContainerProducts>
   );
 };

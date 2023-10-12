@@ -3,28 +3,19 @@ import styled from "styled-components";
 export const ContainerShoes = styled.section`
   padding: 0 10%;
 
-  .highlights {
-    button {
-      color: #ffff;
-      font-weight: 600;
-      width: 100%;
-      font-size: 15px;
-    }
+  .Addsacola {
+    background-color: #05fa3d;
+  }
 
-    .comprado {
-      background-color: #05fa3d;
+  .comprar {
+    background: linear-gradient(to top, #f99500, #ffcd29 100%);
+    &:hover {
+      background: linear-gradient(to top, #e98c00, #fcc71b 100%);
     }
+  }
 
-    .comprar {
-      background: linear-gradient(to top, #f99500, #ffcd29 100%);
-      &:hover {
-        background: linear-gradient(to top, #e98c00, #fcc71b 100%);
-      }
-    }
-
-    .Warn {
-      font-size: 12px;
-    }
+  .Warn {
+    font-size: 12px;
   }
 `;
 
@@ -56,9 +47,7 @@ export const ContainerProducts = styled.div`
     font-size: 20px;
   }
 
-  .transitionX {
-    transform: translateX(-${(props) => 200 * props.activeShoes} "px");
-  }
+  transform: translateX(-${(props) => 200 * props.left} "px");
 `;
 
 export const ImgProducts = styled.div`

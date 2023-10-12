@@ -1,11 +1,5 @@
-import React, { useContext, useEffect, useState } from "react";
-import {
-  ContainerShoes,
-  NumberList,
-  HighlightCheck,
-  BtnCarroussel,
-  Section,
-} from "./styles";
+import React, { useContext, useEffect} from "react";
+import * as S from "./styles";
 
 import AppContext from "../../context/AppContext";
 
@@ -33,38 +27,37 @@ const Shoes = () => {
     const shoesCarousel = shoes[activeShoes];
     //console.log(shoesCarousel, activeShoes);
   };
-
   const listNumbers = numberShoes.map((n) => <li>{n}</li>);
 
   return (
-    <ContainerShoes>
-      <NumberList>
+    <S.ContainerShoes>
+      <S.NumberList>
         <ul>{listNumbers}</ul>
-      </NumberList>
+      </S.NumberList>
 
       <div className="highlights">
-        <HighlightCheck>
+        <S.HighlightCheck>
           <div>
             <p>DESTAQUES</p>
           </div>
           <div>
             <p>CONFERIR TUDO</p>
           </div>
-        </HighlightCheck>
+        </S.HighlightCheck>
 
-        <Section>
-          {shoes.length === 0 && <p>Carregado...</p>}
+        <S.Section>
+          {shoes.length === 0 && <p>CARREGANDO . . .</p>}
           {shoes.map((shoesItem) => {
             return <ShoesIndex shoesItem={shoesItem} />;
           })}
-        </Section>
-        <BtnCarroussel>
+        </S.Section>
+        <S.BtnCarroussel>
           <div className="left" onClick={() => left(1)}></div>
           <div className="center"></div>
           <div className="right" onClick={() => left(-1)}></div>
-        </BtnCarroussel>
+        </S.BtnCarroussel>
       </div>
-    </ContainerShoes>
+    </S.ContainerShoes>
   );
 };
 

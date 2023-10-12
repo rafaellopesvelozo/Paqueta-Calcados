@@ -1,57 +1,57 @@
-import { Section, InfoSection, Icons, TextCapsLock } from "./styles";
+import * as S from "./styles";
 
 const Information = () => {
   return (
-    <Section>
-      <InfoSection>
-        <Icons>
+    <S.Section>
+      <S.InfoSection>
+        <S.Icons>
           <i className="bi bi-briefcase"></i>
-        </Icons>
+        </S.Icons>
         <div className="text-info">
-          <TextCapsLock>PAGUE EM ATÉ 10X</TextCapsLock>
+          <S.TextCapsLock>PAGUE EM ATÉ 10X</S.TextCapsLock>
           <p>SEM JUROS*</p>
         </div>
-      </InfoSection>
-      <InfoSection>
-        <Icons>
+      </S.InfoSection>
+      <S.InfoSection>
+        <S.Icons>
           <i className="bi bi-geo-alt"></i>
-        </Icons>
+        </S.Icons>
         <div className="text-info">
-          <TextCapsLock>RETIRE GRÁTIS</TextCapsLock>
+          <S.TextCapsLock>RETIRE GRÁTIS</S.TextCapsLock>
           <p>EM NOSSAS LOJAS</p>
         </div>
-      </InfoSection>
-      <InfoSection>
-        <Icons>
+      </S.InfoSection>
+      <S.InfoSection>
+        <S.Icons>
           <i className="bi bi-percent"></i>
-        </Icons>
+        </S.Icons>
         <div className="text-info">
-          <TextCapsLock>GANHE 20% DE </TextCapsLock>
-          <TextCapsLock>DESCONTO</TextCapsLock>
+          <S.TextCapsLock>GANHE 20% DE </S.TextCapsLock>
+          <S.TextCapsLock>DESCONTO</S.TextCapsLock>
         </div>
-      </InfoSection>
-      <InfoSection>
-        <Icons>
+      </S.InfoSection>
+      <S.InfoSection>
+        <S.Icons>
           <i className="bi bi-truck"></i>
-        </Icons>
+        </S.Icons>
         <div className="text-info">
-          <TextCapsLock>
+          <S.TextCapsLock>
             FRETE GRÁTIS <span>PARA</span>
-          </TextCapsLock>
+          </S.TextCapsLock>
           <p>
             <span>REGIÕES SUL E SUDESTE*</span>
           </p>
         </div>
-      </InfoSection>
-      <InfoSection>
-        <Icons>
+      </S.InfoSection>
+      <S.InfoSection>
+        <S.Icons>
           <i className="bi bi-arrow-repeat"></i>
-        </Icons>
+        </S.Icons>
         <div className="text-info">
           <p>PRIMEIRA TROCA GRÁTIS</p>
         </div>
-      </InfoSection>
-    </Section>
+      </S.InfoSection>
+    </S.Section>
   );
 };
 export default Information;

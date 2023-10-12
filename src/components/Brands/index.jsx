@@ -1,84 +1,72 @@
 import React from "react";
-import {
-  BrandsContainer,
-  Logomarcas,
-  Logotipos,
-  Formulário,
-  Email,
-  InputForm,
-  Form,
-  Label,
-  Input,
-  ContainerIputEmail,
-} from "./styles";
+import * as S from "./styles";
+
 import Adiddas from "../../assets/Sponsor/adiddas.jpg";
 import bebece from "../../assets/Sponsor/bebece.jpg";
 import dumond from "../../assets/Sponsor/dumond.jpg";
 import viamarte from "../../assets/Sponsor/viamarte.jpg";
-import Button from "../../components/Button/index";
+import { ButtonPrice } from "../Button/Button.style";
 
 export const Brands = () => {
   return (
-    <BrandsContainer>
-      <Logomarcas>
+    <S.BrandsContainer>
+      <S.Logomarcas>
         <h3>AS MELHORES MARCAS ESTÃO AQUI!</h3>
-        <Logotipos>
+        <S.Logotipos>
           <img src={Adiddas} alt="logotipo adiddas" />
           <img src={viamarte} alt="logotipo viamarte" />
           <img src={bebece} alt="logotipo bebecê" />
           <img src={dumond} alt="logotimo dumond" />
-        </Logotipos>
-      </Logomarcas>
+        </S.Logotipos>
+      </S.Logomarcas>
 
-      <Formulário>
+      <S.Formulário>
         <h3>
           SEJA O PRIMEIRO A <span>RECEBER NOSSAS</span>{" "}
           <span>OFERTAS E NOVIDADES</span> <span>EXCLUSIVAS!</span>
         </h3>
-        <Email>
+        <S.Email>
           <p>Nos informe seu e-mail para receber o melhor atendimento!</p>
 
-          <ContainerIputEmail>
-            <Input
+          <S.ContainerIputEmail>
+            <S.Input
               type="text"
               name="name"
               id="name"
               maxLength="30"
               placeholder="Maria da Silva"
             />
-            <Input
+            <S.Input
               type="email"
               name="email"
               id="email"
               maxLength="30"
               placeholder="maria@seuemail.com"
             />
-          </ContainerIputEmail>
+          </S.ContainerIputEmail>
 
-          <InputForm>
+          <S.InputForm>
             <p>Tenho interesse nessa categoria: </p>
-            <Form action="#" method="#">
+            <S.Form action="#" method="#">
               <fieldset>
-                <Label htmlFor="Masculino">
+                <S.Label htmlFor="Masculino">
                   <input type="checkbox" name="masculino" id="masculino" />
                   Masculino
-                </Label>
+                </S.Label>
 
-                <Label htmlFor="Feminino">
+                <S.Label htmlFor="Feminino">
                   <input type="checkbox" name="masculino" id="feminino" />
                   Feminino
-                </Label>
+                </S.Label>
               </fieldset>
-            </Form>
-          </InputForm>
+            </S.Form>
+          </S.InputForm>
 
           <div className="btn-form">
-            <Button className="button-price" type="submit">
-              QUERO RECEBER
-            </Button>
+            <ButtonPrice type="submit">QUERO RECEBER</ButtonPrice>
           </div>
-        </Email>
-      </Formulário>
-    </BrandsContainer>
+        </S.Email>
+      </S.Formulário>
+    </S.BrandsContainer>
   );
 };

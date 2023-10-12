@@ -1,5 +1,5 @@
 import React from "react";
-import * as styled from "./styles";
+import * as S from "./styles";
 
 import logoFooter from "./../../assets/Footer/logo-footer1.png";
 import americanExpress from "../../assets/Footer/american-express.png";
@@ -21,7 +21,7 @@ import security from "../../assets/Footer/security.png";
 
 const Footer = () => {
   return (
-    <styled.ConteinerFooter>
+    <S.ConteinerFooter>
       <div>
         <section>
           <h6>institucional</h6>
@@ -113,7 +113,7 @@ const Footer = () => {
         <h6>UMA EMPRESA DO GRUPO</h6>
         <img src={logoFooter} alt="logo paquetá footer" />
       </section>
-    </styled.ConteinerFooter>
+    </S.ConteinerFooter>
   );
 };
 export default Footer;

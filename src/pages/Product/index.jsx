@@ -1,19 +1,19 @@
 import React from "react";
-import AppContext from "../../context/AppContext";
 import * as Styled from "./styles";
 import { useContext } from "react";
 import { Link } from "react-router-dom";
 import { formatCurrency } from "../../utils/format";
-import Button from "../../components/Button";
-import sizeImg from "../../assets/sizes/Union.png";
+import { ButtonPrice } from "../../components/Button/Button.style";
+
+import AppContext from "../../context/AppContext";
 import img1 from "../../assets/product/image1.jpg";
 import img2 from "../../assets/product/image2.jpg";
 import img3 from "../../assets/product/image3.jpg";
 import img4 from "../../assets/product/image4.jpg";
+import Modal from "./Modal/Modal";
 
 const Product = () => {
-  const { products, modalActive, setModalActive, shoes } =
-    useContext(AppContext);
+  const { products, modalActive, setModalActive } = useContext(AppContext);
 
   function price(item) {
     let preço = item.price.value;
@@ -88,9 +88,7 @@ const Product = () => {
                   </p>
                 </div>
                 <div className="products-btn">
-                  <Button theme="price" type="button">
-                    COMPRAR
-                  </Button>
+                  <ButtonPrice>COMPRAR</ButtonPrice>
                 </div>
               </div>
             </div>
@@ -165,6 +163,8 @@ const Product = () => {
       </section>
 
       {modalActive == true && (
+        <Modal />
+        /*
         <div className={`sizes-fixed`}>
           <div className="container-size">
             <p onClick={() => setModalActive(false)} className="closeModal">
@@ -263,6 +263,7 @@ const Product = () => {
             </div>
           </div>
         </div>
+         */
       )}
     </Styled.ContainerProducts>
   );

@@ -94,14 +94,6 @@ export const ContainerBag = styled.section`
             }
           }
         }
-
-        button {
-          border: none;
-          outline: none;
-          background-color: inherit;
-          height: 20px;
-          width: 100px;
-        }
       }
       section:last-child {
         border-bottom: none;
