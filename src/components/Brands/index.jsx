@@ -1,5 +1,16 @@
 import React from "react";
-import * as styled from "./styles";
+import {
+  BrandsContainer,
+  Logomarcas,
+  Logotipos,
+  Formulário,
+  Email,
+  InputForm,
+  Form,
+  Label,
+  Input,
+  ContainerIputEmail,
+} from "./styles";
 import Adiddas from "../../assets/Sponsor/adiddas.jpg";
 import bebece from "../../assets/Sponsor/bebece.jpg";
 import dumond from "../../assets/Sponsor/dumond.jpg";
@@ -8,66 +19,66 @@ import Button from "../../components/Button/index";
 
 export const Brands = () => {
   return (
-    <styled.BrandsContainer>
-      <div className="logomarcas">
+    <BrandsContainer>
+      <Logomarcas>
         <h3>AS MELHORES MARCAS ESTÃO AQUI!</h3>
-        <div className="logotipos">
+        <Logotipos>
           <img src={Adiddas} alt="logotipo adiddas" />
           <img src={viamarte} alt="logotipo viamarte" />
           <img src={bebece} alt="logotipo bebecê" />
           <img src={dumond} alt="logotimo dumond" />
-        </div>
-      </div>
+        </Logotipos>
+      </Logomarcas>
 
-      <div className="formulário">
+      <Formulário>
         <h3>
           SEJA O PRIMEIRO A <span>RECEBER NOSSAS</span>{" "}
           <span>OFERTAS E NOVIDADES</span> <span>EXCLUSIVAS!</span>
         </h3>
-        <div className="Email">
+        <Email>
           <p>Nos informe seu e-mail para receber o melhor atendimento!</p>
 
-          <div>
-            <input
+          <ContainerIputEmail>
+            <Input
               type="text"
               name="name"
               id="name"
               maxLength="30"
               placeholder="Maria da Silva"
             />
-            <input
+            <Input
               type="email"
               name="email"
               id="email"
               maxLength="30"
               placeholder="maria@seuemail.com"
             />
-          </div>
+          </ContainerIputEmail>
 
-          <div className="input-form">
+          <InputForm>
             <p>Tenho interesse nessa categoria: </p>
-            <form action="#" method="#">
+            <Form action="#" method="#">
               <fieldset>
-                <label htmlFor="Masculino">
+                <Label htmlFor="Masculino">
                   <input type="checkbox" name="masculino" id="masculino" />
                   Masculino
-                </label>
+                </Label>
 
-                <label htmlFor="Feminino">
+                <Label htmlFor="Feminino">
                   <input type="checkbox" name="masculino" id="feminino" />
                   Feminino
-                </label>
+                </Label>
               </fieldset>
-            </form>
-          </div>
+            </Form>
+          </InputForm>
 
           <div className="btn-form">
             <Button className="button-price" type="submit">
               QUERO RECEBER
             </Button>
           </div>
-        </div>
-      </div>
-    </styled.BrandsContainer>
+        </Email>
+      </Formulário>
+    </BrandsContainer>
   );
 };

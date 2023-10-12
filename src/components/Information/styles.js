@@ -7,31 +7,28 @@ export const Section = styled.section`
   justify-content: space-between;
   align-items: center;
   background: linear-gradient(to right, #ff8a29, #cf5d00);
+`;
 
-  .info-section {
-    display: flex;
-    align-items: center;
-    gap: 10px;
+export const InfoSection = styled.div`
+  display: flex;
+  align-items: center;
+  gap: 10px;
 
-    .icons {
-      display: flex;
-      i {
-        font-size: 35px;
-        color: #ffffff;
-        margin: 0 auto;
-      }
-    }
+  p {
+    font-size: 13px;
+    color: #ffff;
+    margin: 0;
   }
+`;
+export const TextCapsLock = styled.p`
+  font-weight: 700;
+`
+export const Icons = styled.div`
+  display: flex;
 
-  div {
-    p {
-      font-size: 12px;
-      color: #ffff;
-      margin: 0;
-    }
-
-    .Caps-lock {
-      font-weight: bold;
-    }
+  i {
+    font-size: 35px;
+    color: #ffffff;
+    margin: 0 auto;
   }
 `;

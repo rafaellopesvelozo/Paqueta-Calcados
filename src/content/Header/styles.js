@@ -10,53 +10,40 @@ export const headerStyle = styled.header`
     cursor: pointer;
     text-decoration: none;
   }
+`;
 
-  .Buy {
-    padding: 0 10%;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
+export const Buy = styled.nav`
+  padding: 0 10%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 4rem;
 
-    img {
-      width: 1remx;
-    }
+  img {
+    width: 1remx;
   }
+`;
+export const Enter = styled.div`
+  display: flex;
+  justify-content: space-between;
+  gap: 4rem;
 
-  .navigation {
-    nav {
-      padding: 1rem 10%;
+  .number-buy {
+    position: relative;
+    span {
+      position: absolute;
       display: flex;
       align-items: center;
-      justify-content: space-between;
-    }
-
-    a {
-      cursor: pointer;
-    }
-  }
-
-  .Buy .enter {
-    display: flex;
-    justify-content: space-between;
-    gap: 4rem;
-
-    .number-buy {
-      position: relative;
-      span {
-        position: absolute;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        left: 6px;
-        top: -14px;
-        height: 20px;
-        width: 20px;
-        padding: 5px;
-        border-radius: 50%;
-        background-color: #fcad12;
-        color: #ffffff;
-        font-size: 12px;
-      }
+      justify-content: center;
+      left: 6px;
+      top: -14px;
+      height: 20px;
+      width: 20px;
+      padding: 5px;
+      border-radius: 50%;
+      background-color: #fcad12;
+      color: #ffffff;
+      font-size: 12px;
     }
   }
 `;
@@ -73,9 +60,23 @@ export const headerHelp = styled.nav`
     cursor: pointer;
     color: #ffff;
   }
+`;
 
-  .talk {
+export const Talk = styled.nav`
+  display: flex;
+  gap: 4rem;
+`;
+
+export const Navigation = styled.nav`
+  nav {
+    padding: 1rem 10%;
     display: flex;
-    gap: 4rem;
+
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  a {
+    cursor: pointer;
   }
 `;

@@ -33,6 +33,7 @@ export const Button = Styled.div`
     transition: all 1s;
     color: #ffff;
   }
+  
   .button-buyItem{
     width: 257px;
     height: 46px;

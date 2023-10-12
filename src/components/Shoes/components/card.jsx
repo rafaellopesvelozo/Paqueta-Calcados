@@ -1,9 +1,13 @@
 import React, { useState, useContext } from "react";
+
+import { ContainerProducts, ImgProducts, soldOutProduct } from "../styles";
 import { formatCurrency } from "../../../utils/format";
-import AppContext from "../../../context/AppContext";
 import { Link } from "react-router-dom";
+//import { localStorageAddUser } from "../../../utils/localStorage";
+
+import AppContext from "../../../context/AppContext";
 import Button from "../../Button";
-import { localStorageAddUser } from "../../../utils/localStorage";
+
 export const ShoesIndex = ({ shoesItem }) => {
   const { cartItem, setCartItem, setProducts, cartWishList, setCartWishList } =
     useContext(AppContext);
@@ -31,9 +35,10 @@ export const ShoesIndex = ({ shoesItem }) => {
   const pageProducts = (shoesItem) => {
     setProducts([shoesItem]);
   };
+
   return (
-    <div className="container_products" key={shoesItem.name}>
-      <div className="img_product">
+    <ContainerProducts key={shoesItem.name}>
+      <ImgProducts>
         {shoesItem.soldout === true && (
           <div className="sold_out_product">
             <p>PRODUTO ESGOTADO</p>
@@ -55,7 +60,7 @@ export const ShoesIndex = ({ shoesItem }) => {
             alt="imagem do produto"
           />
         </Link>
-      </div>
+      </ImgProducts>
 
       <p>{shoesItem.name}</p>
       <p>{formatCurrency(shoesItem.price.value)}</p>
@@ -68,6 +73,7 @@ export const ShoesIndex = ({ shoesItem }) => {
           <p>OU 10X {formatCurrency(shoesItem.price.value / 10)}</p>
         )}
       </div>
+
       <div>
         {shoesItem.soldout == true ? (
           <Button
@@ -91,6 +97,6 @@ export const ShoesIndex = ({ shoesItem }) => {
           </Button>
         )}
       </div>
-    </div>
+    </ContainerProducts>
   );
 };

@@ -1,20 +1,19 @@
-import * as styled from "./styles";
-import Logo from "../../assets/Header/logo.jpg";
+import * as S from "./styles";
 import { Link } from "react-router-dom";
 import { useContext } from "react";
 import AppContext from "../../context/AppContext";
+import Logo from "../../assets/Header/logo.jpg";
 
 const Header = () => {
   const { cartItem, cartWishList } = useContext(AppContext);
   return (
     <>
-      <styled.headerStyle>
-        <styled.headerHelp>
+      <S.headerStyle>
+        <S.headerHelp>
           <div className="online">
             <p>Loja de Calçados e Moda Online </p>
           </div>
-
-          <div className=" talk">
+          <S.Talk>
             <div>
               <a>
                 <i className="bi bi-headphones"></i> Fale conosco
@@ -25,13 +24,13 @@ const Header = () => {
                 <i className="bi bi-geo-alt"></i> Econtrar uma loja fisica
               </a>
             </div>
-          </div>
-        </styled.headerHelp>
+          </S.Talk>
+        </S.headerHelp>
 
-        <div className="Buy">
+        <S.Buy>
           <img src={Logo} alt="Logotipo Paguetá" />
 
-          <nav className="enter">
+          <S.Enter>
             <Link to="WishList" className="number-buy">
               <div>
                 {cartWishList.length ? <span>{cartWishList.length}</span> : ""}
@@ -49,10 +48,10 @@ const Header = () => {
             <a>
               <i className="bi bi-person"></i> Entrar
             </a>
-          </nav>
-        </div>
+          </S.Enter>
+        </S.Buy>
 
-        <div className="navigation">
+        <S.Navigation>
           <nav>
             <a>Novidades</a>
             <a>Feminino</a>
@@ -61,8 +60,8 @@ const Header = () => {
             <a>Outlet</a>
             <a>Cashback</a>
           </nav>
-        </div>
-      </styled.headerStyle>
+        </S.Navigation>
+      </S.headerStyle>
     </>
   );
 };

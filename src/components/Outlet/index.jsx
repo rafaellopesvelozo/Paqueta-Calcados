@@ -1,5 +1,17 @@
 import React from "react";
-import * as styled from "./styles";
+import {
+  Article,
+  ContainerOutlet,
+  GradientManWomanAbsolute,
+  GradientMan,
+  GradientWoman,
+  OutletInfoWoman,
+  OutletInfoMan,
+  PaquetaOutletInfo,
+  PaquetaOutletLogo,
+  PaquetaOutletText,
+  PaquetaOutlet,
+} from "./styles";
 
 import Button from "../Button/index.jsx";
 import ImgWoman from "../../assets/Outlet/woman.png";
@@ -8,35 +20,36 @@ import Logo from "../../assets/Header/logo.jpg";
 
 const Outlet = () => {
   return (
-    <styled.Outlet>
-      <article>
-        <div className="gradient-woman">
+    <ContainerOutlet>
+      <Article>
+        <GradientManWomanAbsolute>
           <img src={ImgWoman} alt="" />
-          <div className="gradientWoman">
+          <GradientWoman>
             CALÇADOS <span>FEMININOS</span>{" "}
-          </div>
-        </div>
-        <div className="outlet-info-woman">
+          </GradientWoman>
+        </GradientManWomanAbsolute>
+        <OutletInfoWoman>
           <p>
             Escolher o seu sapato favorito entre nossa <br />
-            <span>variedade de modelos e cores</span> não será uma tarefa <br />fácil,
-            mas o que uma mulher não consegue fazer?
+            <span>variedade de modelos e cores</span> não será uma tarefa <br />
+            fácil, mas o que uma mulher não consegue fazer?
           </p>
           <Button
             theme="price"
             type="button"
             target="blank"
             rel="nopeener noreferer"
-          > 
+          >
             <a href="#">conferir</a>
           </Button>
-        </div>
-      </article>
-      <article>
-        <div className="outlet-info-man">
+        </OutletInfoWoman>
+      </Article>
+      <Article>
+        <OutletInfoMan>
           <p>
-            Tenha em seu guarda roupa sapatos de <br/> qualidade e confortáveis, para
-            o dia a dia,<br/> trabalho e até mesmo para praticar esportes!
+            Tenha em seu guarda roupa sapatos de <br /> qualidade e
+            confortáveis, para o dia a dia,
+            <br /> trabalho e até mesmo para praticar esportes!
           </p>
           <Button
             type="button"
@@ -46,30 +59,30 @@ const Outlet = () => {
           >
             <a href="#">Conferir</a>
           </Button>
-        </div>
-        <div className="gradient-man">
+        </OutletInfoMan>
+        <GradientManWomanAbsolute>
           <img src={ImgMan} alt="Imagem do homen vestindo sapato" />
-          <div className="gradientMan">
+          <GradientMan>
             CALÇADOS <span>MASCULINO</span>{" "}
-          </div>
-        </div>
-      </article>
-      <section className="Paqueta-Outlet">
+          </GradientMan>
+        </GradientManWomanAbsolute>
+      </Article>
+      <PaquetaOutlet>
         <div className="row"></div>
-        <div className="paqueta-Outlet-info">
-          <div className="paqueta-Outlet-logo">
+        <PaquetaOutletInfo>
+          <PaquetaOutletLogo>
             <img src={Logo} alt="logomarca Paquetá" />
             <p>OUTLET</p>
-          </div>
-          <div className="Paqueta-outlet-text">
+          </PaquetaOutletLogo>
+          <PaquetaOutletText>
             <p>
               Você também pode escolher o seu novo sapato{" "}
               <span>favorito de acordo com a sua numeração.</span>
             </p>
-          </div>
-        </div>
-      </section>
-    </styled.Outlet>
+          </PaquetaOutletText>
+        </PaquetaOutletInfo>
+      </PaquetaOutlet>
+    </ContainerOutlet>
   );
 };
 export default Outlet;
