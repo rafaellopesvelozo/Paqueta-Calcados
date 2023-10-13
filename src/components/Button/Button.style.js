@@ -23,6 +23,7 @@ export const ButtonRemove = styled(ButtonPrice)`
 export const ButtonSoldout = styled(ButtonPrice)`
   background-color: gray;
   border-radius: 5px;
+  width: 100%;
   transition: all 1s;
 `;
 

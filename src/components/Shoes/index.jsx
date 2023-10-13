@@ -1,15 +1,27 @@
-import React, { useContext, useEffect} from "react";
+import React, { useContext, useEffect, useState } from "react";
 import * as S from "./styles";
-
-import AppContext from "../../context/AppContext";
-
 //import { Link } from "react-router-dom";
 import { Shoes_Api } from "../../services/api";
 import { numberShoes } from "../../utils/numberShoes";
 import { ShoesIndex } from "../../components/Shoes/components/card";
+//import Slider from "react-slick";
+import AppContext from "../../context/AppContext";
 
 const Shoes = () => {
+  /* 
+  const settings = {
+    dots: true,
+    infinite: true,
+    speed: 500,
+    slidesToShow: 4,
+    slidesToScroll: 1,
+    //centerMode: false,
+    //variableWidth: true,
+    slidesToScroll: 1,
+  };
+*/
   const { shoes, setShoes } = useContext(AppContext);
+  const [activeIndex, setActiveIndex] = useState(0);
 
   useEffect(() => {
     try {
@@ -21,11 +33,15 @@ const Shoes = () => {
     }
   }, []);
 
-  let activeShoes = 0;
-  const left = (direction) => {
-    activeShoes = activeShoes + direction;
-    const shoesCarousel = shoes[activeShoes];
-    //console.log(shoesCarousel, activeShoes);
+  const updateIndex = (newIndex) => {
+    if (newIndex < 0) {
+      newIndex = 0;
+    } else if (newIndex == shoes.length) {
+      newIndex = shoes.length - 1;
+    }
+    setActiveIndex(newIndex);
+
+    console.log(newIndex);
   };
   const listNumbers = numberShoes.map((n) => <li>{n}</li>);
 
@@ -48,13 +64,21 @@ const Shoes = () => {
         <S.Section>
           {shoes.length === 0 && <p>CARREGANDO . . .</p>}
           {shoes.map((shoesItem) => {
-            return <ShoesIndex shoesItem={shoesItem} />;
+            return (
+              <ShoesIndex activeIndex={activeIndex} shoesItem={shoesItem} />
+            );
           })}
         </S.Section>
         <S.BtnCarroussel>
-          <div className="left" onClick={() => left(1)}></div>
+          <div
+            className="left"
+            onClick={() => updateIndex(activeIndex - 1)}
+          ></div>
           <div className="center"></div>
-          <div className="right" onClick={() => left(-1)}></div>
+          <div
+            className="right"
+            onClick={() => updateIndex(activeIndex + 1)}
+          ></div>
         </S.BtnCarroussel>
       </div>
     </S.ContainerShoes>

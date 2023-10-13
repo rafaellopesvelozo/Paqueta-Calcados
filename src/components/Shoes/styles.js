@@ -17,20 +17,26 @@ export const ContainerShoes = styled.section`
   .Warn {
     font-size: 12px;
   }
+
+  .a {
+    background-color: gray;
+  }
 `;
 
 export const Section = styled.section`
-  display: flex;
-  border-radius: 3px;
   max-height: 500px;
+  display: flex;
+  justify-content: flex-start;
+  border-radius: 3px;
   overflow: hidden;
-  padding: 30px 0;
   gap: 20px;
+  padding: 30px 0;
 `;
 
 export const ContainerProducts = styled.div`
-  max-width: 220px;
+  width: 220px;
   border-radius: 3px;
+
   padding: 10px;
   display: flex;
   flex-direction: column;
@@ -46,8 +52,6 @@ export const ContainerProducts = styled.div`
     font-weight: 600;
     font-size: 20px;
   }
-
-  transform: translateX(-${(props) => 200 * props.left} "px");
 `;
 
 export const ImgProducts = styled.div`

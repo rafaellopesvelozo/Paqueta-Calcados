@@ -7,7 +7,7 @@ import { ButtonBuy, ButtonSoldout } from "../../Button/Button.style";
 //import { localStorageAddUser } from "../../../utils/localStorage";
 import AppContext from "../../../context/AppContext";
 
-export const ShoesIndex = ({ shoesItem}) => {
+export const ShoesIndex = ({ shoesItem, activeIndex }) => {
   const { cartItem, setCartItem, setProducts, cartWishList, setCartWishList } =
     useContext(AppContext);
 
@@ -35,9 +35,11 @@ export const ShoesIndex = ({ shoesItem}) => {
     setProducts([shoesItem]);
   };
 
-  
   return (
-    <S.ContainerProducts key={shoesItem.name}>
+    <S.ContainerProducts
+      style={{ transform: `translate(-${activeIndex * 230}px)` }}
+      key={shoesItem.name}
+    >
       <S.ImgProducts>
         {shoesItem.soldout === true && (
           <div className="sold_out_product">
