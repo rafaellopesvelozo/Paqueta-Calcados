@@ -8,18 +8,6 @@ import { ShoesIndex } from "../../components/Shoes/components/card";
 import AppContext from "../../context/AppContext";
 
 const Shoes = () => {
-  /* 
-  const settings = {
-    dots: true,
-    infinite: true,
-    speed: 500,
-    slidesToShow: 4,
-    slidesToScroll: 1,
-    //centerMode: false,
-    //variableWidth: true,
-    slidesToScroll: 1,
-  };
-*/
   const { shoes, setShoes } = useContext(AppContext);
   const [activeIndex, setActiveIndex] = useState(0);
 
@@ -40,9 +28,10 @@ const Shoes = () => {
       newIndex = shoes.length - 1;
     }
     setActiveIndex(newIndex);
-
     console.log(newIndex);
+    
   };
+
   const listNumbers = numberShoes.map((n) => <li>{n}</li>);
 
   return (

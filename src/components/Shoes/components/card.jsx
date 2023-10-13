@@ -1,4 +1,4 @@
-import React, { useState, useContext } from "react";
+import React, { useState, useContext, useRef } from "react";
 import * as S from "../styles";
 
 import { formatCurrency } from "../../../utils/format";
@@ -38,7 +38,7 @@ export const ShoesIndex = ({ shoesItem, activeIndex }) => {
   return (
     <S.ContainerProducts
       style={{
-        transform: `translate(-${activeIndex * 230}px)`,
+        transform: `translate(-${activeIndex * 270}px)`,
         transition: "all .5s ease-in-out",
       }}
       key={shoesItem.name}

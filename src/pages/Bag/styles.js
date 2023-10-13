@@ -66,7 +66,7 @@ export const ContainerBag = styled.section`
             font-weight: 600;
           }
           .cart-item-tittle {
-            font-size: 25px;
+            font-size: clamp(0.5rem, 25px, 1.563);
           }
           .cart-item-quantidade {
             display: flex;
@@ -101,4 +101,3 @@ export const ContainerBag = styled.section`
     }
   }
 `;
-

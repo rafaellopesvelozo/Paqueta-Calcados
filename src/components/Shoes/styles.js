@@ -20,22 +20,22 @@ export const ContainerShoes = styled.section`
 `;
 
 export const Section = styled.section`
-  max-height: 500px;
+  width: 100%;
   display: flex;
-  justify-content: flex-start;
-  border-radius: 3px;
-  overflow: hidden;
   gap: 20px;
+  overflow: hidden;
+  max-height: 500px;
+  border-radius: 3px;
   padding: 30px 0 30px 15px;
 `;
 
 export const ContainerProducts = styled.div`
-  width: 220px;
-  border-radius: 3px;
-  padding: 10px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  width: 250px;
+  border-radius: 3px;
+  padding: 10px;
   box-shadow: 0px 0px 23px 0px rgba(0, 0, 0, 0.1);
 
   p {
@@ -81,8 +81,8 @@ export const ImgProducts = styled.div`
   }
 
   img {
-    max-width: 200px;
-    max-height: 200px;
+    width: 240px;
+    height: 200px;
   }
 `;
 
