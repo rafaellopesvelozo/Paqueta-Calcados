@@ -37,7 +37,10 @@ export const ShoesIndex = ({ shoesItem, activeIndex }) => {
 
   return (
     <S.ContainerProducts
-      style={{ transform: `translate(-${activeIndex * 230}px)` }}
+      style={{
+        transform: `translate(-${activeIndex * 230}px)`,
+        transition: "all .5s ease-in-out",
+      }}
       key={shoesItem.name}
     >
       <S.ImgProducts>

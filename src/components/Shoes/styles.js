@@ -14,11 +14,9 @@ export const ContainerShoes = styled.section`
     }
   }
 
-  .Warn{
+  .Warn {
     font-size: 12px;
-
   }
-
 `;
 
 export const Section = styled.section`
@@ -28,13 +26,12 @@ export const Section = styled.section`
   border-radius: 3px;
   overflow: hidden;
   gap: 20px;
-  padding: 30px 0;
+  padding: 30px 0 30px 15px;
 `;
 
 export const ContainerProducts = styled.div`
   width: 220px;
   border-radius: 3px;
-
   padding: 10px;
   display: flex;
   flex-direction: column;
@@ -63,6 +60,7 @@ export const ImgProducts = styled.div`
     font-size: 25px;
     color: #cf5d00;
   }
+
   .bi-heart-fill {
     color: #cf5d00;
     transition: all 0.2s linear;
@@ -75,9 +73,6 @@ export const ImgProducts = styled.div`
     display: flex;
     justify-content: center;
     align-items: center;
-    i{
-      display: none;
-    }
 
     p {
       color: #ffff;

@@ -74,7 +74,10 @@ const Shoes = () => {
             className="left"
             onClick={() => updateIndex(activeIndex - 1)}
           ></div>
-          <div className="center"></div>
+          <div
+            className="center"
+            onClick={() => updateIndex(shoes.length / 2)}
+          ></div>
           <div
             className="right"
             onClick={() => updateIndex(activeIndex + 1)}
