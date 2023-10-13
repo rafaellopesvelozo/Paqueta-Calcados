@@ -14,13 +14,11 @@ export const ContainerShoes = styled.section`
     }
   }
 
-  .Warn {
+  .Warn{
     font-size: 12px;
+
   }
 
-  .a {
-    background-color: gray;
-  }
 `;
 
 export const Section = styled.section`
@@ -77,6 +75,9 @@ export const ImgProducts = styled.div`
     display: flex;
     justify-content: center;
     align-items: center;
+    i{
+      display: none;
+    }
 
     p {
       color: #ffff;

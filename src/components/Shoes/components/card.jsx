@@ -49,7 +49,9 @@ export const ShoesIndex = ({ shoesItem, activeIndex }) => {
 
         <div onClick={() => wishList(shoesItem)}>
           {!heartIsActive ? (
-            <i className="bi bi-heart"></i>
+            <i
+              className={`${shoesItem.soldout === true ? "" : "bi-heart"}`}
+            ></i>
           ) : (
             <i className="bi bi-heart-fill"></i>
           )}
