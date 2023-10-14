@@ -18,7 +18,7 @@ export const WishListContainer = styled.section`
   i {
     color: #cf5d00;
   }
-  
+
   .bi-heart-fill {
     color: #cf5d00;
     transition: all 0.2s linear;
@@ -83,8 +83,13 @@ export const WishListContainer = styled.section`
       }
     }
     > p {
+      font-size: 20px;
       font-family: "Montserrat", sans-serif;
       font-weight: 600;
+
+      > span {
+        font-weight: normal;
+      }
     }
   }
 `;

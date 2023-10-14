@@ -1,10 +1,10 @@
-import React from "react";
+import React, { useRef, useState } from "react";
 import * as Styled from "./styles";
 import { useContext } from "react";
 import { Link } from "react-router-dom";
 import { formatCurrency } from "../../utils/format";
 import { ButtonPrice } from "../../components/Button/Button.style";
-
+import { ChoiceNumber } from "../../utils/numberShoes";
 import AppContext from "../../context/AppContext";
 import img1 from "../../assets/product/image1.jpg";
 import img2 from "../../assets/product/image2.jpg";
@@ -14,6 +14,8 @@ import Modal from "./Modal/Modal";
 
 const Product = () => {
   const { products, modalActive, setModalActive } = useContext(AppContext);
+  const [indexN, setIndexN] = useState(0);
+
 
   function price(item) {
     let preço = item.price.value;
@@ -21,6 +23,8 @@ const Product = () => {
     let total = preço - preço * (discount / 100);
     return total;
   }
+
+  //const newChoiceNumber = ChoiceNumber.map((n, index) => n);
 
   return (
     <Styled.ContainerProducts>
@@ -36,11 +40,11 @@ const Product = () => {
                 <div className="share">
                   <p>Compartilhe</p>
                   <div className="share-icons">
-                    <i class="bi bi-instagram"></i>
-                    <i class="bi bi-facebook"></i>
-                    <i class="bi bi-twitter"></i>
-                    <i class="bi bi-youtube"></i>
-                    <i class="bi bi-pinterest"></i>
+                    <i className="bi bi-instagram"></i>
+                    <i className="bi bi-facebook"></i>
+                    <i className="bi bi-twitter"></i>
+                    <i className="bi bi-youtube"></i>
+                    <i className="bi bi-pinterest"></i>
                   </div>
                 </div>
               </div>
@@ -72,14 +76,16 @@ const Product = () => {
                 <div className="products-number">
                   <p className="choie-number">Escolha a numeração: </p>
                   <ul>
-                    <li>34</li>
-                    <li>35</li>
-                    <li>36</li>
-                    <li>37</li>
-                    <li>38</li>
-                    <li>39</li>
-                    <li>40</li>
+                    {ChoiceNumber.map((n, index) => (
+                      <li
+                        className={`${index ? "" : "a"}`}
+                      
+                      >
+                        {n}
+                      </li>
+                    ))}
                   </ul>
+
                   <p
                     onClick={() => setModalActive(true)}
                     className="size-guide"
@@ -112,7 +118,9 @@ const Product = () => {
                     <p>R$ 279,99</p>
                     <p>ou 10X R$ 27,99</p>
                   </div>
-                  <div>btn</div>
+                  <div className="btn">
+                    <ButtonPrice>Comprar</ButtonPrice>
+                  </div>
                 </div>
                 <div className="item-carousel">
                   <div className="img-carousel">
@@ -126,7 +134,10 @@ const Product = () => {
                     <p>R$ 179,99</p>
                     <p>ou 10X R$ 17,99</p>
                   </div>
-                  <div>btn</div>
+
+                  <div className="btn">
+                    <ButtonPrice>Comprar</ButtonPrice>
+                  </div>
                 </div>
                 <div className="item-carousel">
                   <div className="img-carousel">
@@ -140,7 +151,9 @@ const Product = () => {
                     <p>R$ 189,99</p>
                     <p>ou 10X R$ 18,99</p>
                   </div>
-                  <div>btn</div>
+                  <div className="btn">
+                    <ButtonPrice>Comprar</ButtonPrice>
+                  </div>
                 </div>
                 <div className="item-carousel">
                   <div className="img-carousel">
@@ -154,7 +167,9 @@ const Product = () => {
                     <p>R$ 199,99</p>
                     <p>ou 10X R$ 19,99</p>
                   </div>
-                  <div>btn</div>
+                  <div className="btn">
+                    <ButtonPrice>Comprar</ButtonPrice>
+                  </div>
                 </div>
               </div>
             </section>

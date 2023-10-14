@@ -10,7 +10,6 @@ import AppContext from "../../context/AppContext";
 const Shoes = () => {
   const { shoes, setShoes } = useContext(AppContext);
   const [activeIndex, setActiveIndex] = useState(0);
-  const [btnActive, setBtnActive] = useState(false);
 
   const [load, setLoad] = useState(true);
 
@@ -29,11 +28,10 @@ const Shoes = () => {
   const updateIndex = (newIndex) => {
     if (newIndex < 0) {
       newIndex = 0;
-    } else if (newIndex == shoes.length) {
+    } else if (newIndex == shoes.length -1) {
       newIndex = shoes.length - 1;
     }
     setActiveIndex(newIndex);
-    console.log(newIndex);
   };
 
   const listNumbers = numberShoes.map((n) => <li>{n}</li>);

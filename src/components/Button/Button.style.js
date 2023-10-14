@@ -4,6 +4,7 @@ import ButtonStyled from "./Button";
 export const ButtonPrice = styled(ButtonStyled)`
   width: 257px;
   height: 46px;
+  font-size: 20px;
   cursor: pointer;
   background: linear-gradient(to top, #f99500, #ffcd29 100%);
   border-radius: 5px;
@@ -25,10 +26,13 @@ export const ButtonRemove = styled(ButtonPrice)`
 `;
 
 export const ButtonSoldout = styled(ButtonPrice)`
-  background-color: gray;
   border-radius: 5px;
   width: 100%;
   transition: all 1s;
+  background: gray;
+  &:hover {
+    background: gray;
+  }
 `;
 
 export const ButtonBuy = styled.div`
@@ -40,6 +44,6 @@ export const ButtonBuy = styled.div`
   height: 46px;
   width: 100%;
   border-radius: 5px;
-  font-size: 15px;
+  font-size: 18px;
   cursor: pointer;
 `;

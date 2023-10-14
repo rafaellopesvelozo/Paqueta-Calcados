@@ -15,7 +15,8 @@ export const ContainerShoes = styled.section`
   }
 
   .Warn {
-    font-size: 12px;
+    font-size: 13px;
+    font-weight: 600;
   }
 `;
 
@@ -51,7 +52,7 @@ export const ContainerProducts = styled.div`
   width: 250px;
   border-radius: 3px;
   padding: 10px;
-  box-shadow: 0px 0px 23px 0px rgba(0, 0, 0, 0.1);
+  box-shadow: 0px 0px 15px 0px rgba(0, 0, 0, 0.1);
 
   p {
     font-size: 14px;
@@ -74,6 +75,7 @@ export const ImgProducts = styled.div`
     top: 10px;
     font-size: 25px;
     color: #cf5d00;
+    z-index: 99;
   }
 
   .bi-heart-fill {
@@ -98,10 +100,6 @@ export const ImgProducts = styled.div`
   img {
     width: 240px;
     height: 200px;
-
-    &:hover {
-      transform: scale(1.1);
-    }
   }
 `;
 

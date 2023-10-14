@@ -6,7 +6,6 @@ import { ButtonBuy, ButtonSoldout } from "../../Button/Button.style";
 //import { localStorageAddUser } from "../../../utils/localStorage";
 import AppContext from "../../../context/AppContext";
 
-
 export const ShoesIndex = ({ shoesItem, activeIndex }) => {
   const { cartItem, setCartItem, setProducts, cartWishList, setCartWishList } =
     useContext(AppContext);
@@ -91,7 +90,7 @@ export const ShoesIndex = ({ shoesItem, activeIndex }) => {
             onClick={() => handleAddCart(shoesItem)}
             className={`${!existingItem ? "comprar" : "Addsacola"}`}
           >
-            {!existingItem ? "comprar" : "adicionado a sacola"}
+            {!existingItem ? "Comprar" : "Adicionado a sacola"}
           </ButtonBuy>
         )}
       </div>

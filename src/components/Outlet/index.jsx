@@ -27,7 +27,7 @@ const Outlet = () => {
             target="blank"
             rel="nopeener noreferer"
           >
-            <a href="#">conferir</a>
+            <a href="#">Conferir</a>
           </ButtonPrice>
         </S.OutletInfoWoman>
       </S.Article>

@@ -200,6 +200,24 @@ export const ContainerProducts = styled.section`
         }
         ul {
           display: flex;
+          justify-content: space-between;
+          margin: 10px 0;
+          .a {
+              background-color: red;
+            }
+
+          li {
+            border: 1px solid #000000;
+            padding: 10px;
+            cursor: pointer;
+            display: flex;
+            justify-content: center;
+            border-radius: 5px;
+
+            .a {
+              background-color: red;
+            }
+          }
         }
         .size-guide {
           font-size: 14px;
@@ -232,11 +250,18 @@ export const ContainerProducts = styled.section`
       margin-top: 15px;
       gap: 20px;
       justify-content: space-between;
+
       .item-carousel {
-        border: 1px solid red;
         width: 220px;
         flex-wrap: wrap;
         padding: 10px;
+        border-radius: 10px;
+        box-shadow: 0px 0px 15px 0px rgba(0, 0, 0, 0.2);
+
+        &:hover {
+          transform: scale(1.01);
+        }
+
         .img-carousel {
           img {
             width: 100%;
@@ -250,14 +275,21 @@ export const ContainerProducts = styled.section`
             font-weight: 500;
           }
         }
-        .price-item{
-          p:nth-child(1){
+        .price-item {
+          p:nth-child(1) {
             margin: 10px 0;
             font-weight: 600;
           }
-          p:nth-child(2){
-            font-family: 'Montserrat', sans-serif;
+          p:nth-child(2) {
+            font-family: "Montserrat", sans-serif;
             font-weight: 400;
+          }
+        }
+        .btn {
+          padding: 0;
+          width: 100% !important;
+          button {
+            width: 100%;
           }
         }
       }

@@ -5,7 +5,8 @@ import { formatCurrency } from "../../utils/format";
 import AppContext from "../../context/AppContext";
 
 const WishList = () => {
-  const { cartWishList, setCartWishList, heartIsActive } = useContext(AppContext);
+  const { cartWishList, setCartWishList, heartIsActive } =
+    useContext(AppContext);
 
   const removeItem = (item) => {
     const id = item.id;
@@ -29,8 +30,8 @@ const WishList = () => {
             <div className="Container-img">
               <img src={item.image} alt="imagem do prduto" />
               <div className="bg-hover"></div>
-              <div onClick={()=> removeItem(item)} className="icon-heart">
-                {!heartIsActive ? (
+              <div onClick={() => removeItem(item)} className="icon-heart">
+                {heartIsActive ? (
                   <i class="bi bi-heart"></i>
                 ) : (
                   <i class="bi bi-heart-fill"></i>
@@ -42,7 +43,9 @@ const WishList = () => {
                 <h2>{item.name}</h2>
                 <p>id: {item.id}</p>
               </div>
-              <p>Preço: {formatCurrency(item.price.value)}</p>
+              <p>
+                Preço: <span>{formatCurrency(item.price.value)}</span>{" "}
+              </p>
             </div>
           </div>
         </section>
