@@ -9,6 +9,10 @@ export const ButtonPrice = styled(ButtonStyled)`
   border-radius: 5px;
   transition: all 0.5s;
   color: #ffff;
+
+  &:hover {
+    background: linear-gradient(to top, #ff8c00, #ffa500);
+  }
 `;
 
 export const ButtonRemove = styled(ButtonPrice)`

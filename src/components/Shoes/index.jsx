@@ -10,11 +10,16 @@ import AppContext from "../../context/AppContext";
 const Shoes = () => {
   const { shoes, setShoes } = useContext(AppContext);
   const [activeIndex, setActiveIndex] = useState(0);
+  const [btnActive, setBtnActive] = useState(false);
+
+  const [load, setLoad] = useState(true);
 
   useEffect(() => {
     try {
+      setLoad(load);
       Shoes_Api.get("api/paqueta/shoes").then(({ data }) => {
         setShoes(data);
+        setLoad(false);
       });
     } catch (error) {
       console.log(error);
@@ -29,7 +34,6 @@ const Shoes = () => {
     }
     setActiveIndex(newIndex);
     console.log(newIndex);
-    
   };
 
   const listNumbers = numberShoes.map((n) => <li>{n}</li>);
@@ -51,13 +55,16 @@ const Shoes = () => {
         </S.HighlightCheck>
 
         <S.Section>
-          {shoes.length === 0 && <p>CARREGANDO . . .</p>}
+          {shoes.length === 0 && (
+            <i className={`${load ? "bi-arrow-clockwise" : ""}`}></i>
+          )}
           {shoes.map((shoesItem) => {
             return (
               <ShoesIndex activeIndex={activeIndex} shoesItem={shoesItem} />
             );
           })}
         </S.Section>
+
         <S.BtnCarroussel>
           <div
             className="left"

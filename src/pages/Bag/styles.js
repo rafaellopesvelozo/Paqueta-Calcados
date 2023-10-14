@@ -33,6 +33,8 @@ export const ContainerBag = styled.section`
         padding: 15px;
         border-bottom: 2px solid #cf5d00;
 
+        
+
         img {
           max-width: 200px;
           max-height: 200px;

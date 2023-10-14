@@ -1,11 +1,11 @@
-import React, { useState, useContext, useRef } from "react";
+import React, { useState, useContext } from "react";
 import * as S from "../styles";
-
 import { formatCurrency } from "../../../utils/format";
 import { Link } from "react-router-dom";
 import { ButtonBuy, ButtonSoldout } from "../../Button/Button.style";
 //import { localStorageAddUser } from "../../../utils/localStorage";
 import AppContext from "../../../context/AppContext";
+
 
 export const ShoesIndex = ({ shoesItem, activeIndex }) => {
   const { cartItem, setCartItem, setProducts, cartWishList, setCartWishList } =

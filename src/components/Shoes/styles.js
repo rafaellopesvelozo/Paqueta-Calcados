@@ -27,6 +27,21 @@ export const Section = styled.section`
   max-height: 500px;
   border-radius: 3px;
   padding: 30px 0 30px 15px;
+
+  .bi-arrow-clockwise {
+    font-size: 50px;
+    margin: 0 auto;
+    animation: spin 1s linear;
+  }
+
+  @keyframes spin {
+    from {
+      transform: rotate(0deg);
+    }
+    to {
+      transform: rotate(360deg);
+    }
+  }
 `;
 
 export const ContainerProducts = styled.div`
@@ -83,6 +98,10 @@ export const ImgProducts = styled.div`
   img {
     width: 240px;
     height: 200px;
+
+    &:hover {
+      transform: scale(1.1);
+    }
   }
 `;
 
@@ -99,13 +118,20 @@ export const BtnCarroussel = styled.div`
   .right {
     width: 50px;
     height: 10px;
-    background-color: red;
+    background-color: #c3c3c3;
+    border-radius: 10px;
     cursor: pointer;
+
+    &:hover {
+      background-color: #383838;
+      transition: all.2s linear;
+    }
   }
 `;
 
 export const HighlightCheck = styled.div`
   margin: 20px 0;
+
   div:nth-child(2) {
     display: flex;
     justify-content: flex-end;
