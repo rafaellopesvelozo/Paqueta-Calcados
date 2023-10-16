@@ -17,10 +17,12 @@ export const Buy = styled.nav`
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 4rem;
 
   img {
-    width: 1remx;
+    width: 15rem;
+    @media (min-width: 768px) and (max-width: 991px) {
+      width: 13rem;
+    }
   }
 `;
 export const Enter = styled.div`
@@ -28,8 +30,13 @@ export const Enter = styled.div`
   justify-content: space-between;
   gap: 4rem;
 
+  @media (min-width: 768px) and (max-width: 991px) {
+    gap: 1rem;
+  }
+
   .number-buy {
     position: relative;
+
     span {
       position: absolute;
       display: flex;
@@ -65,6 +72,10 @@ export const headerHelp = styled.nav`
 export const Talk = styled.nav`
   display: flex;
   gap: 4rem;
+
+  @media (min-width: 768px) and (max-width: 991px) {
+    gap: 1rem;
+  }
 `;
 
 export const Navigation = styled.nav`

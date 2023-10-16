@@ -33,13 +33,10 @@ export const ShoesIndex = ({ shoesItem, activeIndex }) => {
   const pageProducts = (shoesItem) => {
     setProducts([shoesItem]);
   };
-
+  
   return (
     <S.ContainerProducts
-      style={{
-        transform: `translate(-${activeIndex * 270}px)`,
-        transition: "all .5s ease-in-out",
-      }}
+     
       key={shoesItem.name}
     >
       <S.ImgProducts>

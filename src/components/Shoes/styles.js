@@ -21,13 +21,15 @@ export const ContainerShoes = styled.section`
 `;
 
 export const Section = styled.section`
-  width: 100%;
   display: flex;
-  gap: 20px;
   overflow: hidden;
-  max-height: 500px;
+  align-items: center;
   border-radius: 3px;
-  padding: 30px 0 30px 15px;
+  padding: 10px;
+
+  .Swiper {
+    padding-bottom: 30px;
+  }
 
   .bi-arrow-clockwise {
     font-size: 50px;
@@ -49,19 +51,30 @@ export const ContainerProducts = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  width: 250px;
+  max-width: 330px;
+  max-height: 400px;
   border-radius: 3px;
   padding: 10px;
-  box-shadow: 0px 0px 15px 0px rgba(0, 0, 0, 0.1);
+  margin: 10px;
+  box-shadow: 0px 0px 15px 0px rgba(0, 0, 0, 0.2);
 
   p {
-    font-size: 14px;
+    font-size: clamp(0.5rem, 1.08vw, 0.875rem);
     margin: 0;
   }
 
   p:nth-child(3) {
     font-weight: 600;
     font-size: 20px;
+  }
+  @media (min-width: 992px) and (max-width: 1199px) {
+    height: 345px;
+  }
+  @media (min-width: 1200px) and (max-width: 1919px) {
+    height: 360px;
+  }
+  @media (min-width: 1920px) {
+    width: 330px;
   }
 `;
 
@@ -76,6 +89,10 @@ export const ImgProducts = styled.div`
     font-size: 25px;
     color: #cf5d00;
     z-index: 99;
+    
+    @media (min-width: 768px) and (max-width: 991px) {
+      font-size: 20px;
+    }
   }
 
   .bi-heart-fill {
@@ -84,6 +101,7 @@ export const ImgProducts = styled.div`
   }
 
   .sold_out_product {
+    position: absolute;
     background-color: #cf5d00;
     height: 25px;
     width: 100%;
@@ -98,8 +116,18 @@ export const ImgProducts = styled.div`
   }
 
   img {
-    width: 240px;
-    height: 200px;
+    width: 100%;
+    height: 180px;
+    @media (min-width: 768px) and (max-width: 991px) {
+      height: 120px;
+    }
+    @media (min-width: 992px) and (max-width: 1199px) {
+      height: 150px;
+    }
+    @media (min-width: 1920px) {
+      width: 100%;
+      height: 220px;
+    }
   }
 `;
 

@@ -7,6 +7,9 @@ export const Logomarcas = styled.div`
 
   h3 {
     font-size: 30px;
+    @media (min-width: 768px) and (max-width: 991px) {
+      font-size: 20px;
+    }
   }
 `;
 
@@ -17,15 +20,26 @@ export const Logotipos = styled.div`
   margin-top: 100px;
 
   img:nth-child(1) {
-    width: 100px;
+    max-width: 100px;
+    @media (min-width: 768px) and (max-width: 991px) {
+      max-width: 50px;
+    }
   }
   img:nth-child(2) {
     max-width: 200px;
     height: 40px;
+    @media (min-width: 768px) and (max-width: 991px) {
+      max-width: 150px;
+      height: 25px;
+    }
   }
   img:nth-child(3),
   img:nth-child(4) {
     max-width: 200px;
+    @media (min-width: 768px) and (max-width: 991px) {
+      max-width: 100px;
+      height: 25px;
+    }
   }
 `;
 
@@ -42,25 +56,36 @@ export const Formulário = styled.form`
     color: #ffffff;
     font-family: "Montserrat", sans-serif;
     font-style: 700;
+
+    @media (min-width: 768px) and (max-width: 991px) {
+      font-size: 25px;
+    }
   }
 `;
 
 export const Email = styled.div`
-  width: 450px;
   display: flex;
   flex-direction: column;
   gap: 20px;
   justify-content: space-between;
+
+  @media (min-width: 768px) and (max-width: 991px) {
+    width: 350px;
+  }
 
   p {
     font-family: "Poppins", sans-serif;
     font-size: 14px;
     color: #ffffff;
   }
+
   .btn-form {
     button {
-      max-width: 230px;
+      width: 45%;
       background: linear-gradient(to bottom, #f99500, #ffcd29 100%);
+      @media (min-width: 768px) and (max-width: 991px) {
+        font-size: 12px;
+      }
     }
   }
 `;
@@ -72,6 +97,10 @@ export const ContainerIputEmail = styled.div`
   input[type="text"]::placeholder,
   input[type="email"]::placeholder {
     color: #ffffff;
+
+    @media (min-width: 768px) and (max-width: 991px) {
+      font-size: 14px;
+    }
   }
 `;
 export const Input = styled.input`
@@ -98,6 +127,10 @@ export const Form = styled.form`
 `;
 export const Label = styled.label`
   color: #ffffff;
+
+  @media (min-width: 768px) and (max-width: 991px) {
+    font-size: 14px;
+  }
 
   input[type="checkbox"] {
     margin-right: 5px;

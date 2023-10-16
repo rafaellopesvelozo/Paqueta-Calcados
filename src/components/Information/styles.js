@@ -15,14 +15,14 @@ export const InfoSection = styled.div`
   gap: 10px;
 
   p {
-    font-size: 13px;
+    font-size: clamp(0.325rem, 1.08vw, 0.813rem);
     color: #ffff;
     margin: 0;
   }
 `;
 export const TextCapsLock = styled.p`
   font-weight: 700;
-`
+`;
 export const Icons = styled.div`
   display: flex;
 
@@ -30,5 +30,9 @@ export const Icons = styled.div`
     font-size: 35px;
     color: #ffffff;
     margin: 0 auto;
+
+    @media (min-width: 992px) and (max-width: 1199px) {
+      font-size: 22px;
+    }
   }
 `;

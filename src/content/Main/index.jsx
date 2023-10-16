@@ -20,7 +20,7 @@ const Main = () => {
           </div>
 
           <div className="btn-price">
-            <ButtonPrice type="button" theme="price">
+            <ButtonPrice type="button">
               <a href="#" target="_blank" rel="nopeener noreferer">
                 Aproveite
               </a>

@@ -16,7 +16,6 @@ const Product = () => {
   const { products, modalActive, setModalActive } = useContext(AppContext);
   const [indexN, setIndexN] = useState(0);
 
-
   function price(item) {
     let preço = item.price.value;
     let discount = item.price.discount * 100;
@@ -24,7 +23,9 @@ const Product = () => {
     return total;
   }
 
-  //const newChoiceNumber = ChoiceNumber.map((n, index) => n);
+  const a = (index) => {
+    console.log("a - " + index);
+  };
 
   return (
     <Styled.ContainerProducts>
@@ -77,12 +78,7 @@ const Product = () => {
                   <p className="choie-number">Escolha a numeração: </p>
                   <ul>
                     {ChoiceNumber.map((n, index) => (
-                      <li
-                        className={`${index ? "" : "a"}`}
-                      
-                      >
-                        {n}
-                      </li>
+                      <li onClick={() => a(index == true ? "a": "a")}>{n}</li>
                     ))}
                   </ul>
 

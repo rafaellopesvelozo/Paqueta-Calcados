@@ -18,10 +18,12 @@ export const ButtonPrice = styled(ButtonStyled)`
 
 export const ButtonRemove = styled(ButtonPrice)`
   height: 35px;
-  width: 240px;
-  background: linear-gradient(to top, #ff0000, #ff4e47);
+  width: 180px;
+  background: transparent;
+  font-size: 17px;
+  color: #000000;
   &:hover {
-    background: linear-gradient(to top, #ff0000, #ff1919);
+    background: transparent;
   }
 `;
 

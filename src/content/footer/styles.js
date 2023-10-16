@@ -73,10 +73,17 @@ export const ConteinerFooter = styled.footer`
         flex-direction: column;
         gap: 10px;
         max-width: 190px;
+
+        > div {
+          img {
+            max-width: 30px;
+          }
+        }
       }
     }
   }
   .awards-security {
+    margin-left: 5px;
     div {
       display: flex;
       flex-direction: column;

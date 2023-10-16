@@ -32,23 +32,23 @@ const Header = () => {
           <img src={Logo} alt="Logotipo Paguetá" />
 
           <S.Enter>
-            <Link to="WishList" className="number-buy">
-              <div>
+            <Link to="WishList" >
+              <p className="number-buy">
                 {cartWishList.length ? <span>{cartWishList.length}</span> : ""}
                 <i className="bi bi-heart"></i> Lista de desejos
-              </div>
+              </p>
             </Link>
 
             <Link to="Bag">
-              <div className="number-buy">
+              <p className="number-buy">
                 {cartItem.length ? <span>{cartItem.length}</span> : ""}
                 <i className="bi bi-bag-dash"></i> Sacola
-              </div>
+              </p>
             </Link>
 
-            <a>
+            <p>
               <i className="bi bi-person"></i> Entrar
-            </a>
+            </p>
           </S.Enter>
         </S.Buy>
 

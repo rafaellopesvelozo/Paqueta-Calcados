@@ -48,7 +48,14 @@ export const PaquetaOutletLogo = styled.div`
 export const GradientManWomanAbsolute = styled.div`
   position: relative;
   height: 400px;
-  width: 550px;
+  max-width: 550px;
+
+  @media (min-width: 768px) and (max-width: 991px) {
+    height: 250px;
+  }
+  @media (min-width: 992px) and (max-width: 1199px) {
+    height: 370px;
+  }
 
   img {
     width: 100%;
@@ -67,8 +74,12 @@ export const GradientWoman = styled.div`
   background: linear-gradient(90deg, #f57002 0%, transparent 100%);
   padding: 0 0 30px 30px;
   color: #ffff;
-  font-size: 48px;
+  font-size: clamp(0.2rem, 4.02vw, 3rem);
   text-shadow: 0.1rem 0.1rem 0.2rem #000;
+
+  @media (min-width: 768px) and (max-width: 991px) {
+    font-size: 20px;
+  }
 `;
 
 export const GradientMan = styled(GradientWoman)`
@@ -85,6 +96,7 @@ export const Article = styled.article`
 
 export const OutletInfoMan = styled.div`
   p {
+    font-size: clamp(0.5rem, 2.1vw, 0.875rem);
     font-family: "Montserrat", sans-serif;
   }
   Button {
@@ -100,6 +112,7 @@ export const OutletInfoWoman = styled.div`
   p {
     text-align: right;
     font-family: "Montserrat", sans-serif;
+    font-size: clamp(0.5rem, 1.67vw, 1rem);
     span {
       font-weight: 600;
     }
