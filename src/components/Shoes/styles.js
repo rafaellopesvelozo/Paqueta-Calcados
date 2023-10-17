@@ -89,7 +89,7 @@ export const ImgProducts = styled.div`
     font-size: 25px;
     color: #cf5d00;
     z-index: 99;
-    
+
     @media (min-width: 768px) and (max-width: 991px) {
       font-size: 20px;
     }
@@ -167,6 +167,10 @@ export const HighlightCheck = styled.div`
   }
 `;
 export const NumberList = styled.nav`
+  .numberCheck {
+    border: 1px solid #ff8a29;
+    color: #ff8a29;
+  }
   ul {
     display: flex;
     justify-content: space-between;

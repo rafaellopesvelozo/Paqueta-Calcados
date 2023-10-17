@@ -32,7 +32,7 @@ const Bag = () => {
     }
 
     if (action === "decrease") {
-      if (value === 1) {
+      if (value == 1) {
         return;
       }
       setValue((value) => value - 1);
@@ -80,19 +80,19 @@ const Bag = () => {
                     <div className="cart-item-quantidade">
                       <p className="quantidade">Quantidade:</p>
                       <div className="add-remove">
-                        <div
+                        <button
                           onClick={() => updateItem("decrease")}
                           className="less"
                         >
                           -
-                        </div>
+                        </button>
                         <p>{value}</p>
-                        <div
+                        <button
                           onClick={() => updateItem("increase")}
                           className="more"
                         >
                           +
-                        </div>
+                        </button>
                       </div>
                     </div>
                     <p className="cart-item-price">

@@ -26,6 +26,7 @@ const Shoes = () => {
   const { shoes, setShoes } = useContext(AppContext);
   const [slidePreview, setSlidePreview] = useState(4);
   const [load, setLoad] = useState(true);
+  const [check, setCheck] = useState(null);
 
   useEffect(() => {
     try {
@@ -40,7 +41,6 @@ const Shoes = () => {
   }, []);
 
   useEffect(() => {
-
     function handleResize() {
       if (window.innerWidth < 720) {
         setSlidePreview(2);
@@ -54,12 +54,23 @@ const Shoes = () => {
     };
   }, []);
 
-  const listNumbers = numberShoes.map((n) => <li>{n}</li>);
+  const numberCheck = (index) => {
+    setCheck(index);
+  };
 
   return (
     <S.ContainerShoes>
       <S.NumberList>
-        <ul>{listNumbers}</ul>
+        <ul>
+          {numberShoes.map((n, index) => (
+            <li
+              className={`${check == index ? "numberCheck" : ""}`}
+              onClick={() => numberCheck(index)}
+            >
+              {n}
+            </li>
+          ))}
+        </ul>
       </S.NumberList>
 
       <div className="highlights">

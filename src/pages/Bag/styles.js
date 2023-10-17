@@ -33,8 +33,6 @@ export const ContainerBag = styled.section`
         padding: 15px;
         border-bottom: 2px solid #cf5d00;
 
-        
-
         img {
           max-width: 200px;
           max-height: 200px;
@@ -92,6 +90,9 @@ export const ContainerBag = styled.section`
                 justify-content: center;
                 width: 30px;
                 cursor: pointer;
+                background-color: #a7b3be;
+                border-radius: 10px;
+                color: #ffffff;
               }
             }
           }

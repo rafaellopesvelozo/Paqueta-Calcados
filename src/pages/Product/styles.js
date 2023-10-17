@@ -140,8 +140,13 @@ export const ContainerProducts = styled.section`
       .products-info {
         width: 45%;
         .products-btn {
+
+          .productAdBag{
+              background: #05fa3d;
+            }
           button {
             width: 100%;
+            
           }
         }
       }
@@ -202,9 +207,11 @@ export const ContainerProducts = styled.section`
           display: flex;
           justify-content: space-between;
           margin: 10px 0;
-          .a {
-              background-color: red;
-            }
+
+          .numberProductCheck {
+            border: 1px solid #ff8a29;
+            color: #ff8a29;
+          }
 
           li {
             border: 1px solid #000000;
@@ -213,10 +220,6 @@ export const ContainerProducts = styled.section`
             display: flex;
             justify-content: center;
             border-radius: 5px;
-
-            .a {
-              background-color: red;
-            }
           }
         }
         .size-guide {

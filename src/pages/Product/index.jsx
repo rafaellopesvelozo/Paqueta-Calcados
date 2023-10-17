@@ -13,8 +13,17 @@ import img4 from "../../assets/product/image4.jpg";
 import Modal from "./Modal/Modal";
 
 const Product = () => {
-  const { products, modalActive, setModalActive } = useContext(AppContext);
-  const [indexN, setIndexN] = useState(0);
+  const {
+    products,
+    modalActive,
+    setModalActive,
+    cartItem,
+    setCartItem,
+    heartIsActive,
+  } = useContext(AppContext);
+
+  const [numberProductCheck, setNumberProductCheck] = useState(null);
+  const [productItemBuy, setProductItemBuy] = useState(false);
 
   function price(item) {
     let preço = item.price.value;
@@ -23,10 +32,17 @@ const Product = () => {
     return total;
   }
 
-  const a = (index) => {
-    console.log("a - " + index);
+  const numberProduct = (index) => {
+    setNumberProductCheck(index);
   };
 
+  const BuyProduct = (item) => {
+    const existProduct = cartItem.find((product) => product.id === item.id);
+    if (!existProduct) {
+      setCartItem([...cartItem, item]);
+      setProductItemBuy(!productItemBuy);
+    }
+  };
   return (
     <Styled.ContainerProducts>
       <section>
@@ -35,6 +51,13 @@ const Product = () => {
             <p>
               <Link to="/">Paguetá</Link> &gt; <span>{item.name}</span>
             </p>
+            <div>
+              <i
+                className={`${
+                  !heartIsActive ? "bi bi-heart-fill" : "bi-heart"
+                }`}
+              ></i>
+            </div>
             <div className="container-products-item" key={item.name}>
               <div className="products-img">
                 <img src={item.image} alt="imagem do produto" />
@@ -78,7 +101,16 @@ const Product = () => {
                   <p className="choie-number">Escolha a numeração: </p>
                   <ul>
                     {ChoiceNumber.map((n, index) => (
-                      <li onClick={() => a(index == true ? "a": "a")}>{n}</li>
+                      <li
+                        className={`${
+                          numberProductCheck == index
+                            ? "numberProductCheck"
+                            : ""
+                        }`}
+                        onClick={() => numberProduct(index)}
+                      >
+                        {n}
+                      </li>
                     ))}
                   </ul>
 
@@ -90,7 +122,12 @@ const Product = () => {
                   </p>
                 </div>
                 <div className="products-btn">
-                  <ButtonPrice>COMPRAR</ButtonPrice>
+                  <ButtonPrice
+                    className={`${productItemBuy ? "productAdBag" : ""}`}
+                    onClick={() => BuyProduct(item)}
+                  >
+                    {productItemBuy ? "ADICIONADO A SACOLA" : "COMPRAR"}
+                  </ButtonPrice>
                 </div>
               </div>
             </div>
@@ -173,109 +210,7 @@ const Product = () => {
         ))}
       </section>
 
-      {modalActive == true && (
-        <Modal />
-        /*
-        <div className={`sizes-fixed`}>
-          <div className="container-size">
-            <p onClick={() => setModalActive(false)} className="closeModal">
-              X
-            </p>
-            <div className="guia-de-tamanhos">
-              <div className="título-tamanhos">
-                <p>GUIA DE TAMANHOS</p>
-              </div>
-              <div className="instruções">
-                <p>1</p>
-                <p>
-                  Fique de pé em cima de uma folha
-                  <br /> de papel.
-                </p>
-              </div>
-              <div className="instruções">
-                <p>2</p>
-                <p>
-                  Faça um risco no seu calcanhar e<br /> outro na frente do de
-                  dedão.
-                </p>
-              </div>
-              <div className="instruções">
-                <p>3</p>
-                <p>
-                  Agora é so medir o comprimento
-                  <br /> entre essas duas linhas e pronto.
-                </p>
-              </div>
-              <div className="tamanho-img">
-                <img src={sizeImg} alt="" />
-              </div>
-            </div>
-            <div className="numeros">
-              <div className="título-numeros">
-                <p>
-                  NÚMERO DO <br />
-                  CALÇADO
-                </p>
-                <p>
-                  COMPRIMENTO <br />
-                  DO PÉ
-                </p>
-              </div>
-              <div className="numeros-e-comprimentos">
-                <div className="lista">
-                  <p>33</p>
-                  <p>21,6 - 22,2 cm</p>
-                </div>
-                <div className="lista">
-                  <p>34</p>
-                  <p>22,6 - 22,9 cm</p>
-                </div>
-                <div className="lista">
-                  <p>35</p>
-                  <p>23,0 - 23,6 cm</p>
-                </div>
-                <div className="lista">
-                  <p>36</p>
-                  <p>21,6 - 22,2 cm</p>
-                </div>
-                <div className="lista">
-                  <p>37</p>
-                  <p>23,7 - 24,2 cm</p>
-                </div>
-                <div className="lista">
-                  <p>38</p>
-                  <p>24,9 - 25,5 cm</p>
-                </div>
-                <div className="lista">
-                  <p>39</p>
-                  <p>25,6 - 26,2 cm</p>
-                </div>
-                <div className="lista">
-                  <p>40</p>
-                  <p>26,3 - 26,8 cm</p>
-                </div>
-                <div className="lista">
-                  <p>41</p>
-                  <p>26,9 - 27,5 cm</p>
-                </div>
-                <div className="lista">
-                  <p>42</p>
-                  <p>27,6 - 28,2 cm</p>
-                </div>
-                <div className="lista">
-                  <p>43</p>
-                  <p>28,3 - 28,7 cm</p>
-                </div>
-                <div className="lista">
-                  <p>44</p>
-                  <p>28,8 - 29,4 cm</p>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-         */
-      )}
+      {modalActive == true && <Modal />}
     </Styled.ContainerProducts>
   );
 };
