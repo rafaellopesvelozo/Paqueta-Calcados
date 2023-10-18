@@ -8,7 +8,6 @@ import Update from "./UpdateItem/updateItem";
 const Bag = () => {
   const { cartItem } = useContext(AppContext);
 
- 
 
   return (
     <ContainerBag>

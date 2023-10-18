@@ -9,13 +9,32 @@ import AppContext from "../../../context/AppContext";
 const Update = ({ cart }) => {
   const { cartItem, setCartItem } = useContext(AppContext);
   const [value, setValue] = useState(1);
-
+  const [ramdomCode, setRamdomCode] = useState("");
+  const [ramdomShoe, setramdomShoe] = useState("");
   const handleRemoveItem = (cart) => {
     const id = cart.id;
     const updatedItems = cartItem.filter((item) => item.id !== id);
     setCartItem(updatedItems);
     //localStorageRemoveUser(cart);
   };
+
+  const getRamdomCode = () => {
+    const min = 1234;
+    const max = 99999999;
+    const nRamdom1 = Math.floor(Math.random() * (max - min) + min);
+    setRamdomCode(nRamdom1);
+  };
+
+  const getRamdomNumberShoe = () => {
+    const min = 33;
+    const max = 44;
+    const RamdomNumberShoe = Math.floor(Math.random() * (max - min) + min);
+    setramdomShoe(RamdomNumberShoe);
+  };
+
+  useEffect(() => {
+    getRamdomCode(), getRamdomNumberShoe();
+  }, []);
 
   const updateItem = (action) => {
     if (action === "increase") {
@@ -30,30 +49,15 @@ const Update = ({ cart }) => {
     }
   };
 
-  const getRamdom = () => {
-    const min = 1234;
-    const max = 9999;
-    const nRamdom1 = Math.floor(Math.random() * (max - min) + min);
-    const nRamdom2 = Math.floor(Math.random() * (max - min) + min);
-    return nRamdom1 + "-" + nRamdom2;
-  };
-
-  const NumberShoes = () => {
-    const numMin = 33;
-    const numMax = 44;
-    const numRamdom = Math.floor(Math.random() * (numMax - numMin) + numMin);
-    return numRamdom;
-  };
-
   return (
     <section key={cart.id}>
       <img src={cart.image} alt="imagem da compra" className="cart-item-img" />
       <div className="cart-item-info">
         <div>
           <h3 className="cart-item-tittle">{cart.name}</h3>
-          <p className="cart-item-codigo">Código do produto: {getRamdom()}</p>;
+          <p className="cart-item-codigo">Código do produto: {ramdomCode}</p>
           <p className="cart-item-numeracao">
-            <span>Numeração:</span> {NumberShoes()}
+            <span>Numeração:</span> {ramdomShoe}
           </p>
           <p className="cart-item-cor">
             <span>Cor:</span> Preto
