@@ -4,7 +4,7 @@ export const WishListContainer = styled.section`
   display: flex;
   flex-direction: column;
   gap: 20px;
-  padding: 0 10%;
+  padding: 0 10% 100px;
 
   h3 {
     width: fit-content;

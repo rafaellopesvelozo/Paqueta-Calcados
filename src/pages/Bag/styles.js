@@ -3,7 +3,7 @@ import styled from "styled-components";
 export const ContainerBag = styled.section`
   display: flex;
   flex-direction: column;
-  padding: 0 10%;
+  padding: 0 10% 100px;
 
   .navigation {
     margin: 30px 0;
