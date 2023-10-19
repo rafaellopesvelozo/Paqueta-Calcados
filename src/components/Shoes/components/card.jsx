@@ -5,15 +5,15 @@ import { formatCurrency } from "../../../utils/format";
 import { Link } from "react-router-dom";
 import { ButtonBuy, ButtonSoldout } from "../../Button/Button.style";
 //import { localStorageAddUser } from "../../../utils/localStorage";
-
 import AppContext from "../../../context/AppContext";
+import StateShoes from "../../../hooks/StateShoes/statesShoesHook";
 
 export const ShoesIndex = ({ shoesItem }) => {
-  const { cartItem, setCartItem, setProducts, cartWishList, setCartWishList } =
-    useContext(AppContext);
 
+  const { cartItem, setCartItem } = useContext(AppContext);
+  const { wishList, heartIsActive, pageProducts } = StateShoes();
+  
   const [existingItem, setExistingItem] = useState(false);
-  const [heartIsActive, setHeatIsActive] = useState(false);
 
   function handleAddCart(shoesItem) {
     const existCart = cartItem.find((item) => item.id === shoesItem.id);
@@ -23,18 +23,6 @@ export const ShoesIndex = ({ shoesItem }) => {
       //localStorageAddUser(shoesItem)
     }
   }
-
-  const wishList = (shoesItem) => {
-    const existWishList = cartWishList.find((item) => item.id === shoesItem.id);
-    if (!existWishList) {
-      setCartWishList([...cartWishList, shoesItem]);
-      setHeatIsActive(!heartIsActive);
-    }
-  };
-
-  const pageProducts = (shoesItem) => {
-    setProducts([shoesItem]);
-  };
 
   return (
     <S.ContainerProducts key={shoesItem.name}>

@@ -209,12 +209,12 @@ export const ContainerProducts = styled.section`
           margin: 10px 0;
 
           .numberProductCheck {
-            border: 1px solid #ff8a29;
+            border: 2px solid #ff8a29;
             color: #ff8a29;
           }
 
           li {
-            border: 1px solid #000000;
+            border: 2px solid #000000;
             padding: 10px;
             cursor: pointer;
             display: flex;

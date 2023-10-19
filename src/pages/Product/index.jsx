@@ -1,10 +1,11 @@
-import React, { useRef, useState } from "react";
+import React, { useState } from "react";
 import * as Styled from "./styles";
 import { useContext } from "react";
 import { Link } from "react-router-dom";
 import { formatCurrency } from "../../utils/format";
 import { ButtonPrice } from "../../components/Button/Button.style";
 import { ChoiceNumber } from "../../utils/numberShoes";
+
 import AppContext from "../../context/AppContext";
 import img1 from "../../assets/product/image1.jpg";
 import img2 from "../../assets/product/image2.jpg";
@@ -43,6 +44,7 @@ const Product = () => {
       setProductItemBuy(!productItemBuy);
     }
   };
+
   return (
     <Styled.ContainerProducts>
       <section>

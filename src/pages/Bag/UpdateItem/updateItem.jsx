@@ -1,53 +1,19 @@
-import React, { useContext, useEffect } from "react";
+import React from "react";
 
-import { useState } from "react";
 import { formatCurrency } from "../../../utils/format";
 import { ButtonRemove } from "../../../components/Button/Button.style";
 
-import AppContext from "../../../context/AppContext";
+import UpdateItemStates from "../../../hooks/Statesbag/StatesUpdateItem/UpdateItemHook";
 
 const Update = ({ cart }) => {
-  const { cartItem, setCartItem } = useContext(AppContext);
-  const [value, setValue] = useState(1);
-  const [ramdomCode, setRamdomCode] = useState("");
-  const [ramdomShoe, setramdomShoe] = useState("");
-  const handleRemoveItem = (cart) => {
-    const id = cart.id;
-    const updatedItems = cartItem.filter((item) => item.id !== id);
-    setCartItem(updatedItems);
-    //localStorageRemoveUser(cart);
-  };
 
-  const getRamdomCode = () => {
-    const min = 1234;
-    const max = 99999999;
-    const nRamdom1 = Math.floor(Math.random() * (max - min) + min);
-    setRamdomCode(nRamdom1);
-  };
-
-  const getRamdomNumberShoe = () => {
-    const min = 33;
-    const max = 44;
-    const RamdomNumberShoe = Math.floor(Math.random() * (max - min) + min);
-    setramdomShoe(RamdomNumberShoe);
-  };
-
-  useEffect(() => {
-    getRamdomCode(), getRamdomNumberShoe();
-  }, []);
-
-  const updateItem = (action) => {
-    if (action === "increase") {
-      setValue((value) => value + 1);
-    }
-
-    if (action === "decrease") {
-      if (value == 1) {
-        return;
-      }
-      setValue((value) => value - 1);
-    }
-  };
+  const {
+    handleRemoveItem,
+    updateItem,
+    value,
+    ramdomCode,
+    ramdomShoe,
+  } = UpdateItemStates();
 
   return (
     <section key={cart.id}>
@@ -76,7 +42,6 @@ const Update = ({ cart }) => {
           </div>
           <p className="cart-item-price">
             <span>Preço:</span> {formatCurrency(cart.price.value * value)}
-            <p>{}</p>
           </p>
         </div>
         <ButtonRemove onClick={() => handleRemoveItem(cart)}>

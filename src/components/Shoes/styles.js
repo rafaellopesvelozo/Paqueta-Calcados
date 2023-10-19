@@ -168,7 +168,7 @@ export const HighlightCheck = styled.div`
 `;
 export const NumberList = styled.nav`
   .numberCheck {
-    border: 1px solid #ff8a29;
+    border: 2px solid #ff8a29;
     color: #ff8a29;
   }
   ul {
@@ -179,7 +179,7 @@ export const NumberList = styled.nav`
     padding: 0;
 
     li {
-      border: 1px solid #383838;
+      border: 2px solid #383838;
       padding: 10px;
       border-radius: 3px;
       cursor: pointer;

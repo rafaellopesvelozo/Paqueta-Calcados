@@ -7,7 +7,7 @@ import AppContext from "../../context/AppContext";
 const WishList = () => {
   const { cartWishList, setCartWishList, heartIsActive } =
     useContext(AppContext);
-
+    
   const removeItem = (item) => {
     const id = item.id;
     const updateItems = cartWishList.filter((items) => items.id != id);
