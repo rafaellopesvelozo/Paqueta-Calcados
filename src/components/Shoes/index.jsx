@@ -3,7 +3,6 @@ import * as S from "./styles";
 import { Shoes_Api } from "../../services/api";
 import { numberShoes } from "../../utils/numberShoes";
 import { ShoesIndex } from "../../components/Shoes/components/card";
-
 import AppContext from "../../context/AppContext";
 
 import {
@@ -64,6 +63,7 @@ const Shoes = () => {
         <ul>
           {numberShoes.map((n, index) => (
             <li
+            key={index}
               className={`${check == index ? "numberCheck" : ""}`}
               onClick={() => numberCheck(index)}
             >
@@ -105,8 +105,6 @@ const Shoes = () => {
             })}
           </Swiper>
         </S.Section>
-
-        <S.BtnCarroussel></S.BtnCarroussel>
       </div>
     </S.ContainerShoes>
   );

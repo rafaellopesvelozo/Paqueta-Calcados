@@ -7,15 +7,13 @@ import Update from "./UpdateItem/updateItem";
 
 const Bag = () => {
   const { cartItem } = useContext(AppContext);
-
-
   return (
     <ContainerBag>
       <div>
         <div className="navigation">
-          <a>
+          <nav>
             <Link to="/">Paquetá &gt;</Link> <span>Sacola</span>
-          </a>
+          </nav>
         </div>
 
         <div className="sacola-de-compras">

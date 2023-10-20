@@ -2,8 +2,8 @@ import React from "react";
 
 import { formatCurrency } from "../../../utils/format";
 import { ButtonRemove } from "../../../components/Button/Button.style";
+import UpdateItemStates from "../../../hooks/Statesbag/StatesUpdateItem/StatesUpdateItem";
 
-import UpdateItemStates from "../../../hooks/Statesbag/StatesUpdateItem/UpdateItemHook";
 
 const Update = ({ cart }) => {
 

@@ -1,28 +1,16 @@
-import React, { useState, useContext } from "react";
-
+import React from "react";
 import * as S from "../styles";
 import { formatCurrency } from "../../../utils/format";
 import { Link } from "react-router-dom";
 import { ButtonBuy, ButtonSoldout } from "../../Button/Button.style";
 //import { localStorageAddUser } from "../../../utils/localStorage";
-import AppContext from "../../../context/AppContext";
-import StateShoes from "../../../hooks/StateShoes/statesShoesHook";
+import StateShoes from "../../../hooks/StateShoes/statesShoes";
+import StateDesire from "../../../hooks/StatesWishList/StatesDesire";
 
 export const ShoesIndex = ({ shoesItem }) => {
-
-  const { cartItem, setCartItem } = useContext(AppContext);
-  const { wishList, heartIsActive, pageProducts } = StateShoes();
   
-  const [existingItem, setExistingItem] = useState(false);
-
-  function handleAddCart(shoesItem) {
-    const existCart = cartItem.find((item) => item.id === shoesItem.id);
-    if (!existCart) {
-      setCartItem([...cartItem, shoesItem]);
-      setExistingItem(!existingItem);
-      //localStorageAddUser(shoesItem)
-    }
-  }
+  const { pageProducts, existingItem, handleAddCart } = StateShoes();
+  const { wishList, heartIsActive } = StateDesire();
 
   return (
     <S.ContainerProducts key={shoesItem.name}>
@@ -65,17 +53,21 @@ export const ShoesIndex = ({ shoesItem }) => {
       </div>
 
       <div>
-        {shoesItem.soldout == true ? (
+        {shoesItem.soldout == true && (
           <ButtonSoldout className="Warn" rel="nopeener noreferer">
             ME AVISE QUANDO CHEGAR
           </ButtonSoldout>
-        ) : (
+        )}
+
+        {!existingItem ? (
           <ButtonBuy
             onClick={() => handleAddCart(shoesItem)}
-            className={`${!existingItem ? "comprar" : "Addsacola"}`}
+            className="comprar"
           >
-            {!existingItem ? "Comprar" : "Adicionado a sacola"}
+            Comprar
           </ButtonBuy>
+        ) : (
+          <ButtonBuy className="Addsacola">Adicionado a sacola</ButtonBuy>
         )}
       </div>
     </S.ContainerProducts>

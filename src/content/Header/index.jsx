@@ -7,6 +7,7 @@ import Logo from "../../assets/Header/logo.jpg";
 
 const Header = () => {
   const { cartItem, cartWishList } = useContext(AppContext);
+
   return (
     <>
       <S.headerStyle>
@@ -32,7 +33,7 @@ const Header = () => {
           <img src={Logo} alt="Logotipo Paguetá" />
 
           <S.Enter>
-            <Link to="WishList" >
+            <Link to="WishList">
               <p className="number-buy">
                 {cartWishList.length ? <span>{cartWishList.length}</span> : ""}
                 <i className="bi bi-heart"></i> Lista de desejos

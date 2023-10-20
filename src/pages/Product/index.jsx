@@ -12,47 +12,31 @@ import img2 from "../../assets/product/image2.jpg";
 import img3 from "../../assets/product/image3.jpg";
 import img4 from "../../assets/product/image4.jpg";
 import Modal from "./Modal/Modal";
+import StatesProduct from "../../hooks/StatesProduct/StatesProduct";
+import StateDesire from "../../hooks/StatesWishList/StatesDesire";
 
 const Product = () => {
+  const { products } = useContext(AppContext);
+  const [modalActive, setModalActive] = useState(false);
+
+  const { heartIsActive } = StateDesire();
+
   const {
-    products,
-    modalActive,
-    setModalActive,
-    cartItem,
-    setCartItem,
-    heartIsActive,
-  } = useContext(AppContext);
-
-  const [numberProductCheck, setNumberProductCheck] = useState(null);
-  const [productItemBuy, setProductItemBuy] = useState(false);
-
-  function price(item) {
-    let preço = item.price.value;
-    let discount = item.price.discount * 100;
-    let total = preço - preço * (discount / 100);
-    return total;
-  }
-
-  const numberProduct = (index) => {
-    setNumberProductCheck(index);
-  };
-
-  const BuyProduct = (item) => {
-    const existProduct = cartItem.find((product) => product.id === item.id);
-    if (!existProduct) {
-      setCartItem([...cartItem, item]);
-      setProductItemBuy(!productItemBuy);
-    }
-  };
+    price,
+    numberProduct,
+    numberProductCheck,
+    BuyProduct,
+    productItemBuy,
+  } = StatesProduct();
 
   return (
     <Styled.ContainerProducts>
       <section>
         {products.map((item) => (
           <>
-            <p>
+            <nav>
               <Link to="/">Paguetá</Link> &gt; <span>{item.name}</span>
-            </p>
+            </nav>
             <div>
               <i
                 className={`${
@@ -84,13 +68,13 @@ const Product = () => {
                     <p className="with-discount">
                       {formatCurrency(item.price.value)}
                     </p>{" "}
-                    <p className="discount">
+                    <div className="discount">
                       {item.price.discount > 0 ? (
                         <p>{item.price.discount * 100} % de desconto</p>
                       ) : (
                         <p> produto sem desconto</p>
                       )}
-                    </p>
+                    </div>
                   </div>
                   <div className="price">
                     <p className="no-discount">{formatCurrency(price(item))}</p>
@@ -102,7 +86,7 @@ const Product = () => {
                 <div className="products-number">
                   <p className="choie-number">Escolha a numeração: </p>
                   <ul>
-                    {ChoiceNumber.map((n, index) => (
+                    {ChoiceNumber.map((number, index) => (
                       <li
                         className={`${
                           numberProductCheck == index
@@ -111,13 +95,13 @@ const Product = () => {
                         }`}
                         onClick={() => numberProduct(index)}
                       >
-                        {n}
+                        {number}
                       </li>
                     ))}
                   </ul>
 
                   <p
-                    onClick={() => setModalActive(true)}
+                    onClick={() => setModalActive(!modalActive)}
                     className="size-guide"
                   >
                     Guia de tamanhos
@@ -211,8 +195,7 @@ const Product = () => {
           </>
         ))}
       </section>
-
-      {modalActive == true && <Modal />}
+      {modalActive == true && <Modal setModalActive={setModalActive} />}
     </Styled.ContainerProducts>
   );
 };

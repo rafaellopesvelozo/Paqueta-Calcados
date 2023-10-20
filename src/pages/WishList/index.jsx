@@ -2,28 +2,20 @@ import React, { useContext } from "react";
 import * as Styled from "./styles";
 import { Link } from "react-router-dom";
 import { formatCurrency } from "../../utils/format";
+import StateDesire from "../../hooks/StatesWishList/StatesDesire";
 import AppContext from "../../context/AppContext";
 
 const WishList = () => {
-  const { cartWishList, setCartWishList, heartIsActive } =
-    useContext(AppContext);
-    
-  const removeItem = (item) => {
-    const id = item.id;
-    const updateItems = cartWishList.filter((items) => items.id != id);
-    setCartWishList(updateItems);
-  };
-
+  const { cartWishList } = useContext(AppContext);
+  const { removeItem, heartIsActive } = StateDesire();
   return (
     <Styled.WishListContainer>
       <div className="link-back">
-        <a>
+        <nav>
           <Link to="/">Paquetá</Link> &gt; Lista de desejos
-        </a>
+        </nav>
       </div>
-
       <h3>Favoritos</h3>
-
       {cartWishList.map((item) => (
         <section className="Container-Items">
           <div>

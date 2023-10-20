@@ -1,11 +1,8 @@
 import { useContext, useState } from "react";
 import AppContext from "../../context/AppContext";
 
-const StateShoesHook = () => {
-  const { cartWishList, setCartWishList, setProducts } =
-    useContext(AppContext);
-
-    console.log("oi")
+const StateDesire = () => {
+  const { cartWishList, setCartWishList } = useContext(AppContext);
   const [heartIsActive, setHeatIsActive] = useState(false);
 
   const wishList = (shoesItem) => {
@@ -16,17 +13,17 @@ const StateShoesHook = () => {
     }
   };
 
-  const pageProducts = (shoesItem) => {
-    setProducts([shoesItem]);
-    
+  const removeItem = (item) => {
+    const id = item.id;
+    const updateItems = cartWishList.filter((items) => items.id != id);
+    setCartWishList(updateItems);
   };
 
   return {
+    removeItem,
     wishList,
-    pageProducts,
     heartIsActive,
-    setProducts,
+    setHeatIsActive,
   };
 };
-
-export default StateShoesHook;
+export default StateDesire;

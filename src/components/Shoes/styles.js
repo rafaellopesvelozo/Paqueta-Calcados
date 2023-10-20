@@ -133,28 +133,6 @@ export const ImgProducts = styled.div`
 
 export const soldOutProduct = styled.div``;
 
-export const BtnCarroussel = styled.div`
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 10px;
-
-  .left,
-  .center,
-  .right {
-    width: 50px;
-    height: 10px;
-    background-color: #c3c3c3;
-    border-radius: 10px;
-    cursor: pointer;
-
-    &:hover {
-      background-color: #383838;
-      transition: all.2s linear;
-    }
-  }
-`;
-
 export const HighlightCheck = styled.div`
   margin: 20px 0;
 

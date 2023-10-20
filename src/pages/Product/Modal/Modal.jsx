@@ -1,9 +1,7 @@
-import { useContext } from "react";
+import React from "react";
 import sizeImg from "../../../assets/sizes/Union.png";
-import AppContext from "../../../context/AppContext";
 
-const Modal = () => {
-  const { setModalActive } = useContext(AppContext);
+const Modal = ({ setModalActive }) => {
   return (
     <div className={`sizes-fixed`}>
       <div className="container-size">

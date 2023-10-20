@@ -37,7 +37,7 @@ export const ButtonSoldout = styled(ButtonPrice)`
   }
 `;
 
-export const ButtonBuy = styled.div`
+export const ButtonBuy = styled.button`
   display: flex;
   align-items: center;
   justify-content: center;

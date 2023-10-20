@@ -43,7 +43,7 @@ export const Logotipos = styled.div`
   }
 `;
 
-export const Formulário = styled.form`
+export const Formulário = styled.div`
   align-items: center;
   display: flex;
   justify-content: space-between;
@@ -127,7 +127,6 @@ export const Form = styled.form`
 `;
 export const Label = styled.label`
   color: #ffffff;
-
   @media (min-width: 768px) and (max-width: 991px) {
     font-size: 14px;
   }
