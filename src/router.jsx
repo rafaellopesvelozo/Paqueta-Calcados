@@ -10,10 +10,10 @@ export const Router = () => {
   return (
     <BrowserRouter>
       <Routes>
-        <Route path="/" element={<Home />} />
+        <Route exact path="/" element={<Home />} />
         <Route path="/WishList" element={<WishList />} />
         <Route path="/Bag" element={<Bag />} />
-        <Route path="/product" element={<Product />} />
+        <Route path="/product/:id" element={<Product />} />
         <Route path="*" element={<Home />} />
         <Route />
       </Routes>

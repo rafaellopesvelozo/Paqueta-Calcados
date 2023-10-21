@@ -1,16 +1,16 @@
-import React from "react";
+import React, { useContext } from "react";
 import * as S from "../styles";
 import { formatCurrency } from "../../../utils/format";
 import { Link } from "react-router-dom";
 import { ButtonBuy, ButtonSoldout } from "../../Button/Button.style";
-//import { localStorageAddUser } from "../../../utils/localStorage";
 import StateShoes from "../../../hooks/StateShoes/statesShoes";
 import StateDesire from "../../../hooks/StatesWishList/StatesDesire";
+import StatesProduct from "../../../hooks/StatesProduct/StatesProduct";
 
 export const ShoesIndex = ({ shoesItem }) => {
-  
-  const { pageProducts, existingItem, handleAddCart } = StateShoes();
+  const { existingItem, handleAddCart } = StateShoes();
   const { wishList, heartIsActive } = StateDesire();
+  const { pageProducts } = StatesProduct();
 
   return (
     <S.ContainerProducts key={shoesItem.name}>
@@ -31,7 +31,7 @@ export const ShoesIndex = ({ shoesItem }) => {
           )}
         </div>
 
-        <Link to="product">
+        <Link to={`product/${shoesItem.name}`}>
           <img
             onClick={() => pageProducts(shoesItem)}
             src={shoesItem.image}

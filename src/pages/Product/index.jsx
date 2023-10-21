@@ -18,9 +18,9 @@ import StateDesire from "../../hooks/StatesWishList/StatesDesire";
 const Product = () => {
   const { products } = useContext(AppContext);
   const [modalActive, setModalActive] = useState(false);
-
   const { heartIsActive } = StateDesire();
 
+  
   const {
     price,
     numberProduct,
@@ -34,9 +34,11 @@ const Product = () => {
       <section>
         {products.map((item) => (
           <>
-            <nav>
-              <Link to="/">Paguetá</Link> &gt; <span>{item.name}</span>
-            </nav>
+            <li>
+              <Link to="/">
+                Paguetá &gt; <span>{item.name}</span>
+              </Link>
+            </li>
             <div>
               <i
                 className={`${

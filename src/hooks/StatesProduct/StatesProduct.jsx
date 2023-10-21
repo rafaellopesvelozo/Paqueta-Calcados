@@ -2,10 +2,13 @@ import { useContext, useState } from "react";
 import AppContext from "../../context/AppContext";
 
 const StatesProduct = () => {
-  
-  const { cartItem, setCartItem } = useContext(AppContext);
+  const { setProducts, cartItem, setCartItem } = useContext(AppContext);
   const [numberProductCheck, setNumberProductCheck] = useState(null);
   const [productItemBuy, setProductItemBuy] = useState(false);
+
+  const pageProducts = (shoesItem) => {
+    setProducts([shoesItem]);
+  };
 
   function price(item) {
     let preço = item.price.value;
@@ -34,6 +37,8 @@ const StatesProduct = () => {
     BuyProduct,
     productItemBuy,
     setProductItemBuy,
+    pageProducts,
+    setProducts,
   };
 };
 export default StatesProduct;

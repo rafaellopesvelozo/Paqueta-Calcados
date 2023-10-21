@@ -63,7 +63,7 @@ const Shoes = () => {
         <ul>
           {numberShoes.map((n, index) => (
             <li
-            key={index}
+              key={index}
               className={`${check == index ? "numberCheck" : ""}`}
               onClick={() => numberCheck(index)}
             >

@@ -4,16 +4,9 @@ import { formatCurrency } from "../../../utils/format";
 import { ButtonRemove } from "../../../components/Button/Button.style";
 import UpdateItemStates from "../../../hooks/Statesbag/StatesUpdateItem/StatesUpdateItem";
 
-
 const Update = ({ cart }) => {
-
-  const {
-    handleRemoveItem,
-    updateItem,
-    value,
-    ramdomCode,
-    ramdomShoe,
-  } = UpdateItemStates();
+  const { handleRemoveItem, updateItem, value, ramdomCode, ramdomShoe } =
+    UpdateItemStates();
 
   return (
     <section key={cart.id}>
