@@ -2,22 +2,6 @@ import styled from "styled-components";
 
 export const ContainerShoes = styled.section`
   padding: 0 10%;
-
-  .Addsacola {
-    background-color: #05fa3d;
-  }
-
-  .comprar {
-    background: linear-gradient(to top, #f99500, #ffcd29 100%);
-    &:hover {
-      background: linear-gradient(to top, #e98c00, #fcc71b 100%);
-    }
-  }
-
-  .Warn {
-    font-size: 13px;
-    font-weight: 600;
-  }
 `;
 
 export const Section = styled.section`
@@ -75,6 +59,33 @@ export const ContainerProducts = styled.div`
   }
   @media (min-width: 1920px) {
     width: 330px;
+  }
+
+
+  div {
+    .Addsacola {
+      background-color: #05fa3d;
+    }
+
+    .comprar {
+      background: linear-gradient(
+        to top,
+        rgb(249, 149, 0),
+        rgb(255, 205, 41) 100%
+      );
+      &:hover {
+        background: linear-gradient(
+          to top,
+          rgb(233, 140, 0),
+          rgb(252, 199, 27) 100%
+        );
+      }
+    }
+
+    .Warn {
+      font-size: 13px;
+      font-weight: 600;
+    }
   }
 `;
 

@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import AppContext from "./AppContext";
 
-const cartFromLocalStorage = JSON.parse(localStorage.getItem("cart") || "[]");
+const cartFromLocalStorage = JSON.parse(localStorage.getItem("Bag") || "[]");
 const WishListFromLocalStorage = JSON.parse(
   localStorage.getItem("WishList") || "[]"
 );
@@ -13,7 +13,7 @@ export const Provider = ({ children }) => {
   const [cartWishList, setCartWishList] = useState(WishListFromLocalStorage);
 
   useEffect(() => {
-    localStorage.setItem("cart", JSON.stringify(cartItem));
+    localStorage.setItem("Bag", JSON.stringify(cartItem));
     localStorage.setItem("WishList", JSON.stringify(cartWishList));
   }, [cartItem, cartWishList]);
 

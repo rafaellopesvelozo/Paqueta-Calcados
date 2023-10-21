@@ -48,6 +48,7 @@ const Shoes = () => {
     handleResize();
 
     window.addEventListener("resize", handleResize);
+
     return () => {
       window.removeEventListener("resise", handleResize);
     };
@@ -56,6 +57,7 @@ const Shoes = () => {
   const numberCheck = (index) => {
     setCheck(index);
   };
+
 
   return (
     <S.ContainerShoes>

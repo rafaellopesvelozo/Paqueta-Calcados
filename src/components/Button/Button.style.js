@@ -38,10 +38,8 @@ export const ButtonSoldout = styled(ButtonPrice)`
 `;
 
 export const ButtonBuy = styled.button`
-  display: flex;
-  align-items: center;
-  justify-content: center;
   color: #ffff;
+  text-align: center;
   font-weight: 600;
   height: 46px;
   width: 100%;

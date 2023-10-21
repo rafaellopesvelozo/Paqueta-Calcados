@@ -59,16 +59,12 @@ export const ShoesIndex = ({ shoesItem }) => {
           </ButtonSoldout>
         )}
 
-        {!existingItem ? (
-          <ButtonBuy
-            onClick={() => handleAddCart(shoesItem)}
-            className="comprar"
-          >
-            Comprar
-          </ButtonBuy>
-        ) : (
-          <ButtonBuy className="Addsacola">Adicionado a sacola</ButtonBuy>
-        )}
+        <ButtonBuy
+          onClick={() => handleAddCart(shoesItem)}
+          className={`${!existingItem ? "comprar" : "Addsacola"}`}
+        >
+          {!existingItem ? "Comprar" : "adicionado a sacola"}
+        </ButtonBuy>
       </div>
     </S.ContainerProducts>
   );
