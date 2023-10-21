@@ -1,7 +1,6 @@
 import React, { useContext } from "react";
 import { ContainerBag } from "./styles";
-import { Link, useParams } from "react-router-dom";
-//import { localStorageRemoveUser } from "../../utils/localStorage";
+import { Link } from "react-router-dom";
 import AppContext from "../../context/AppContext";
 import Update from "./UpdateItem/updateItem";
 

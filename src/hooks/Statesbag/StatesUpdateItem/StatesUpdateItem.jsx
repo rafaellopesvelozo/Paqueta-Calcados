@@ -12,7 +12,6 @@ const UpdateItemStates = () => {
     const id = cart.id;
     const updatedItems = cartItem.filter((item) => item.id !== id);
     setCartItem(updatedItems);
-    //localStorageRemoveUser(cart);
   };
 
   const getRamdomCode = () => {
