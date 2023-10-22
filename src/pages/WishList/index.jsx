@@ -7,7 +7,7 @@ import AppContext from "../../context/AppContext";
 
 const WishList = () => {
   const { cartWishList } = useContext(AppContext);
-  const { removeItem, heartIsActive } = StateDesire();
+  const { removeItem } = StateDesire();
   return (
     <Styled.WishListContainer>
       <div className="link-back">
@@ -23,7 +23,7 @@ const WishList = () => {
               <img src={item.image} alt="imagem do prduto" />
               <div className="bg-hover"></div>
               <div onClick={() => removeItem(item)} className="icon-heart">
-                {heartIsActive ? (
+                {cartWishList.filter((i) => i.id == item.id).length == 0 ? (
                   <i class="bi bi-heart"></i>
                 ) : (
                   <i class="bi bi-heart-fill"></i>

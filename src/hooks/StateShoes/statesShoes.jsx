@@ -11,7 +11,6 @@ const StateShoes = () => {
       setCartItem((previous) => [...previous, shoesItem]);
       setExistingItem(!existingItem);
     }
-    
   };
 
   return {

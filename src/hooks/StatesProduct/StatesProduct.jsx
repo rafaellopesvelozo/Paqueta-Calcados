@@ -25,7 +25,6 @@ const StatesProduct = () => {
     const existProduct = cartItem.find((product) => product.id === item.id);
     if (!existProduct) {
       setCartItem([...cartItem, item]);
-      setProductItemBuy(!productItemBuy);
     }
   };
 
@@ -39,6 +38,7 @@ const StatesProduct = () => {
     setProductItemBuy,
     pageProducts,
     setProducts,
+    cartItem
   };
 };
 export default StatesProduct;

@@ -13,21 +13,13 @@ import img3 from "../../assets/product/image3.jpg";
 import img4 from "../../assets/product/image4.jpg";
 import Modal from "./Modal/Modal";
 import StatesProduct from "../../hooks/StatesProduct/StatesProduct";
-import StateDesire from "../../hooks/StatesWishList/StatesDesire";
 
 const Product = () => {
-  const { products } = useContext(AppContext);
+  const { products, cartItem } = useContext(AppContext);
   const [modalActive, setModalActive] = useState(false);
-  const { heartIsActive } = StateDesire();
 
-  
-  const {
-    price,
-    numberProduct,
-    numberProductCheck,
-    BuyProduct,
-    productItemBuy,
-  } = StatesProduct();
+  const { price, numberProduct, numberProductCheck, BuyProduct } =
+    StatesProduct();
 
   return (
     <Styled.ContainerProducts>
@@ -39,13 +31,7 @@ const Product = () => {
                 Paguetá &gt; <span>{item.name}</span>
               </Link>
             </li>
-            <div>
-              <i
-                className={`${
-                  !heartIsActive ? "bi bi-heart-fill" : "bi-heart"
-                }`}
-              ></i>
-            </div>
+            <div></div>
             <div className="container-products-item" key={item.name}>
               <div className="products-img">
                 <img src={item.image} alt="imagem do produto" />
@@ -110,12 +96,22 @@ const Product = () => {
                   </p>
                 </div>
                 <div className="products-btn">
-                  <ButtonPrice
-                    className={`${productItemBuy ? "productAdBag" : ""}`}
-                    onClick={() => BuyProduct(item)}
-                  >
-                    {productItemBuy ? "ADICIONADO A SACOLA" : "COMPRAR"}
-                  </ButtonPrice>
+                  {item.soldout == false ? (
+                    <ButtonPrice
+                      onClick={() => BuyProduct(item)}
+                      className={`${
+                        cartItem.filter((i) => i.id == item.id).length == 0
+                          ? ""
+                          : "productAdBag"
+                      }`}
+                    >
+                      {cartItem.filter((i) => i.id == item.id).length == 0
+                        ? "COMPRAR"
+                        : "ADICIONADO A SACOLA"}
+                    </ButtonPrice>
+                  ) : (
+                    ""
+                  )}
                 </div>
               </div>
             </div>

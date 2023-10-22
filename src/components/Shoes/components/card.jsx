@@ -6,9 +6,11 @@ import { ButtonBuy, ButtonSoldout } from "../../Button/Button.style";
 import StateShoes from "../../../hooks/StateShoes/statesShoes";
 import StateDesire from "../../../hooks/StatesWishList/StatesDesire";
 import StatesProduct from "../../../hooks/StatesProduct/StatesProduct";
+import AppContext from "../../../context/AppContext";
 
 export const ShoesIndex = ({ shoesItem }) => {
-  const { existingItem, handleAddCart } = StateShoes();
+  const { cartItem, cartWishList } = useContext(AppContext);
+  const { handleAddCart } = StateShoes();
   const { wishList, heartIsActive } = StateDesire();
   const { pageProducts } = StatesProduct();
 
@@ -22,7 +24,8 @@ export const ShoesIndex = ({ shoesItem }) => {
         )}
 
         <div onClick={() => wishList(shoesItem)}>
-          {!heartIsActive ? (
+          {cartWishList.filter((item) => item.id == shoesItem.id).length ==
+          0 ? (
             <i
               className={`${shoesItem.soldout === true ? "" : "bi-heart"}`}
             ></i>
@@ -53,18 +56,24 @@ export const ShoesIndex = ({ shoesItem }) => {
       </div>
 
       <div>
-        {shoesItem.soldout == true && (
+        {shoesItem.soldout == false ? (
+          <ButtonBuy
+            onClick={() => handleAddCart(shoesItem)}
+            className={`${
+              cartItem.filter((item) => item.id == shoesItem.id).length == 0
+                ? "comprar"
+                : "Addsacola"
+            }`}
+          >
+            {cartItem.filter((item) => item.id == shoesItem.id).length == 0
+              ? "Comprar"
+              : "adicionado a sacola"}
+          </ButtonBuy>
+        ) : (
           <ButtonSoldout className="Warn" rel="nopeener noreferer">
             ME AVISE QUANDO CHEGAR
           </ButtonSoldout>
         )}
-
-        <ButtonBuy
-          onClick={() => handleAddCart(shoesItem)}
-          className={`${!existingItem ? "comprar" : "Addsacola"}`}
-        >
-          {!existingItem ? "Comprar" : "adicionado a sacola"}
-        </ButtonBuy>
       </div>
     </S.ContainerProducts>
   );
