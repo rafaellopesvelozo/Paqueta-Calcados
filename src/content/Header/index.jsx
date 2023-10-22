@@ -16,16 +16,18 @@ const Header = () => {
             <p>Loja de Calçados e Moda Online </p>
           </div>
           <S.Talk>
-            <div>
-              <a>
-                <i className="bi bi-headphones"></i> Fale conosco
-              </a>
-            </div>
-            <div>
-              <a>
-                <i className="bi bi-geo-alt"></i> Econtrar uma loja fisica
-              </a>
-            </div>
+            <nav>
+              <li>
+                <i className="bi bi-headphones" />
+                Fale conosco
+              </li>
+            </nav>
+            <nav>
+              <li>
+                <i className="bi bi-geo-alt" />
+                Econtrar uma loja fisica
+              </li>
+            </nav>
           </S.Talk>
         </S.headerHelp>
 
@@ -36,19 +38,20 @@ const Header = () => {
             <Link to="WishList">
               <p className="number-buy">
                 {cartWishList.length ? <span>{cartWishList.length}</span> : ""}
-                <i className="bi bi-heart"></i> Lista de desejos
+                <i className="bi bi-heart" />
+                Lista de desejos
               </p>
             </Link>
 
             <Link to="Bag">
               <p className="number-buy">
                 {cartItem.length ? <span>{cartItem.length}</span> : ""}
-                <i className="bi bi-bag-dash"></i> Sacola
+                <i className="bi bi-bag-dash" /> Sacola
               </p>
             </Link>
 
-            <p>
-              <i className="bi bi-person"></i> Entrar
+            <p className="login">
+              <i className="bi bi-person" /> Entrar
             </p>
           </S.Enter>
         </S.Buy>

@@ -3,7 +3,10 @@ import * as Styled from "./styles";
 import { useContext } from "react";
 import { Link } from "react-router-dom";
 import { formatCurrency } from "../../utils/format";
-import { ButtonPrice } from "../../components/Button/Button.style";
+import {
+  ButtonPrice,
+  ButtonSoldout,
+} from "../../components/Button/Button.style";
 import { ChoiceNumber } from "../../utils/numberShoes";
 
 import AppContext from "../../context/AppContext";
@@ -15,7 +18,7 @@ import Modal from "./Modal/Modal";
 import StatesProduct from "../../hooks/StatesProduct/StatesProduct";
 
 const Product = () => {
-  const { products, cartItem } = useContext(AppContext);
+  const { products, cartItem, cartWishList } = useContext(AppContext);
   const [modalActive, setModalActive] = useState(false);
 
   const { price, numberProduct, numberProductCheck, BuyProduct } =
@@ -31,7 +34,15 @@ const Product = () => {
                 Paguetá &gt; <span>{item.name}</span>
               </Link>
             </li>
-            <div></div>
+
+            <i
+              className={`${
+                cartWishList.filter((i) => i.id == item.id).length == 0
+                  ? "bi bi-heart"
+                  : "bi bi-heart-fill"
+              }`}
+            ></i>
+
             <div className="container-products-item" key={item.name}>
               <div className="products-img">
                 <img src={item.image} alt="imagem do produto" />
@@ -110,7 +121,7 @@ const Product = () => {
                         : "ADICIONADO A SACOLA"}
                     </ButtonPrice>
                   ) : (
-                    ""
+                    <ButtonSoldout>ME AVISE QUANDO CHEGAR</ButtonSoldout>
                   )}
                 </div>
               </div>

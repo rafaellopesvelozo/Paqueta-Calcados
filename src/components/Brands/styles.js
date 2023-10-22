@@ -93,6 +93,7 @@ export const Email = styled.div`
 export const ContainerIputEmail = styled.div`
   display: flex;
   justify-content: space-between;
+  gap: 10px;
 
   input[type="text"]::placeholder,
   input[type="email"]::placeholder {
@@ -103,6 +104,7 @@ export const ContainerIputEmail = styled.div`
     }
   }
 `;
+
 export const Input = styled.input`
   border: none;
   outline: none;

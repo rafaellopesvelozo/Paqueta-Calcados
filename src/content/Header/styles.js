@@ -25,15 +25,20 @@ export const Buy = styled.nav`
     }
   }
 `;
+
 export const Enter = styled.div`
   display: flex;
   justify-content: space-between;
   gap: 4rem;
 
-  @media (min-width: 768px) and (max-width: 991px) {
-    gap: 1rem;
+  .login {
+    cursor: pointer;
   }
 
+  i {
+    margin-right: 5px;
+    font-size: 20px;
+  }
   .number-buy {
     position: relative;
 
@@ -52,6 +57,10 @@ export const Enter = styled.div`
       color: #ffffff;
       font-size: 12px;
     }
+  }
+
+  @media (min-width: 768px) and (max-width: 991px) {
+    gap: 1rem;
   }
 `;
 
@@ -73,6 +82,17 @@ export const Talk = styled.nav`
   display: flex;
   gap: 4rem;
 
+  nav {
+    li {
+      color: #ffff;
+      i {
+        font-size: 20px;
+        color: #ffffff;
+        margin-right: 5px;
+      }
+    }
+  }
+
   @media (min-width: 768px) and (max-width: 991px) {
     gap: 1rem;
   }
@@ -82,12 +102,41 @@ export const Navigation = styled.nav`
   nav {
     padding: 1rem 10%;
     display: flex;
-
     align-items: center;
     justify-content: space-between;
   }
 
   a {
     cursor: pointer;
+    position: relative;
+    font-size: 17px;
+
+    &::after {
+      content: "";
+      position: absolute;
+      background-color: #e97516;
+      left: 0;
+      top: -3px;
+      width: 0px;
+      height: 2px;
+    }
+
+    &::before {
+      content: "";
+      position: absolute;
+      background-color: #e97516;
+      right: 0;
+      bottom: -3px;
+      width: 0px;
+      height: 2px;
+    }
+
+    &:hover {
+      &::after,
+      &::before {
+        width: 100%;
+        transition: all 0.3s linear;
+      }
+    }
   }
 `;

@@ -16,7 +16,7 @@ export const ContainerProducts = styled.section`
     top: 0;
     left: 0;
     background: rgba(0, 0, 0, 0.85);
-    width: 100vw;
+    width: 100%;
     height: 100vh;
 
     .container-size {
@@ -116,6 +116,11 @@ export const ContainerProducts = styled.section`
   }
 
   section {
+    i {
+      font-size: 25px;
+      color: #cf5d00;
+    }
+
     .container-products-item {
       display: flex;
       justify-content: space-between;
@@ -140,13 +145,11 @@ export const ContainerProducts = styled.section`
       .products-info {
         width: 45%;
         .products-btn {
-
-          .productAdBag{
-              background: #05fa3d;
-            }
+          .productAdBag {
+            background: #05fa3d;
+          }
           button {
             width: 100%;
-            
           }
         }
       }
@@ -168,7 +171,6 @@ export const ContainerProducts = styled.section`
         }
       }
       .products-price {
-        //padding: 20px 0;
         .price-discount {
           display: flex;
           gap: 10px;
@@ -220,6 +222,12 @@ export const ContainerProducts = styled.section`
             display: flex;
             justify-content: center;
             border-radius: 5px;
+
+             &:hover {
+                border: 2px solid #ff8a29;
+                color: #ff8a29;
+            }
+            
           }
         }
         .size-guide {
@@ -255,7 +263,7 @@ export const ContainerProducts = styled.section`
       justify-content: space-between;
 
       .item-carousel {
-        width: 220px;
+        max-width: 320px;
         flex-wrap: wrap;
         padding: 10px;
         border-radius: 10px;

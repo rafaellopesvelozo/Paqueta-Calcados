@@ -32,7 +32,7 @@ const Shoes = () => {
       setLoad(load);
       Shoes_Api.get("api/paqueta/shoes").then(({ data }) => {
         setShoes(data);
-        setLoad(false);
+        setLoad(!load);
       });
     } catch (error) {
       console.log(error);
@@ -57,7 +57,6 @@ const Shoes = () => {
   const numberCheck = (index) => {
     setCheck(index);
   };
-
 
   return (
     <S.ContainerShoes>
@@ -87,7 +86,7 @@ const Shoes = () => {
 
         <S.Section>
           {shoes.length === 0 && (
-            <i className={`${load ? "bi-arrow-clockwise" : ""}`}></i>
+            <i className={`${load ? "bi-arrow-clockwise" : ""}`} />
           )}
           <Swiper
             className="Swiper"

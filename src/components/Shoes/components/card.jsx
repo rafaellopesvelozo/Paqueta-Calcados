@@ -11,7 +11,7 @@ import AppContext from "../../../context/AppContext";
 export const ShoesIndex = ({ shoesItem }) => {
   const { cartItem, cartWishList } = useContext(AppContext);
   const { handleAddCart } = StateShoes();
-  const { wishList, heartIsActive } = StateDesire();
+  const { wishList } = StateDesire();
   const { pageProducts } = StatesProduct();
 
   return (
@@ -26,11 +26,9 @@ export const ShoesIndex = ({ shoesItem }) => {
         <div onClick={() => wishList(shoesItem)}>
           {cartWishList.filter((item) => item.id == shoesItem.id).length ==
           0 ? (
-            <i
-              className={`${shoesItem.soldout === true ? "" : "bi-heart"}`}
-            ></i>
+            <i className={`${shoesItem.soldout === true ? "" : "bi-heart"}`} />
           ) : (
-            <i className="bi bi-heart-fill"></i>
+            <i className="bi bi-heart-fill" />
           )}
         </div>
 
@@ -67,7 +65,7 @@ export const ShoesIndex = ({ shoesItem }) => {
           >
             {cartItem.filter((item) => item.id == shoesItem.id).length == 0
               ? "Comprar"
-              : "adicionado a sacola"}
+              : "Adicionado a sacola"}
           </ButtonBuy>
         ) : (
           <ButtonSoldout className="Warn" rel="nopeener noreferer">

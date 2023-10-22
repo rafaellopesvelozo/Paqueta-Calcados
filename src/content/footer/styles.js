@@ -40,6 +40,7 @@ export const ConteinerFooter = styled.footer`
       flex-direction: column;
       gap: 10px;
       li {
+        cursor: pointer;
         font-size: 14px;
         font-weight: 400;
         font-family: "Montserrat", sans-serif;
@@ -49,7 +50,12 @@ export const ConteinerFooter = styled.footer`
     .footer-talk-us,
     .footer-work-us {
       display: block;
+
+      p, address{
+        cursor: pointer;
+      }
     }
+   
 
     .social-media {
       display: flex;

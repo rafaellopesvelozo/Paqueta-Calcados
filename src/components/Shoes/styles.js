@@ -61,7 +61,6 @@ export const ContainerProducts = styled.div`
     width: 330px;
   }
 
-
   div {
     .Addsacola {
       background-color: #05fa3d;
@@ -104,11 +103,6 @@ export const ImgProducts = styled.div`
     @media (min-width: 768px) and (max-width: 991px) {
       font-size: 20px;
     }
-  }
-
-  .bi-heart-fill {
-    color: #cf5d00;
-    transition: all 0.2s linear;
   }
 
   .sold_out_product {
@@ -172,6 +166,11 @@ export const NumberList = styled.nav`
       padding: 10px;
       border-radius: 3px;
       cursor: pointer;
+
+      &:hover {
+        border: 2px solid #ff8a29;
+        color: #ff8a29;
+      }
     }
   }
 `;

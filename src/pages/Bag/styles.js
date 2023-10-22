@@ -42,6 +42,7 @@ export const ContainerBag = styled.section`
           width: 100%;
           justify-content: space-between;
           padding-left: 30px;
+
           div {
           }
           p,
@@ -61,6 +62,7 @@ export const ContainerBag = styled.section`
           .cart-item-numeracao > span,
           .cart-item-cor > span,
           .cart-item-price > span {
+            font-size: 18px;
             margin-bottom: 10px;
             font-family: "Montserrat", sans-serif;
             font-weight: 600;
