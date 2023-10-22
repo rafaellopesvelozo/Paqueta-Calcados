@@ -3,7 +3,7 @@
 </p>
 
 <p align="center">
-  Deploy do projeto: https://paqueta-calcados-q998arbbp-rafaellopesvelozo.vercel.app)https://paqueta-calcados-q998arbbp-rafaellopesvelozo.vercel.app
+  Deploy do projeto: https://paqueta-calcados-q998arbbp-rafaellopesvelozo.vercel.app
   <br/>
 </p>
 
