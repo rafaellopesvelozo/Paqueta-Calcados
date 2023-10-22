@@ -71,6 +71,9 @@ export const Email = styled.div`
 
   @media (min-width: 768px) and (max-width: 991px) {
     width: 350px;
+    p {
+      font-size: 12px;
+    }
   }
 
   p {
@@ -112,6 +115,10 @@ export const Input = styled.input`
   padding-left: 10px;
   background-color: transparent;
   border-bottom: 1px solid #ffffff;
+
+  @media (min-width: 768px) and (max-width: 991px) {
+    max-width: 160px;
+  }
 `;
 export const InputForm = styled.div`
   display: flex;
@@ -129,14 +136,16 @@ export const Form = styled.form`
 `;
 export const Label = styled.label`
   color: #ffffff;
+  display: flex;
+ 
+
   @media (min-width: 768px) and (max-width: 991px) {
-    font-size: 14px;
+    font-size: 12px;
   }
 
   input[type="checkbox"] {
     margin-right: 5px;
     outline: none;
     border: none;
-    box-shadow: 1px 1px 3px #000000;
   }
 `;

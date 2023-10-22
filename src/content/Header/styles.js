@@ -21,7 +21,7 @@ export const Buy = styled.nav`
   img {
     width: 15rem;
     @media (min-width: 768px) and (max-width: 991px) {
-      width: 13rem;
+      width: 12rem;
     }
   }
 `;
@@ -34,11 +34,16 @@ export const Enter = styled.div`
   .login {
     cursor: pointer;
   }
-
-  i {
-    margin-right: 5px;
-    font-size: 20px;
+  p {
+    @media (min-width: 768px) and (max-width: 991px) {
+      font-size: 14px;
+    }
+    i {
+      margin-right: 5px;
+      font-size: 20px;
+    }
   }
+
   .number-buy {
     position: relative;
 
@@ -75,6 +80,10 @@ export const headerHelp = styled.nav`
   p {
     cursor: pointer;
     color: #ffff;
+
+    @media (min-width: 768px) and (max-width: 991px) {
+      font-size: 14px;
+    }
   }
 `;
 
@@ -85,6 +94,9 @@ export const Talk = styled.nav`
   nav {
     li {
       color: #ffff;
+      @media (min-width: 768px) and (max-width: 991px) {
+        font-size: 14px;
+      }
       i {
         font-size: 20px;
         color: #ffffff;
@@ -110,6 +122,9 @@ export const Navigation = styled.nav`
     cursor: pointer;
     position: relative;
     font-size: 17px;
+    @media (min-width: 768px) and (max-width: 991px) {
+      font-size: 14px;
+    }
 
     &::after {
       content: "";

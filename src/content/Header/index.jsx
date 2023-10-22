@@ -33,7 +33,6 @@ const Header = () => {
 
         <S.Buy>
           <img src={Logo} alt="Logotipo Paguetá" />
-
           <S.Enter>
             <Link to="WishList">
               <p className="number-buy">

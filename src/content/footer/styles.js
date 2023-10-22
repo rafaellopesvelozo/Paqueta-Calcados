@@ -6,6 +6,7 @@ export const ConteinerFooter = styled.footer`
     display: flex;
     justify-content: space-between;
     background-color: #ebebeb;
+    gap: 5px;
     .payment,
     .awards-security {
       display: flex;
@@ -13,9 +14,6 @@ export const ConteinerFooter = styled.footer`
       justify-content: space-between;
     }
 
-    div {
-      padding: 0;
-    }
     .footer-service {
       display: flex;
       flex-direction: column;
@@ -33,6 +31,9 @@ export const ConteinerFooter = styled.footer`
       font-family: "Montserrat", sans-serif;
       margin-bottom: 10px;
       color: #383838;
+      @media (min-width: 768px) and (max-width: 991px) {
+        font-size: 13px;
+      }
     }
 
     ul {
@@ -44,6 +45,9 @@ export const ConteinerFooter = styled.footer`
         font-size: 14px;
         font-weight: 400;
         font-family: "Montserrat", sans-serif;
+        @media (min-width: 768px) and (max-width: 991px) {
+          font-size: 10px;
+        }
       }
     }
     .footer-adress,
@@ -51,21 +55,27 @@ export const ConteinerFooter = styled.footer`
     .footer-work-us {
       display: block;
 
-      p, address{
+      p,
+      address {
         cursor: pointer;
       }
     }
-   
 
     .social-media {
       display: flex;
       flex-direction: column;
+      text-align: center;
+
       .social-media-icons {
         display: flex;
-        justify-content: unset;
-        gap: 17px;
+        justify-content: space-between;
+        padding: 0;
+
         img {
           max-width: 15px;
+          @media (min-width: 768px) and (max-width: 991px) {
+            width: 8px;
+          }
         }
       }
     }
@@ -74,13 +84,21 @@ export const ConteinerFooter = styled.footer`
     .payment-container {
       display: flex;
       flex-direction: column;
+      text-align: center;
+      h6 {
+        @media (min-width: 768px) and (max-width: 991px) {
+          font-size: 12px;
+        }
+      }
       .partners {
         display: flex;
         flex-direction: column;
         gap: 10px;
         max-width: 190px;
+        padding: 0;
 
-        > div {
+        div {
+          padding: 0;
           img {
             max-width: 30px;
           }

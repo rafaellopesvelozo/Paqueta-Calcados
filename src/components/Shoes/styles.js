@@ -51,6 +51,9 @@ export const ContainerProducts = styled.div`
     font-weight: 600;
     font-size: 20px;
   }
+  @media (min-width: 768px) and (max-width: 991px) {
+    height: 280px;
+  }
   @media (min-width: 992px) and (max-width: 1199px) {
     height: 345px;
   }
@@ -64,6 +67,9 @@ export const ContainerProducts = styled.div`
   div {
     .Addsacola {
       background-color: #05fa3d;
+      @media (min-width: 768px) and (max-width: 991px) {
+        font-size: 13px;
+      }
     }
 
     .comprar {
@@ -78,6 +84,10 @@ export const ContainerProducts = styled.div`
           rgb(233, 140, 0),
           rgb(252, 199, 27) 100%
         );
+      }
+
+      @media (min-width: 768px) and (max-width: 991px) {
+        font-size: 13px;
       }
     }
 
