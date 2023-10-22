@@ -67,8 +67,9 @@ export const ContainerProducts = styled.div`
   div {
     .Addsacola {
       background-color: #05fa3d;
-      @media (min-width: 768px) and (max-width: 991px) {
-        font-size: 13px;
+
+      @media (max-width: 1169px) {
+        font-size: 12px;
       }
     }
 
@@ -86,8 +87,8 @@ export const ContainerProducts = styled.div`
         );
       }
 
-      @media (min-width: 768px) and (max-width: 991px) {
-        font-size: 13px;
+      @media (max-width: 1169px) {
+        font-size: 15px;
       }
     }
 
