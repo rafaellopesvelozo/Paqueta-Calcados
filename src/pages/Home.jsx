@@ -1,6 +1,6 @@
 import React from "react";
 import Header from "../content/Header";
-import Main from "../content/main";
+import Main from '../content/Main'
 import Footer from "../content/footer";
 
 const Home = () => {
